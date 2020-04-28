@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6 }, allow_nil: true
 
   # user attribute validations
-  validates :email, presence: true, email_format: { message: "Please enter valid email address." }
+  validates :email, presence: true, email_format: { message: "Please enter valid email address" }
   validates :reputation, presence: true
   validates :bronze_points, presence: true
   validates :silver_points, presence: true
