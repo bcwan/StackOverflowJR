@@ -15,7 +15,7 @@ class User < ApplicationRecord
   validates :gold_points, presence: true
   validates :location, presence: true
 
-  # able to run methods before running validations
+  # able to run method before running validations
   # just needs to have session_token when a user is created
   after_initialize :ensure_session_token
 
