@@ -15,6 +15,7 @@ const logoutCurrentUser = () => ({
   type: LOGOUT_CURRENT_USER,
 });
 
+// receives errors as array
 const receiveErrors = (errors) => ({
   type: RECEIVE_ERRORS,
   errors
