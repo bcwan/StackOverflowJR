@@ -8,7 +8,7 @@ class Api::SessionsController < ApplicationController
     else  
       render json: ["Invalid username/password combination"], status: 401
     end
-  end
+  end 
 
   def destroy
     @user = current_user

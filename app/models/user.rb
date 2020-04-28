@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6 }, allow_nil: true
 
   # user attribute validations
-  validates :email, presence: true, email_format: { message: "Please enter valid email address" }
+  validates :email, presence: true, email_format: { message: "invalid: please enter valid email format" }
   validates :reputation, presence: true
   validates :bronze_points, presence: true
   validates :silver_points, presence: true
@@ -35,7 +35,7 @@ class User < ApplicationRecord
     self.password_digest = BCrypt::Password.create(password)
   end
 
-  def is_password(password)
+  def is_password?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)
   end
 
