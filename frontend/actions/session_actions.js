@@ -23,16 +23,27 @@ const receiveErrors = (errors) => ({
 // thunk action
 export const login = (user) => (dispatch) => (
   UserAPIUtil.login(user)
-    .then(currentUser => dispatch(receiveCurrentUser(currentUser)))
+    .then((currentUser) => dispatch(receiveCurrentUser(currentUser),
+      (error) => (
+        dispatch(receiveErrors(error.responseJSON))
+      )
+    )
+  )
 );
 
 export const logout = () => (dispatch) => (
   UserAPIUtil.logout()
-    .then(() => dispatch(logoutCurrentUser()))
+    .then(() => dispatch(logoutCurrentUser())
+  )
 );
 
 export const signup = (user) => (dispatch) => (
   UserAPIUtil.signup(user)
-    .then(newUser => dispatch(receiveCurrentUser(newUser)))
+    .then((newUser) => dispatch(receiveCurrentUser(newUser),
+      (error) => (
+        dispatch(receiveErrors(error.responseJSON))
+      )
+    )
+  )
 );
 
