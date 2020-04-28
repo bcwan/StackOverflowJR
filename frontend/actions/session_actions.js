@@ -6,17 +6,17 @@ export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 // action creators
 
-const receiveCurrentUser = (currentUser) => ({
+export const receiveCurrentUser = (currentUser) => ({
   type: RECEIVE_CURRENT_USER,
   currentUser
 });
 
-const logoutCurrentUser = () => ({
+export const logoutCurrentUser = () => ({
   type: LOGOUT_CURRENT_USER,
 });
 
 // receives errors as array
-const receiveErrors = (errors) => ({
+export const receiveErrors = (errors) => ({
   type: RECEIVE_ERRORS,
   errors
 });
