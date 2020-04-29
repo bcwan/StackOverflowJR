@@ -6,7 +6,7 @@ import { Route, Redirect, HashRouter, Link, Switch } from 'react-router-dom';
 
 const App = () => (
   <div>
-    <header>
+    <header className="header-bar">
       <h1>StackOverflow Jr</h1>
       <GreetingContainer />
     </header>

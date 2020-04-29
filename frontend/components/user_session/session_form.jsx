@@ -20,11 +20,26 @@ class SessionForm extends React.Component {
     return e => this.setState({ [field]: e.currentTarget.value });
   }
 
+  errors() {
+    return (
+      <ul>
+        {
+          this.props.errors.map((error, idx) => (
+            <li key={idx}>
+              {error}
+            </li>
+          ))
+        }
+      </ul>
+    )
+  }
+
   render () {
     return (
       <div className="session-form-container">
         <h1>Please {this.props.formType}</h1>
         <form onSubmit={this.handleSubmit}>
+          {this.errors()}
           <label>Username: 
             <input type="text"
                    value={this.state.username}
