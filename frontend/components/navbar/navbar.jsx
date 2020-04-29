@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const NavBar = ( { currentUser, logout } ) => {
   //profile button and logout button
   const loggedInButtons = () => (
-    <div>
+    <div className="auth-btn-set">
       <Link to="/profile">
         <button>Profile</button>
       </Link>
@@ -14,7 +14,7 @@ const NavBar = ( { currentUser, logout } ) => {
 
   //login and signup buttons
   const notLoggedInButtons = () => (
-    <div>
+    <div className="auth-btn-set">
       <Link to="/login">
         <button>Log in</button>
       </Link>
@@ -27,7 +27,7 @@ const NavBar = ( { currentUser, logout } ) => {
   const navBarDesign = (user, loggedInHTML, notLoggedInHTML) => (
     <header className="header">
       <nav className="header-nav">
-        <img src="/assets/stackoverflowjr.jpg" alt="" />
+        <img className="stackoverflow-logo" src="/assets/stackoverflowjr.jpg" alt="" />
         <input type="text" placeholder="Search..." />
         {
           user ? loggedInHTML : notLoggedInHTML
