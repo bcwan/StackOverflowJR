@@ -4,12 +4,13 @@ import LoginContainer from "./user_session/login_form_container"
 import SignUpContainer from "./user_session/signup_form_container"
 import { Route, Redirect, HashRouter, Link, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_utils'
+import NavBarContainer from './navbar/navbar_container'
 
 const App = () => (
   <div>
     <header className="header-bar">
-      <h1>StackOverflow Jr</h1>
-      <GreetingContainer />
+      <NavBarContainer />
+      {/*<GreetingContainer />*/}
     </header>
     <Switch>
       <Route exact path="/login" component={LoginContainer} />

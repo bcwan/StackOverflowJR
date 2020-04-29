@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { login, signup, logout } from '../../actions/session_actions';
+import { logout } from '../../actions/session_actions';
 import NavBar from './navbar';
 
 const mSTP = ( { session, entities: { users } }) => ({
@@ -7,8 +7,6 @@ const mSTP = ( { session, entities: { users } }) => ({
 });
 
 const mDTP = (dispatch) => ({
-  login: (user) => dispatch(login(user)),
-  signup: (user) => dispatch(signup(user)),
   logout: () => dispatch(logout())
 });
 
