@@ -8,12 +8,12 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6 }, allow_nil: true
 
   # user attribute validations
-  validates :email, presence: true, email_format: { message: "invalid: please enter valid email format" }
-  validates :reputation, presence: true
-  validates :bronze_points, presence: true
-  validates :silver_points, presence: true
-  validates :gold_points, presence: true
-  validates :location, presence: true
+  # validates :email, presence: true, email_format: { message: "invalid: please enter valid email format" }
+  # validates :reputation, presence: true
+  # validates :bronze_points, presence: true
+  # validates :silver_points, presence: true
+  # validates :gold_points, presence: true
+  # validates :location, presence: true
 
   # able to run method before running validations
   # just needs to have session_token when a user is created
