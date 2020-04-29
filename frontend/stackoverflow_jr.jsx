@@ -6,19 +6,30 @@ import Root from './components/root';
 
 
 // test out thunk actions
-import { login, logout, signup } from './actions/session_actions'
+// import { login, logout, signup } from './actions/session_actions'
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
-  const store = configureStore();
+  let store;
+  if (window.currentUser) {
+    const preloadedState = {
+      entities: {
+        users: { [window.currentUser.id]: window.currentUser }
+      },
+      session: { id: window.currentUser.id }
+    };
+    store = configureStore(preloadedState);
+  } else {
+    store = configureStore();
+  }
 
   // test out store
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 
-  window.login = login;
-  window.logout = logout;
-  window.signup = signup;
+  // window.login = login;
+  // window.logout = logout;
+  // window.signup = signup;
 
   ReactDOM.render(<Root store={store}/>, root);
 });
