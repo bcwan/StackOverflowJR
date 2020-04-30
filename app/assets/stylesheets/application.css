@@ -43,3 +43,12 @@
 .jumbotron {
   margin: 100px;
 }
+
+.auth-btn-set {
+  margin: 5px;
+}
+
+.search-bar {
+  margin: 7px;
+  width: 300px;
+}
