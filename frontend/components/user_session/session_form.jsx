@@ -1,4 +1,6 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
+import Jumbotron from 'react-bootstrap/Jumbotron';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -36,7 +38,7 @@ class SessionForm extends React.Component {
 
   render () {
     return (
-      <div className="session-form-container">
+      <Jumbotron>
         <h1>Please {this.props.formType}</h1>
         <form onSubmit={this.handleSubmit}>
           {this.errors()}
@@ -54,9 +56,9 @@ class SessionForm extends React.Component {
             />
           </label>
           <br/>
-          <button type="submit">{this.props.formType}</button>
+          <Button variant="primary" type="submit">{this.props.formType}</Button>
         </form>
-      </div>
+      </Jumbotron>
     )
   }
 }

@@ -7,9 +7,9 @@ const NavBar = ( { currentUser, logout } ) => {
   const loggedInButtons = () => (
     <div className="auth-btn-set">
       <Link to="/profile">
-        <Button variant="primary">Profile</Button>
+        <Button variant="success">Profile</Button>
       </Link>
-      <Button variant="primary" onClick={logout}>Log out</Button>
+      <Button variant="dark" onClick={logout}>Log out</Button>
     </div>
   );
 
@@ -17,7 +17,7 @@ const NavBar = ( { currentUser, logout } ) => {
   const notLoggedInButtons = () => (
     <div className="auth-btn-set">
       <Link to="/login">
-        <Button variant="primary">Log in</Button>
+        <Button variant="success">Log in</Button>
       </Link>
       <Link to="/signup">
         <Button variant="primary">Sign up</Button>
