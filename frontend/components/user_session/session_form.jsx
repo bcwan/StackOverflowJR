@@ -40,8 +40,8 @@ class SessionForm extends React.Component {
     return (
       
       <Jumbotron>
-        <h1>Please {this.props.formType}</h1>
-        <form onSubmit={this.handleSubmit}>
+        <form className="session-form" onSubmit={this.handleSubmit}>
+          <h1>Please {this.props.formType}</h1>
           {this.errors()}
           <label>Username: 
             <input type="text"

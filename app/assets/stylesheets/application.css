@@ -42,10 +42,14 @@
   margin-left: 10px;
   
 }
+.session-form {
+  text-align: center;
+}
 
 .jumbotron {
   margin: 100px;
 }
+
 
 
 .search-bar, .input-bar{
