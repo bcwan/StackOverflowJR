@@ -16,20 +16,29 @@ const logoutCurrentUser = () => ({
 });
 
 // receives errors as array
-const receiveErrors = (errors) => ({
-  type: RECEIVE_ERRORS,
-  errors
-});
+// const receiveErrors = (errors) => ({
+//   type: RECEIVE_ERRORS,
+//   errors
+// });
+
+const receiveErrors = (errors) => {
+  return (
+    {
+      type: RECEIVE_ERRORS,
+      errors
+    }
+  );
+};
+
+
 
 // thunk action
 export const login = (user) => (dispatch) => (
   UserAPIUtil.login(user)
-    .then((currentUser) => dispatch(receiveCurrentUser(currentUser),
-      (error) => (
-        dispatch(receiveErrors(error.responseJSON))
-      )
+    .then(
+      (currentUser) => dispatch(receiveCurrentUser(currentUser)),
+      (error) => (dispatch(receiveErrors(error.responseJSON)))
     )
-  )
 );
 
 export const logout = () => (dispatch) => (
@@ -40,11 +49,9 @@ export const logout = () => (dispatch) => (
 
 export const signup = (user) => (dispatch) => (
   UserAPIUtil.signup(user)
-    .then((newUser) => dispatch(receiveCurrentUser(newUser),
-      (error) => (
-        dispatch(receiveErrors(error.responseJSON))
-      )
+    .then(
+      (newUser) => dispatch(receiveCurrentUser(newUser)),
+      (error) => dispatch(receiveErrors(error.responseJSON))
     )
-  )
-);
+  );
 
