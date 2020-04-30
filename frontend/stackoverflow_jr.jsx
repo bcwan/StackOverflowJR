@@ -6,10 +6,6 @@ import Root from './components/root';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-
-// test out thunk actions
-// import { login, logout, signup } from './actions/session_actions'
-
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
   let store;
@@ -30,17 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 
-  // window.login = login;
-  // window.logout = logout;
-  // window.signup = signup;
-
   ReactDOM.render(<Root store={store}/>, root);
 });
 
 
-// api util testing
-// =================
-// import { login, logout, signup } from './util/session_api_util'
-// window.login = login;
-// window.logout = logout;
-// window.signup = signup;
