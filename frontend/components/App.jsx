@@ -6,6 +6,7 @@ import { Route, Redirect, HashRouter, Link, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_utils'
 import NavBarContainer from './navbar/navbar_container'
 
+
 const App = () => (
   <div>
     <header className="header-bar">

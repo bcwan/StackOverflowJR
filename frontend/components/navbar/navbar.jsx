@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import Button from 'react-bootstrap/Button';
 
 const NavBar = ( { currentUser, logout } ) => {
   //profile button and logout button
   const loggedInButtons = () => (
     <div className="auth-btn-set">
       <Link to="/profile">
-        <button>Profile</button>
+        <Button variant="primary">Profile</Button>
       </Link>
-      <button onClick={logout}>Log out</button>
+      <Button variant="primary" onClick={logout}>Log out</Button>
     </div>
   );
 
@@ -16,10 +17,10 @@ const NavBar = ( { currentUser, logout } ) => {
   const notLoggedInButtons = () => (
     <div className="auth-btn-set">
       <Link to="/login">
-        <button>Log in</button>
+        <Button variant="primary">Log in</Button>
       </Link>
       <Link to="/signup">
-        <button>Sign up</button>
+        <Button variant="primary">Sign up</Button>
       </Link>
     </div>
   );
