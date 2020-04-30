@@ -22,10 +22,21 @@
 .header {
   background-color: aliceblue;
   height: 50px;
-  display: flex;
+  
+}
+
+.header > nav {
+  display: block;
+  float: right;
+}
+
+.auth-btn-set {
+  display: block;
+  float: right;
 }
 
 .stackoverflow-logo {
-  width: 15%;
+  width: 205px;
   height: auto;
 }
+

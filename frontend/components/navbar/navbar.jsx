@@ -26,12 +26,14 @@ const NavBar = ( { currentUser, logout } ) => {
 
   const navBarDesign = (user, loggedInHTML, notLoggedInHTML) => (
     <header className="header">
+      <img className="stackoverflow-logo" src="/assets/stackoverflowjr.png" alt="" />
       <nav className="header-nav">
-        <img className="stackoverflow-logo" src="/assets/stackoverflowjr.jpg" alt="" />
-        <input type="text" placeholder="Search..." />
+     
+        <input className="search-bar" type="text" placeholder="Search..." />
         {
           user ? loggedInHTML : notLoggedInHTML
         }
+
       </nav>
     </header>
   );
