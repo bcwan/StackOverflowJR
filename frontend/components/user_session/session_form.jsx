@@ -13,6 +13,11 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  //deletes errors if user shifts to another page/link
+  componentWillUnmount() {
+    this.props.deleteErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.processForm(this.state);
