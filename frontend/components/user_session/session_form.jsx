@@ -38,6 +38,7 @@ class SessionForm extends React.Component {
 
   render () {
     return (
+      
       <Jumbotron>
         <h1>Please {this.props.formType}</h1>
         <form onSubmit={this.handleSubmit}>
