@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint           not null, primary key
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  username        :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
 class User < ApplicationRecord
   # we can validates password length, without storing it in DB
   attr_reader :password
@@ -7,14 +18,11 @@ class User < ApplicationRecord
   validates :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
-  # user attribute validations
-  # validates :email, presence: true, email_format: { message: "invalid: please enter valid email format" }
-  # validates :reputation, presence: true
-  # validates :bronze_points, presence: true
-  # validates :silver_points, presence: true
-  # validates :gold_points, presence: true
-  # validates :location, presence: true
 
+  has_many :questions,
+    class_name: :Question,
+    foreign_key: :questioner_id,
+    primary_key: :id
   # able to run method before running validations
   # just needs to have session_token when a user is created
   after_initialize :ensure_session_token
