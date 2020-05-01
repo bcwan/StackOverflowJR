@@ -14,6 +14,7 @@ class Api::QuestionsController < ApplicationController
     render :show
   end
 
+  # only user logged in can ask questions
   def create
     @question = Question.new(question_params)
     @question.questioner_id = current_user.id 
@@ -33,6 +34,7 @@ class Api::QuestionsController < ApplicationController
       render json: ['Question cannot be updated'], status: 422
   end
 
+  # only user who created can destroy a question
   def destroy
     @question = Question.find_by(id: params[:id])
     if @question.nil?
