@@ -32,6 +32,7 @@ class Api::QuestionsController < ApplicationController
       render :show
     else
       render json: ['Question cannot be updated'], status: 422
+    end
   end
 
   # only user who created can destroy a question
@@ -46,6 +47,7 @@ class Api::QuestionsController < ApplicationController
       else
         render json: ['Question is not destroyed'], status: 422
       end
+    end
   end
 
   private
