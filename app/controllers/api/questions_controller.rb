@@ -24,6 +24,7 @@ class Api::QuestionsController < ApplicationController
     end
   end
 
+  # question creator can only update their own question
   def update
     @question = Question.find_by(id: params[:id])
     if @question.questioner_id == current_user.id && @question.update(question_params)
@@ -33,7 +34,6 @@ class Api::QuestionsController < ApplicationController
   end
 
   def destroy
-    # @question = current_user.questions.find_by(params[:id])
     @question = Question.find_by(id: params[:id])
     if @question.nil?
       render json: ['Question cannot be found'], status: 422
@@ -42,7 +42,7 @@ class Api::QuestionsController < ApplicationController
         @question.destroy
         render :show
       else
-        render json: ['Question was not destroyed'], status: 422
+        render json: ['Question is not destroyed'], status: 422
       end
   end
 
