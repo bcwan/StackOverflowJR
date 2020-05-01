@@ -15,22 +15,30 @@ class Api::QuestionsController < ApplicationController
   end
 
   def create
-    
-  end
-
-  def edit
-
+    @question = current_user.questions.new(question_params)
+    if @question.save
+      render :show
+    else
+      render json: @question.errors.full_messages, status: 422
+    end
   end
 
   def update
-
+    @question = Question.find(params[:id])
+    if @question.update(question_params)
+      render json: @question
+    else
+      render json: @question.errors.full_messages, status: 422
   end
 
   def destroy
-
+    @question = current_user.questions.find(params[:id])
+    @question.destroy
+    render json: @question
   end
 
-  def questions_params
+  private
+  def question_params
     params.require(:question).permit(:title, :description)
   end
 
