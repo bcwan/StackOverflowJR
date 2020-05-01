@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   # session#destroy - logout
 
   namespace :api, defaults: { format: :json } do
-    resource :user, only: [:create]
+    resource :user, only: [:create] do
+      resources :questions, only: [:update, :destroy, :create, :index]
+    end
     resource :session, only: [:create, :destroy]
+    resources :questions, only: [:show, :index]
   end
 end
