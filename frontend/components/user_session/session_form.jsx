@@ -13,7 +13,7 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  
+
   //deletes errors if user shifts to another page/link
   componentWillUnmount() {
     this.props.deleteErrors();
@@ -22,7 +22,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.processForm(this.state)
-      .then(() => this.props.history.push('./profile'));
+      .then(() => this.props.history.push('./'));
   }
 
   update(field) {
