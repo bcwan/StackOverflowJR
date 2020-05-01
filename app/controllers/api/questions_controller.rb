@@ -15,7 +15,8 @@ class Api::QuestionsController < ApplicationController
   end
 
   def create
-    @question = current_user.questions.new(question_params)
+    @question = Question.new(question_params)
+    @question.questioner_id = current_user.id 
     if @question.save
       render :show
     else
@@ -24,17 +25,25 @@ class Api::QuestionsController < ApplicationController
   end
 
   def update
-    @question = Question.find(params[:id])
-    if @question.update(question_params)
-      render json: @question
+    @question = Question.find_by(id: params[:id])
+    if @question.questioner_id == current_user.id && @question.update(question_params)
+      render :show
     else
-      render json: @question.errors.full_messages, status: 422
+      render json: ['Question cannot be updated'], status: 422
   end
 
   def destroy
-    @question = current_user.questions.find(params[:id])
-    @question.destroy
-    render json: @question
+    # @question = current_user.questions.find_by(params[:id])
+    @question = Question.find_by(id: params[:id])
+    if @question.nil?
+      render json: ['Question cannot be found'], status: 422
+    else
+      if current_user.id == @question.questioner_id
+        @question.destroy
+        render :show
+      else
+        render json: ['Question was not destroyed'], status: 422
+      end
   end
 
   private
