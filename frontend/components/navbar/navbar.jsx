@@ -27,7 +27,7 @@ const NavBar = ( { currentUser, logout } ) => {
 
   const navBarDesign = (user, loggedInHTML, notLoggedInHTML) => (
     <header className="header">
-      <img className="stackoverflow-logo" src="/assets/stackoverflowjr.png" alt="" />
+      <Link to="/"><img className="stackoverflow-logo" src="/assets/stackoverflowjr.png" alt="" /></Link>
       <nav className="header-nav">
      
         <input className="search-bar" type="text" placeholder=" Search..." />
