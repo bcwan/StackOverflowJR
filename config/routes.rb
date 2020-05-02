@@ -21,6 +21,21 @@ Rails.application.routes.draw do
       resources :answers, only: [:index]
     end
 
+    # shows list index of current users questions
+    # resources :users do
+    #   member do
+    #     get 'questions'
+    #   end
+    # end
+    # 
+    # or===
+    #
+    # resources :questions do
+    #   member do
+    #     get 'self'
+    #   end
+    # end
+
     # create, update, destroy questions
     resources :questions, only: [:update, :destroy, :create]
     
