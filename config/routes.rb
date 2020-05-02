@@ -21,6 +21,11 @@ Rails.application.routes.draw do
       resources :answers, only: [:index]
     end
 
+    resources :questions, only: [:self] do
+      collection do
+        get 'self'
+      end
+    end
     
     # create, update, destroy questions
     resources :questions, only: [:update, :destroy, :create]
@@ -39,8 +44,3 @@ end
 # 
 # or===
 #
-# resources :questions do
-#   member do
-#     get 'self'
-#   end
-# end

@@ -15,6 +15,12 @@ class Api::QuestionsController < ApplicationController
     render :show
   end
 
+  # current_user's questions - test it out
+  def self
+     @questions = Question.where(questioner_id: current_user.id)
+     render :self
+  end
+
   # only user logged in can ask questions
   # make sure that description is 30 letters more
   def create
