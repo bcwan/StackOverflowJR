@@ -12,6 +12,12 @@ Rails.application.routes.draw do
     # end
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
-    resources :questions, only: [:show, :index, :update, :destroy, :create]
+    # nest and show answers that refer to the question
+    resources :questions, only: [:index]
+    resources :questions, only: [:show] do
+      resources :answers, only: [:index]
+    end
+    resources :questions, only: [:update, :destroy, :create]
+    resources :answers, only: [:destroy, :create, :update]
   end
 end
