@@ -23,6 +23,11 @@ class User < ApplicationRecord
     class_name: :Question,
     foreign_key: :questioner_id,
     primary_key: :id
+
+  has_many :answers,
+    class_name: :Answer,
+    foreign_key: :answerer_id,
+    primary_key: :id
   # able to run method before running validations
   # just needs to have session_token when a user is created
   after_initialize :ensure_session_token
