@@ -19,6 +19,28 @@ const removeQuestion = questionId => ({
   questionId
 });
 
+// thunk action creators
+export const fetchQuestions = () => dispatch => (
+  QuestionApiUtil.fetchQuestions()
+    .then(questions => dispatch(receiveQuestions(questions)))
+);
 
+export const fetchQuestion = (questionId) => dispatch => (
+  QuestionApiUtil.fetchQuestion(questionId)
+    .then(question => dispatch(receiveQuestion(question)))
+);
 
+export const createQuestion = (question) => (dispatch) => (
+  QuestionApiUtil.createQuestion(question)
+    .then(createdQuestion => dispatch(receiveQuestion(createdQuestion)))
+);
 
+export const updateQuestion = (question) => (dispatch) => (
+  QuestionApiUtil.updateQuestion(question)
+    .then(updatedQuestion => dispatch(receiveQuesion(updatedQuestion)))
+);
+
+export const deleteQuestion = (questionId) => (dispatch) => (
+  QuestionApiUtil.deleteQuestion(questionId)
+    .then(() => dispatch(removeQuestion(questionId)))
+);
