@@ -12,13 +12,18 @@ Rails.application.routes.draw do
     # end
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
-    # nest and show answers that refer to the question
+
+    # show list of questions
     resources :questions, only: [:index]
+
+    # show list of answers from a particular question
     resources :questions, only: [:show] do
       resources :answers, only: [:index]
     end
 
+    # create, update, destroy questions
     resources :questions, only: [:update, :destroy, :create]
+    
     # editing an answer
     resources :answers, only: [:show, :destroy, :create, :update]
   end
