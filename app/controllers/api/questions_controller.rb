@@ -1,6 +1,7 @@
 class Api::QuestionsController < ApplicationController
 
   # we want user to be logged in in order to manage his/her own questions
+  # protect_from_forgery with: :null_session
   before_action :require_logged_in, only: [:update, :destroy, :create]
 
   # we'll display all questions for now
@@ -15,6 +16,7 @@ class Api::QuestionsController < ApplicationController
   end
 
   # only user logged in can ask questions
+  # make sure that description is 30 letters more
   def create
     @question = Question.new(question_params)
     @question.questioner_id = current_user.id 
@@ -42,7 +44,7 @@ class Api::QuestionsController < ApplicationController
       render json: ['Question cannot be found'], status: 422
     else
       if current_user.id == @question.questioner_id
-        @question.destroy
+        @question.destroy!
         render :show
       else
         render json: ['Question is not destroyed'], status: 422

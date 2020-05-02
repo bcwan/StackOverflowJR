@@ -12,13 +12,10 @@ const QuestionReducer = (oldState = {}, action) => {
       nextState[action.question.id] = action.question;
       return nextState;
     case REMOVE_QUESTION:
-      delete nextState[action.question.id];
+      delete nextState[action.questionId];
       return nextState;
     case RECEIVE_ALL_QUESTIONS:
-      action.questions.forEach(question => {
-        nextState[question.id] = question;
-      });
-      return nextState;
+      return action.questions;
     default:
       return oldState;
   }
