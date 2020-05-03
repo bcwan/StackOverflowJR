@@ -4,7 +4,8 @@ import LoginContainer from "./user_session/login_form_container"
 import SignUpContainer from "./user_session/signup_form_container"
 import { Route, Redirect, HashRouter, Link, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_utils'
-import NavBarContainer from './navbar/navbar_container'
+import NavBarContainer from './navbar/navbar_container';
+import SideBarContainer from './sidebar/sidebar_container';
 
 
 const App = () => (
@@ -12,6 +13,7 @@ const App = () => (
     <header className="header-bar">
       <NavBarContainer />
       {/*<GreetingContainer />*/}
+      <SideBarContainer />
     </header>
     <Switch>
       <Route exact path="/" />
