@@ -13,6 +13,11 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
 
+    resources :questions, only: [:self] do
+      collection do
+        get :self
+      end
+    end
     # show list of questions
     resources :questions, only: [:index]
 
@@ -21,11 +26,6 @@ Rails.application.routes.draw do
       resources :answers, only: [:index]
     end
 
-    resources :questions, only: [:self] do
-      collection do
-        get 'self'
-      end
-    end
     
     # create, update, destroy questions
     resources :questions, only: [:update, :destroy, :create]

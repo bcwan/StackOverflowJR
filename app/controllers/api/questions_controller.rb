@@ -15,7 +15,7 @@ class Api::QuestionsController < ApplicationController
     render :show
   end
 
-  # current_user's questions - test it out
+  # current_user's questions
   def self
      @questions = Question.where(questioner_id: current_user.id)
      render :self
