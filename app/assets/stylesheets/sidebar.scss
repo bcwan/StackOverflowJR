@@ -1,10 +1,17 @@
 .sidebar {
   height: 100%;
-  width: 160px;
+  width: 200px;
   position: fixed;
-  top: 0;
+  top: 50px;
   left: 0;
   background-color: #111;
   overflow-x: hidden;
   padding-top: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .sidebar {
+    display: none;
+  }
+  
 }
