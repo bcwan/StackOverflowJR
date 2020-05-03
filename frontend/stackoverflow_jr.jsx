@@ -11,6 +11,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //   deleteQuestion
 // } from './actions/questions_actions'
 
+import {
+  fetchAnswersForQuestion,
+  fetchAnswer,
+  createAnswer,
+  updateAnswer,
+  deleteAnswer
+} from './actions/answers_actions'
+
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
   let store;

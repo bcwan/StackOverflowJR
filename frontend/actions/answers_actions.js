@@ -40,7 +40,7 @@ export const updateAnswer = (answer) => (dispatch) => (
     .then(updatedAnswer => dispatch(receiveAnswer(updatedAnswer)))
 );
 
-export const deleteQuestion = (answerId) => (dispatch) =>  (
+export const deleteAnswer = (answerId) => (dispatch) =>  (
   AnswerApiUtil.deleteAnswer(answerId)
     .then(() => dispatch(removeAnswer(answerId)))
 );
