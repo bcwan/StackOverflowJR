@@ -21,6 +21,7 @@ class Api::QuestionsController < ApplicationController
      render :self
   end
 
+
   # only user logged in can ask questions
   # make sure that description is 30 letters more
   def create
@@ -50,7 +51,7 @@ class Api::QuestionsController < ApplicationController
       render json: ['Question cannot be found'], status: 422
     else
       if current_user.id == @question.questioner_id
-        @question.destroy!
+        @question.destroy
         render :show
       else
         render json: ['Question is not destroyed'], status: 422
@@ -59,6 +60,7 @@ class Api::QuestionsController < ApplicationController
   end
 
   private
+
   def question_params
     params.require(:question).permit(:title, :description)
   end

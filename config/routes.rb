@@ -7,23 +7,24 @@ Rails.application.routes.draw do
   # session#destroy - logout
 
   namespace :api, defaults: { format: :json } do
-    # resources :users, only: [:create] do
-    #   resources :questions, only: [:index]
-    # end
+
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
 
+    # current user
     resources :questions, only: [:self] do
       collection do
         get :self
       end
     end
+
+
     # show list of questions
     resources :questions, only: [:index]
 
     # show list of answers from a particular question
     resources :questions, only: [:show] do
-      resources :answers, only: [:index]
+      resources :answers, only: [:index, :create]
     end
 
     
@@ -31,7 +32,7 @@ Rails.application.routes.draw do
     resources :questions, only: [:update, :destroy, :create]
     
     # editing an answer
-    resources :answers, only: [:show, :destroy, :create, :update]
+    resources :answers, only: [:show, :destroy, :update]
   end
 end
 
