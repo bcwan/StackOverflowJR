@@ -48,11 +48,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // window.deleteQuestion = deleteQuestion;
 
   // test answer actions
-  window.fetchAnswersForQuestion = fetchAnswersForQuestion;
-  window.fetchAnswer = fetchAnswer;
-  window.createAnswer = createAnswer;
-  window.updateAnswer = updateAnswer;
-  window.deleteAnswer = deleteAnswer;
+  // window.fetchAnswersForQuestion = fetchAnswersForQuestion;
+  // window.fetchAnswer = fetchAnswer;
+  // window.createAnswer = createAnswer;
+  // window.updateAnswer = updateAnswer;
+  // window.deleteAnswer = deleteAnswer;
 
   ReactDOM.render(<Root store={store}/>, root);
 });
