@@ -1,7 +1,7 @@
 class Api::AnswersController < ApplicationController
 
   # we want user to be logged in in order to manage his/her own answers
-  before_action :require_logged_in, only: [:update, :destroy, :create]
+  # before_action :require_logged_in, only: [:update, :destroy, :create]
 
   def index
     @answers = Answer.where(question_id: params[:question_id])
@@ -28,7 +28,7 @@ class Api::AnswersController < ApplicationController
   # updating the answer
   def update
     @answer = Answer.find_by(id: params[:id])
-    if @answer.answerer_id == current_user.id && answer.update(answer_params)
+    if @answer.answerer_id == current_user.id && @answer.update(answer_params)
       render :show
     else
       render json: ['Answer cannot be updated'], status: 422
@@ -43,7 +43,6 @@ class Api::AnswersController < ApplicationController
       render json: ['Answer cannot be found'], status: 422
     else
       if current_user.id == @answer.answerer_id
-        @answer.destroy
         render :show
       else
         render json: ['Answer is not destroyed'], status: 422
