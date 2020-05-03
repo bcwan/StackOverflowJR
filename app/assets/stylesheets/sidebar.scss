@@ -1,13 +1,18 @@
 .sidebar {
-  height: 100%;
-  width: 200px;
-  position: fixed;
   top: 50px;
   left: 0;
-  background-color: #111;
+  height: 100%;
+  width: 18%;
+  position: fixed;
+  border-right: 1px solid gray;
   overflow-x: hidden;
   padding-top: 20px;
 }
+
+.sidebar-p {
+  margin: 10px;
+}
+
 
 @media screen and (max-width: 600px) {
   .sidebar {

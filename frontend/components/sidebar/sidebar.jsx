@@ -1,19 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ListGroup from 'react-bootstrap/ListGroup';
+import { Search } from 'react-bootstrap-icons';
+
 
 const SideBar = ( { currentUser } ) => {
 
+
+
   const sideBarDesign = (user) => (
-    <section className="sidebar">
-      {
-        user ? <a href="#home">Home</a> : <a href="#splash">Home</a>
-      }
-      <a href="#home">Home</a>
+    <section className="sidebar list-group">
+      <ListGroup variant="flush">
+        {
+          user ? 
+            (<ListGroup.Item className="side-item">Home</ListGroup.Item>) 
+            : 
+            (<ListGroup.Item className="side-item">Splash</ListGroup.Item>)
+        }
+      </ListGroup>
+      <h5 className="sidebar-p">Public</h5>
       <aside className="public-sidebar">
-        <a href="#stackoverflow">Stack Overflow Jr.</a>
-        <a href="#tags">Tags</a>
-        <a href="#users">User</a>
-        <a href="#jobs">Jobs</a>
+        <ListGroup variant="flush">
+          <ListGroup.Item className="side-item"><Search />Stack Overflow Jr</ListGroup.Item>
+          <ListGroup.Item className="side-item">Tags</ListGroup.Item>
+          <ListGroup.Item className="side-item">User</ListGroup.Item>
+          <ListGroup.Item className="side-item">Jobs</ListGroup.Item>
+        </ListGroup>
+
       </aside>
     </section>
 

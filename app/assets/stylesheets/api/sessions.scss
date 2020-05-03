@@ -17,6 +17,12 @@
   float: right;
 }
 
+@media screen and (max-width: 400px) {
+  .auth-btn-set {
+    display: none;
+  }
+}
+
 .stackoverflow-logo {
   width: 205px;
   height: auto;
@@ -41,6 +47,15 @@
   border-radius: 4px;
   border:1px solid #ccc;
 }
+
+@media screen and (max-width: 800px) {
+  .search-bar {
+    display: none;
+  }
+  
+}
+
+
 
 .input-bar {
   margin: 7px;
