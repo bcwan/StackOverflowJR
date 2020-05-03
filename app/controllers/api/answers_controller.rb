@@ -12,7 +12,7 @@ class Api::AnswersController < ApplicationController
     @answer = Answer.new(answer_params)
     @answer.answerer_id = current_user.id
     @answer.question_id = params[:question_id]
-    if @answer.save
+    if @answer.save!
       render :show
     else
       render json: @answer.errors.full_messages, status: 422
@@ -42,7 +42,8 @@ class Api::AnswersController < ApplicationController
     if @answer.nil?
       render json: ['Answer cannot be found'], status: 422
     else
-      if current_user.id == @answer.answerer_id
+      if current_user.id == @answer.answerer_id 
+        @answer.destroy!
         render :show
       else
         render json: ['Answer is not destroyed'], status: 422
