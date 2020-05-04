@@ -27,5 +27,16 @@ const Protected = ({ loggedIn, path, component: Component }) => (
   />
 );
 
+//makes sure user is logged in to access component, else, redirect to login
+const LoggedIn = ({ loggedIn, path, component: Component }) => (
+  <Route
+    path={path}
+    render={props => (
+      loggedIn ? <Component {...props} /> : <Redirect to="/login" />
+    )}
+  />
+);
+
 export const AuthRoute = withRouter(connect(mSTP)(Auth));
 export const ProtectedRoute = withRouter(connect(mSTP)(Protected));
+export const LoggedInRoute = withRouter(connect(mSTP)(LoggedIn));
