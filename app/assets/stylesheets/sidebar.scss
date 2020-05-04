@@ -11,6 +11,7 @@
 
 .sidebar-p {
   margin: 10px;
+  font-size: 15px;
 }
 
 
@@ -19,4 +20,16 @@
     display: none;
   }
   
+}
+
+
+.side-item {
+  padding-left: 30px !important;
+  font-size: 13px !important;
+}
+
+
+.indent-side-item {
+  padding-left: 45px !important;
+  font-size: 13px !important;
 }

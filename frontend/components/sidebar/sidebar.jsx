@@ -18,13 +18,14 @@ const SideBar = ( { currentUser } ) => {
             (<ListGroup.Item className="side-item">Splash</ListGroup.Item>)
         }
       </ListGroup>
-      <h5 className="sidebar-p">Public</h5>
+      <p className="sidebar-p">Public</p>
       <aside className="public-sidebar">
         <ListGroup variant="flush">
-          <ListGroup.Item className="side-item"><Search />Stack Overflow Jr</ListGroup.Item>
-          <ListGroup.Item className="side-item">Tags</ListGroup.Item>
-          <ListGroup.Item className="side-item">User</ListGroup.Item>
-          <ListGroup.Item className="side-item">Jobs</ListGroup.Item>
+          <ListGroup.Item className="side-item">
+            <Search />Stack Overflow Jr</ListGroup.Item>
+          <ListGroup.Item className="indent-side-item">Tags</ListGroup.Item>
+          <ListGroup.Item className="indent-side-item">User</ListGroup.Item>
+          <ListGroup.Item className="indent-side-item">Jobs</ListGroup.Item>
         </ListGroup>
 
       </aside>
