@@ -17,7 +17,9 @@ class AllQuestionsIndex extends React.Component {
       <section className="questions-section">
         <section className="title-button">
           <h3 className="index-title">All Questions</h3>
-          <Button className="ask-question" variant="warning">Ask Question</Button>
+          <Link className="ask-question" to="/questions/ask">
+            <Button variant="warning">Ask Question</Button>
+          </Link>
         </section>
         <ListGroup variant="flush">
         {
