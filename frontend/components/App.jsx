@@ -7,6 +7,7 @@ import NavBarContainer from './navbar/navbar_container';
 import SideBarContainer from './sidebar/sidebar_container';
 import AllQuestionsIndexContainer from './questions/all_questions_index/all_questions_index_container'
 import AskQuestionContainer from './questions/new_question/ask_question_container';
+import ShowQuestionContainer from './questions/show_question/show_question_container';
 
 
 const App = () => (
@@ -21,6 +22,7 @@ const App = () => (
     <Switch>
       <Route exact path="/" />
       <Route exact path="/questions" component={AllQuestionsIndexContainer}/>
+      <Route exact path="/questions/:questionId" component={ShowQuestionContainer} />
       <LoggedInRoute exact path="/questions/ask" component={AskQuestionContainer} />
       <AuthRoute exact path="/login" component={LoginContainer} />
       <AuthRoute exact path="/signup" component={SignUpContainer} />
