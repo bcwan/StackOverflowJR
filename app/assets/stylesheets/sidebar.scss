@@ -2,7 +2,7 @@
   top: 50px;
   left: 0;
   height: 100%;
-  width: 18%;
+  width: 225px;
   position: fixed;
   border-right: 1px solid gray;
   overflow-x: hidden;
@@ -15,13 +15,6 @@
 }
 
 
-@media screen and (max-width: 600px) {
-  .sidebar {
-    display: none;
-  }
-  
-}
-
 
 .side-item {
   padding-left: 30px !important;
@@ -32,4 +25,12 @@
 .indent-side-item {
   padding-left: 45px !important;
   font-size: 13px !important;
+}
+
+
+@media screen and (max-width: 600px) {
+  .sidebar {
+    display: none !important;
+  }
+  
 }
