@@ -7,7 +7,7 @@ const AllQuestionsItem = ({ question, fetchQuestion }) => {
   return (
     <ListGroupItem>
       <div>
-        <Link>{question.title}</Link>
+        <Link to={`/questions/${question.id}`}>{question.title}</Link>
         <p className="question-desc">{question.description}</p>
       </div>
     </ListGroupItem>
