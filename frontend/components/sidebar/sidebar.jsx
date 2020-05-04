@@ -18,7 +18,7 @@ const SideBar = ( { currentUser } ) => {
             (<ListGroup.Item className="side-item">Splash</ListGroup.Item>)
         }
       </ListGroup>
-      <p className="sidebar-p">Public</p>
+      <p className="sidebar-p">PUBLIC</p>
       <aside className="public-sidebar">
         <ListGroup variant="flush">
           <ListGroup.Item className="side-item">
