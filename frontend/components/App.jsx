@@ -1,5 +1,4 @@
 import React from "react";
-import GreetingContainer from "./greeting/greeting_container"
 import LoginContainer from "./user_session/login_form_container"
 import SignUpContainer from "./user_session/signup_form_container"
 import { Route, Redirect, HashRouter, Link, Switch } from 'react-router-dom';
