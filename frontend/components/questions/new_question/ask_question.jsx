@@ -25,25 +25,24 @@ class AskQuestion extends React.Component {
   render() {
     return (
       <section className="wrapper-ask-question">
-        <h3 className="ask-question-title">Ask a public question</h3>
         <Jumbotron className="ask-question-container">
+          <h3 className="ask-question-title">Ask a public question</h3>
           <form className="ask-question-form" onSubmit={this.handleSubmit}>
-            <label>Title: 
-              <input type="text"
-                className="input-bar"
-                value={this.state.title}
-                onChange={this.update("title")}
-              />
-            </label>
+            <label>Title</label>
+            <input type="text"
+              className="title-input-bar"
+              value={this.state.title}
+              onChange={this.update("title")}
+            />
             <br />
-            <label>Body:
-              <textarea type="text"
+            <label className="body-tag-question">Body</label>
+              <textarea className="desc-question"
+                type="text"
                 value={this.state.description}
                 onChange={this.update("description")}
               />
-            </label>
             <br />
-            <Button variant="primary" type="submit">Submit your question</Button>
+            <Button variant="primary" className="button-submit-question" type="submit">Submit your question</Button>
           </form>
         </Jumbotron>
       </section>
