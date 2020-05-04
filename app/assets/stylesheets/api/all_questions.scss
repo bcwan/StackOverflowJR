@@ -1,0 +1,19 @@
+.questions-section {
+  top: 50px;
+  left: 225px;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  padding-top: 20px;
+}
+
+.index-title {
+  padding-left: 20px;
+}
+
+// if the nav bar hides due to browser resizing, fill up the page
+@media screen and (max-width: 600px) {
+  .questions-section {
+    left: 0px;
+  }
+}

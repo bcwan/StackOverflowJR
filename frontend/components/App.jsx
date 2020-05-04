@@ -6,6 +6,7 @@ import { Route, Redirect, HashRouter, Link, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_utils'
 import NavBarContainer from './navbar/navbar_container';
 import SideBarContainer from './sidebar/sidebar_container';
+import AllQuestionsIndexContainer from './questions/all_questions_index/all_questions_index_container'
 
 
 const App = () => (
@@ -14,6 +15,7 @@ const App = () => (
       <NavBarContainer />
       {/*<GreetingContainer />*/}
       <SideBarContainer />
+      <AllQuestionsIndexContainer />
     </header>
     <Switch>
       <Route exact path="/" />
