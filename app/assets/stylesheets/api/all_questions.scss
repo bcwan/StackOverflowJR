@@ -7,9 +7,21 @@
   padding-top: 20px;
 }
 
+
+.title-button {
+  display: flex;
+}
+
+.ask-question {
+  margin-left: auto !important;
+}
+
 .index-title {
   padding-left: 20px;
+  margin-top: 10px;
 }
+
+
 
 // if the nav bar hides due to browser resizing, fill up the page
 @media screen and (max-width: 600px) {

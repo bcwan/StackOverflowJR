@@ -15,7 +15,10 @@ class AllQuestionsIndex extends React.Component {
     const { questions, fetchQuestion } = this.props;
     return (
       <section className="questions-section">
-        <h3 className="index-title">All Questions</h3>
+        <section className="title-button">
+          <h3 className="index-title">All Questions</h3>
+          <Button className="ask-question" variant="warning">Ask Question</Button>
+        </section>
         <ListGroup variant="flush">
         {
           questions.map((question) => (

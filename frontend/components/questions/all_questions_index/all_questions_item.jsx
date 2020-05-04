@@ -6,7 +6,9 @@ import { ListGroupItem } from 'react-bootstrap';
 const AllQuestionsItem = ({ question, fetchQuestion }) => {
   return (
     <ListGroupItem>
-      {question.title}
+      <div>
+        <Link>{question.title}</Link>
+      </div>
     </ListGroupItem>
   )
 }
