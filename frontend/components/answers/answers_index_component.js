@@ -8,10 +8,12 @@ import {
   updateAnswer } 
 from '../../actions/answers_actions';
 
-const mSTP = (state, ownProps) => ({
-  answers: Object.values(state.entities.answers),
-  questionId: ownProps.questionId
-});
+const mSTP = (state, ownProps) => {
+  return {
+    answers: Object.values(state.entities.answers),
+    questionId: ownProps.questionId
+  }
+};
 
 const mDTP = (dispatch) => ({
   fetchAnswersForQuestion: (questionId) => dispatch(fetchAnswersForQuestion(questionId)),

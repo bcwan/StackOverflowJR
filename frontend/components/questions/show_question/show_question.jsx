@@ -6,15 +6,15 @@ import AnswerIndexComponent from '../../answers/answers_index_component';
 class ShowQuestion extends React.Component {
 
   componentDidMount() {
-   
     this.props.fetchQuestion(this.props.match.params.questionId);
-    // this.props.fetchAnswersForQuestion(this.props.match.params.questionId);
+    //this.props.fetchAnswersForQuestion(this.props.match.params.questionId);
 
   }
   
   render () {
     const { question } = this.props;
     // if we just want to directly access the question by id instead of through the all questions component
+    
     if (!question) {
       return null;
     }

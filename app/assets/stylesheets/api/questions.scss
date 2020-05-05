@@ -33,3 +33,10 @@
 .ask-question-single {
   margin-left: auto !important;
 }
+
+@media screen and (max-width: 600px) {
+  .single-question-container {
+    left: 0px;
+    width: 100%;
+  }
+}
