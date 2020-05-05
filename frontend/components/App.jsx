@@ -14,16 +14,16 @@ const App = () => (
   <div>
     <header className="header-bar">
       <NavBarContainer />
-      {/*<SideBarContainer />*/}
+      <SideBarContainer />
 
       {/*<GreetingContainer />*/}
       {/*<AllQuestionsIndexContainer /> */}
     </header>
     <Switch>
       <Route exact path="/" />
-      <Route exact path="/questions" component={AllQuestionsIndexContainer}/>
-      <Route exact path="/questions/:questionId" component={ShowQuestionContainer} />
       <LoggedInRoute exact path="/questions/ask" component={AskQuestionContainer} />
+      <Route exact path="/questions/:questionId" component={ShowQuestionContainer} />
+      <Route exact path="/questions" component={AllQuestionsIndexContainer}/>
       <AuthRoute exact path="/login" component={LoginContainer} />
       <AuthRoute exact path="/signup" component={SignUpContainer} />
       

@@ -1,3 +1,35 @@
 // Place all the styles related to the api/questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.single-question-container {
+  top: 50px;
+  left: 225px;
+  height: 700px;
+  width: 60%;
+  position: fixed;
+  padding-top: 20px;
+  overflow-y: auto;
+  margin-left: 20px;
+}
+
+.title-ask-button {
+  display: flex;
+  border-bottom: 1px solid #DEDEDE;
+}
+
+.question-title {
+  margin-top: 10px;
+}
+
+.question-desc {
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.line-placeholder {
+    border-bottom: 1px solid #DEDEDE;
+}
+
+.ask-question-single {
+  margin-left: auto !important;
+}

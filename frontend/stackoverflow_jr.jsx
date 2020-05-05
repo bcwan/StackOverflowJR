@@ -11,13 +11,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //   deleteQuestion
 // } from './actions/questions_actions'
 
-import {
-  fetchAnswersForQuestion,
-  fetchAnswer,
-  createAnswer,
-  updateAnswer,
-  deleteAnswer
-} from './actions/answers_actions'
+// import {
+//   fetchAnswersForQuestion,
+//   fetchAnswer,
+//   createAnswer,
+//   updateAnswer,
+//   deleteAnswer
+// } from './actions/answers_actions'
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.dispatch = store.dispatch;
 
 
-  // test question actions
+  //test question actions
   // window.fetchQuestion = fetchQuestion;
   // window.fetchQuestions = fetchQuestions;
   // window.createQuestion = createQuestion;

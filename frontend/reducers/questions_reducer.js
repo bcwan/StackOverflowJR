@@ -9,7 +9,6 @@ const QuestionReducer = (oldState = {}, action) => {
   let nextState = Object.assign({}, oldState);
   switch (action.type) {
     case RECEIVE_QUESTION:
-      debugger;
       nextState[action.question.id] = action.question;
       return nextState;
     case REMOVE_QUESTION:

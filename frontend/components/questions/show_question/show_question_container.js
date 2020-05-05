@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
 import ShowQuestion from './show_question';
-import { fetchQuestion } from '../../../actions/questions_actions';
-import { fetchAnswersForQuestion } from '../../../actions/answers_actions';
+import { fetchQuestion, updateQuestion, deleteQuestion } from '../../../actions/questions_actions';
+import { fetchAnswersForQuestion, deleteAnswer, createAnswer, updateAnswer } from '../../../actions/answers_actions';
 
 const mSTP = (state, ownProps) => {
+
   return {
     question: state.entities.questions[ownProps.match.params.questionId]
   }
