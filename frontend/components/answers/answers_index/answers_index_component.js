@@ -6,7 +6,7 @@ import {
   createAnswer, 
   deleteAnswer, 
   updateAnswer } 
-from '../../actions/answers_actions';
+from '../../../actions/answers_actions'
 
 const mSTP = (state, ownProps) => {
   return {

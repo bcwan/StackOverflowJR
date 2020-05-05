@@ -19,12 +19,14 @@ class AnswerIndex extends React.Component {
         <h4>Answers</h4>
         <ListGroup variant="flush">
           {answers.map((answer) => (
-            <AnswerItem answer={answer}
+            <AnswerItem id={answer.id}
+                        answer={answer}
                         deleteAnswer={deleteAnswer}
                         updateAnswer={updateAnswer}
             />
           ))}
         </ListGroup>
+        
       </section>
     );
   }
