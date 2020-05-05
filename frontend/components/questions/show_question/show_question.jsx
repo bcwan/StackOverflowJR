@@ -1,17 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
+import AnswerIndexComponent from '../../answers/answers_index_component';
 
 class ShowQuestion extends React.Component {
-
-  // constructor(props) {
-  //   super(props);
-  // }
 
   componentDidMount() {
    
     this.props.fetchQuestion(this.props.match.params.questionId);
-    this.props.fetchAnswersForQuestion(this.props.match.params.questionId);
+    // this.props.fetchAnswersForQuestion(this.props.match.params.questionId);
 
   }
   
@@ -30,7 +27,8 @@ class ShowQuestion extends React.Component {
           </Link> 
         </div>
         <p className="question-desc">{question.description}</p>
-        <div className="line-placeholder">
+        <div className="answer-component-div">
+          <AnswerIndexComponent questionId={question.id}/>
         </div>
       </section>
     )
