@@ -1,6 +1,8 @@
 import React from 'react';
 import AnswerItem from './answers_item';
 import ListGroup from 'react-bootstrap/ListGroup';
+import NewAnswerContainer from '../new_answer/new_answer_container';
+
 
 class AnswerIndex extends React.Component {
   componentDidMount() {
@@ -26,7 +28,7 @@ class AnswerIndex extends React.Component {
             />
           ))}
         </ListGroup>
-        
+        <NewAnswerContainer questionId={this.props.questionId}/>
       </section>
     );
   }
