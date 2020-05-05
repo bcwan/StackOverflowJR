@@ -1,5 +1,6 @@
 import React from 'react';
-//import AnswerItem from './answers_item';
+import AnswerItem from './answers_item';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 class AnswerIndex extends React.Component {
   componentDidMount() {
@@ -8,7 +9,6 @@ class AnswerIndex extends React.Component {
 
   render() {
     const { answers, 
-            fetchAnswersForQuestion, 
             fetchAnswer, 
             createAnswer, 
             deleteAnswer, 
@@ -16,15 +16,15 @@ class AnswerIndex extends React.Component {
 
     return (
       <section>
-        <ul>
+        <h4>Answers</h4>
+        <ListGroup variant="flush">
           {answers.map((answer) => (
-            <li>
-              <p>
-                {answer.description}
-              </p>
-            </li>
+            <AnswerItem answer={answer}
+                        deleteAnswer={deleteAnswer}
+                        updateAnswer={updateAnswer}
+            />
           ))}
-        </ul>
+        </ListGroup>
       </section>
     );
   }

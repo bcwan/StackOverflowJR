@@ -1,11 +1,13 @@
 import React from 'react';
 import { ListGroupItem } from 'react-bootstrap';
 
-const AnswerItem = (props) => {
+const AnswerItem = ({ answer, deleteAnswer, updateAnswer }) => {
   return (
-    <section>
-      
-    </section>
+    <ListGroupItem>
+      <div>
+        <p>{answer.description}</p>
+      </div>
+    </ListGroupItem>
   )
 }
 
