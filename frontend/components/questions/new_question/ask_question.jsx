@@ -18,8 +18,10 @@ class AskQuestion extends React.Component {
     }
   }
 
+  //go back to parent, which is the all questions page
   handleSubmit() {
-    this.props.createQuestion(this.state);
+    this.props.createQuestion(this.state)
+      .then(() => this.props.history.push('./'));
   }
 
   render() {

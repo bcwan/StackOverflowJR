@@ -15,7 +15,8 @@
 #  index_answers_on_question_id  (question_id)
 #
 class Answer < ApplicationRecord
-  validates :description, presence: true, length: { minimum: 30 }
+  # validates :description, presence: true, length: { minimum: 30 }
+  validates :description, presence: true
 
   belongs_to :user,
     class_name: :User,

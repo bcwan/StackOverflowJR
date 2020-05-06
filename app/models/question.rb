@@ -19,8 +19,10 @@ class Question < ApplicationRecord
 
   # title has minimum of 15 words
   # description has minimum of 30 words
-  validates :title, presence: true, length: { minimum: 15 }
-  validates :description, presence: true, length: { minimum: 30 }
+  #validates :title, presence: true, length: { minimum: 15 }
+  #validates :description, presence: true, length: { minimum: 30 }
+  validates :title, presence: true
+  validates :description, presence: true
 
   belongs_to :user,
     class_name: :User,
