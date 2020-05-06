@@ -40,26 +40,26 @@ class EditQuestionForm extends React.Component {
 
   render() {
     return (
-      <section className = "wrapper-ask-question" >
+      <section className = "wrapper-edit-question" >
         {this.usersQuestion()}
-        <Jumbotron className="ask-question-container">
-          <h3 className="ask-question-title">Update Question</h3>
+        <Jumbotron className="edit-question-container">
+          <h3 className="edit-question-title">Update Question</h3>
           <form className="ask-question-form" onSubmit={this.handleSubmit}>
             <label>Title</label>
             <input type="text"
-              className="title-input-bar"
+              className="title-edit-input-bar"
               value={this.state.title}
               onChange={this.update("title")}
             />
             <br />
-            <label className="body-tag-question">Body</label>
-            <textarea className="desc-question"
+            <label className="body-tag-edit-question">Body</label>
+            <textarea className="desc-edit-question"
               type="text"
               value={this.state.description}
               onChange={this.update("description")}
             />
             <br />
-            <Button variant="primary" className="button-submit-question" type="submit">Update question</Button>
+            <Button variant="primary" className="button-submit-edit-question" type="submit">Update question</Button>
           </form>
         </Jumbotron>
       </section >

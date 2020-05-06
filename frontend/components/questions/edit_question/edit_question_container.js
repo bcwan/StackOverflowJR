@@ -13,6 +13,16 @@ class EditQuestion extends React.Component {
     this.props.fetchQuestion(this.props.match.params.questionId);
   }
 
+  fetchData(newId) {
+    this.props.fetchQuestion(newId);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.questionId !== this.props.questionId) {
+      this.fetchData(this.props.questionId);
+    }
+  }
+
   render() {
     const { question, currentUser, updateQuestion, fetchQuestion } = this.props;
     if (!question) {
@@ -29,7 +39,8 @@ class EditQuestion extends React.Component {
 
 const mSTP = ({ session, entities: { users, questions }}, ownProps) => ({
   currentUser: users[session.id],
-  question: questions[ownProps.match.params.questionId]
+  question: questions[ownProps.match.params.questionId],
+  questionId: ownProps.match.params.questionId
 });
 
 const mDTP = (dispatch) => ({
