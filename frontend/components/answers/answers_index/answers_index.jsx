@@ -6,19 +6,15 @@ import NewAnswerContainer from '../new_answer/new_answer_container';
 
 class AnswerIndex extends React.Component {
   componentDidMount() {
-    debugger;
     this.props.fetchAnswersForQuestion(this.props.questionId);
   }
 
   fetchData(newId) {
-    debugger;
     this.props.fetchAnswersForQuestion(newId);
   }
 
   componentDidUpdate(prevProps, prevState) {
-    debugger;
     if (prevProps.questionId !== this.props.questionId) {
-      debugger;
       this.fetchData(this.props.questionId);
     }
   }
@@ -29,7 +25,6 @@ class AnswerIndex extends React.Component {
             createAnswer, 
             deleteAnswer, 
             updateAnswer } = this.props;
-    debugger;
     return (
       <section>
         <h4>Answers</h4>

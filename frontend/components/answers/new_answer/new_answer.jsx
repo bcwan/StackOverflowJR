@@ -13,7 +13,7 @@ class NewAnswer extends React.Component {
     return (
       <section className="new-answer-component">
         <h4>Your Answer</h4>
-        <textarea id="" cols="30" rows="10"></textarea>
+        <textarea className="new-answer-textarea" cols="30" rows="10"></textarea>
       </section>
     )
   }
