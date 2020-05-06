@@ -3,6 +3,7 @@ import NewAnswer from './new_answer';
 import { createAnswer } from '../../../actions/answers_actions';
 
 const mSTP = (state, ownProps) => ({
+  currentUser: state.entities.users[state.session.id],
   questionId: ownProps.questionId
 });
 
