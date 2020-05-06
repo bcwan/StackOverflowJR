@@ -2,16 +2,13 @@ import React from 'react';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Button from 'react-bootstrap/Button';
 
-class EditQuestion extends React.Component {
+class EditQuestionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.question;
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount() {
-    this.props.fetchQuestion(this.props.match.params.questionId);
-  }
 
   update(field) {
     return e => {
@@ -28,7 +25,6 @@ class EditQuestion extends React.Component {
       return (
         <div>          
           <p>You are user id: {this.props.currentUser.id}. User id: {this.props.question.questioner_id} made this form.</p>
-          <br/>
           <p>You can edit this form</p>
         </div>
       );
@@ -36,7 +32,6 @@ class EditQuestion extends React.Component {
       return (
         <div>
           <p>Log into correct user.</p>
-          <br/>
           <p>You are user id: {this.props.currentUser.id}. User id: {this.props.question.questioner_id} made this form.</p>
         </div>
       );
@@ -44,20 +39,34 @@ class EditQuestion extends React.Component {
   }
 
   render() {
-    const { question } = this.props;
-    // if question is not loaded into state, or user directly accessed url/id
-    // we would ask componentDidMount to get the data
-    if (!question) {
-      return null;
-    } 
     return (
-      <section>
+      <section className = "wrapper-ask-question" >
         {this.usersQuestion()}
-      </section>
+        <Jumbotron className="ask-question-container">
+          <h3 className="ask-question-title">Update Question</h3>
+          <form className="ask-question-form" onSubmit={this.handleSubmit}>
+            <label>Title</label>
+            <input type="text"
+              className="title-input-bar"
+              value={this.state.title}
+              onChange={this.update("title")}
+            />
+            <br />
+            <label className="body-tag-question">Body</label>
+            <textarea className="desc-question"
+              type="text"
+              value={this.state.description}
+              onChange={this.update("description")}
+            />
+            <br />
+            <Button variant="primary" className="button-submit-question" type="submit">Update question</Button>
+          </form>
+        </Jumbotron>
+      </section >
     )
   }
 
 
 }
 
-export default EditQuestion;
+export default EditQuestionForm;

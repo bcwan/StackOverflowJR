@@ -37,7 +37,7 @@ export const createQuestion = (question) => (dispatch) => {
 
 export const updateQuestion = (question) => (dispatch) => (
   QuestionApiUtil.updateQuestion(question)
-    .then(updatedQuestion => dispatch(receiveQuesion(updatedQuestion)))
+    .then(updatedQuestion => dispatch(receiveQuestion(updatedQuestion)))
 );
 
 export const deleteQuestion = (questionId) => (dispatch) => (
