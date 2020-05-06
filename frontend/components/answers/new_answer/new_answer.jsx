@@ -41,7 +41,7 @@ class NewAnswer extends React.Component {
       <div>
         <h4 className="your-answer-title">Your Answer</h4>
         <Link to="/login">
-          <Button variant="success">Please Log In to Answer</Button>
+          <Button variant="primary">Please Log In to Answer</Button>
         </Link>
       </div>
     );

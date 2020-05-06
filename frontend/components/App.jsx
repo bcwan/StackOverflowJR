@@ -8,13 +8,14 @@ import SideBarContainer from './sidebar/sidebar_container';
 import AllQuestionsIndexContainer from './questions/all_questions_index/all_questions_index_container'
 import AskQuestionContainer from './questions/new_question/ask_question_container';
 import ShowQuestionContainer from './questions/show_question/show_question_container';
+import EditQuestionContainer from "./questions/edit_question/edit_question_container";
 
 
 const App = () => (
   <div>
     <header className="header-bar">
       <NavBarContainer />
-      <SideBarContainer />
+      {/*<SideBarContainer />*/}
 
       {/*<GreetingContainer />*/}
       {/*<AllQuestionsIndexContainer /> */}
@@ -22,6 +23,7 @@ const App = () => (
     <Switch>
       <Route exact path="/" />
       <LoggedInRoute exact path="/questions/ask" component={AskQuestionContainer} />
+      <LoggedInRoute exact path="/questions/edit/:questionId" component={EditQuestionContainer} /> 
       <Route exact path="/questions/:questionId" component={ShowQuestionContainer} />
       <Route exact path="/questions" component={AllQuestionsIndexContainer}/>
       <AuthRoute exact path="/login" component={LoginContainer} />
