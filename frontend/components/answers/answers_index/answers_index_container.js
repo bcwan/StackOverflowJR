@@ -9,6 +9,7 @@ import {
 from '../../../actions/answers_actions'
 
 const mSTP = (state, ownProps) => {
+  debugger;
   return {
     answers: Object.values(state.entities.answers),
     questionId: ownProps.questionId

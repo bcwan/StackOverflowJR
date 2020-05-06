@@ -28,6 +28,7 @@ class ShowQuestion extends React.Component {
     if (!question) {
       return null;
     }
+    debugger;
     return (
       <section className="single-question-container">
         <div className="title-ask-button">
@@ -38,7 +39,7 @@ class ShowQuestion extends React.Component {
         </div>
         <p className="question-desc">{question.description}</p>
         <div className="answer-component-div">
-          <AnswerIndexComponent questionId={question.id}/>
+          <AnswerIndexComponent questionId={this.props.questionId}/>
         </div>
       </section>
     )
