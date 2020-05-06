@@ -11,6 +11,7 @@ class SessionForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoLogin = this.handleDemoLogin.bind(this);
   }
 
 
@@ -22,6 +23,12 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.processForm(this.state)
+      .then(() => this.props.history.push('./'));
+  }
+
+  handleDemoLogin(e) {
+    e.preventDefault();
+    this.props.demoProcessForm({ username: "demo", password: "123456" })
       .then(() => this.props.history.push('./'));
   }
 
@@ -65,6 +72,7 @@ class SessionForm extends React.Component {
             />
           <br/>
           <Button variant="primary" type="submit">{this.props.formType}</Button>
+          <Button variant="success" onClick={this.handleDemoLogin}>Demo Account</Button>
         </form>
       </Jumbotron>
     )

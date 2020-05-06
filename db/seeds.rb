@@ -14,7 +14,8 @@ users = User.create!([
  { username: "kyungpark", password: "123456"},
  { username: "borampark", password: "123456"},
  { username: "IU", password: "123456"},
- { username: "jacksonwang", password: "123456"}
+ { username: "jacksonwang", password: "123456"},
+ { username: "demo", password: "123456"}
 ])
 
 questions = Question.create!([
