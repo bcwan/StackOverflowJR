@@ -1,7 +1,7 @@
 .questions-section {
   top: 50px;
   left: 225px;
-  height: 700px;
+  height: 90%;
   width: 60%;
   position: fixed;
   padding-top: 20px;
@@ -26,6 +26,9 @@
   font-size: 13px;
 }
 
+.answer-title {
+  margin-top: 20px;
+}
 
 
 // if the nav bar hides due to browser resizing, fill up the page

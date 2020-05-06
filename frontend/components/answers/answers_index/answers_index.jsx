@@ -27,7 +27,7 @@ class AnswerIndex extends React.Component {
             updateAnswer } = this.props;
     return (
       <section>
-        <h4>Answers</h4>
+        <h4 className="answer-title">Answers</h4>
         <ListGroup variant="flush">
           {answers.map((answer) => (
             <AnswerItem id={answer.id}
