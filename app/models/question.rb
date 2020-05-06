@@ -27,7 +27,8 @@ class Question < ApplicationRecord
   belongs_to :user,
     class_name: :User,
     foreign_key: :questioner_id,
-    primary_key: :id
+    primary_key: :id,
+    optional: true
 
   has_many :answers,
     class_name: :Answer,
