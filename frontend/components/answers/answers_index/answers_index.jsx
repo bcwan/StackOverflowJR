@@ -24,14 +24,17 @@ class AnswerIndex extends React.Component {
             fetchAnswer, 
             createAnswer, 
             deleteAnswer, 
-            updateAnswer } = this.props;
+            updateAnswer,
+            currentUser
+          } = this.props;
     return (
       <section>
         <h4 className="answer-title">Answers</h4>
         <ListGroup variant="flush">
           {answers.map((answer) => (
-            <AnswerItem id={answer.id}
+            <AnswerItem key={answer.id}
                         answer={answer}
+                        currentUser={currentUser}
                         deleteAnswer={deleteAnswer}
                         updateAnswer={updateAnswer}
             />

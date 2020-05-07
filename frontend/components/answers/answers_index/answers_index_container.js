@@ -11,7 +11,8 @@ from '../../../actions/answers_actions'
 const mSTP = (state, ownProps) => {
   return {
     answers: Object.values(state.entities.answers),
-    questionId: ownProps.questionId
+    questionId: ownProps.questionId,
+    currentUser: state.entities.users[state.session.id]
   }
 };
 
