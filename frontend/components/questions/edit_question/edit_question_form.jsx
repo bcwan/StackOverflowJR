@@ -20,28 +20,9 @@ class EditQuestionForm extends React.Component {
     this.props.updateQuestion(this.state);
   }
 
-  usersQuestion () {
-    if(this.props.currentUser.id === this.props.question.questioner_id) {
-      return (
-        <div>          
-          <p>You are user id: {this.props.currentUser.id}. User id: {this.props.question.questioner_id} made this form.</p>
-          <p>You can edit this form</p>
-        </div>
-      );
-    } else {
-      return (
-        <div>
-          <p>Log into correct user.</p>
-          <p>You are user id: {this.props.currentUser.id}. User id: {this.props.question.questioner_id} made this form.</p>
-        </div>
-      );
-    }
-  }
-
   render() {
     return (
       <section className = "wrapper-edit-question" >
-        {this.usersQuestion()}
         <Jumbotron className="edit-question-container">
           <h3 className="edit-question-title">Update Question</h3>
           <form className="edit-question-form" onSubmit={this.handleSubmit}>

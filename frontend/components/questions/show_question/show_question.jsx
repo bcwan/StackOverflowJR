@@ -21,32 +21,47 @@ class ShowQuestion extends React.Component {
       this.fetchData(this.props.questionId);
     }
   }
+
+  // give user who created the question access to edit
+
+  editAccess (currentUser, question) {
+    if ((currentUser.id === question.questioner_id) && !!currentUser) {
+      return (
+        <Link className="edit-question-btn" to={`/questions/edit/${this.props.questionId}`}>
+          <Button variant="info">Edit Question</Button>
+        </Link>
+      )
+    } else {
+      return null;
+    }
+  }
   
   render () {
-    const { question } = this.props;
+    const { question, currentUser } = this.props;
     // if we just want to directly access the question by id instead of through the all questions component
     if (!question) {
       return null;
     }
+
+
     return (
       <section className="single-question-container">
         <div className="title-ask-button">
           <h3 className="question-title">{question.title}</h3>
           <Link className="ask-question-single" to="/questions/ask">
             <Button variant="warning">Ask Question</Button>
-          </Link> 
+          </Link>
         </div>
         <div>
           <p className="question-desc">{question.description}</p>
-          <Link className="edit-question-btn"to={`/questions/edit/${this.props.questionId}`}>
-            <Button variant="info">Edit Question</Button>
-          </Link>
+          {this.editAccess(currentUser, question)}
         </div>
         <div className="answer-component-div">
-          <AnswerIndexComponent questionId={this.props.questionId}/>
+          <AnswerIndexComponent questionId={this.props.questionId} />
         </div>
       </section>
     )
+    
   }
   
 }
