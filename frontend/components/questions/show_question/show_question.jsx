@@ -36,7 +36,12 @@ class ShowQuestion extends React.Component {
             <Button variant="warning">Ask Question</Button>
           </Link> 
         </div>
-        <p className="question-desc">{question.description}</p>
+        <div>
+          <p className="question-desc">{question.description}</p>
+          <Link className="edit-question-btn"to={`/questions/edit/${this.props.questionId}`}>
+            <Button variant="info">Edit Question</Button>
+          </Link>
+        </div>
         <div className="answer-component-div">
           <AnswerIndexComponent questionId={this.props.questionId}/>
         </div>
