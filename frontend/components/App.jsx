@@ -1,8 +1,11 @@
 import React from "react";
-import LoginContainer from "./user_session/login_form_container"
-import SignUpContainer from "./user_session/signup_form_container"
 import { Route, Redirect, HashRouter, Link, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute, LoggedInRoute } from '../util/route_utils'
+
+
+// React Redux Containers
+import LoginContainer from "./user_session/login_form_container"
+import SignUpContainer from "./user_session/signup_form_container"
 import NavBarContainer from './navbar/navbar_container';
 import SideBarContainer from './sidebar/sidebar_container';
 import AllQuestionsIndexContainer from './questions/all_questions_index/all_questions_index_container'
