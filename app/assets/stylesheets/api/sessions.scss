@@ -4,8 +4,10 @@
 .header {
   background-color: aliceblue;
   height: 50px;
-  box-shadow: 3px 2px 4px #ECECEC;
-  
+  box-shadow: 3px 2px 4px rgb(99, 93, 93);
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 
 .header > nav {

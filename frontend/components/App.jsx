@@ -13,6 +13,7 @@ import AskQuestionContainer from './questions/new_question/ask_question_containe
 import ShowQuestionContainer from './questions/show_question/show_question_container';
 import EditQuestionContainer from "./questions/edit_question/edit_question_container";
 import EditAnswerContainer from './answers/edit_answer/edit_answer_container';
+import HomeComponent from './home/home';
 
 
 const App = () => (
@@ -25,7 +26,7 @@ const App = () => (
       {/*<AllQuestionsIndexContainer /> */}
     </header>
     <Switch>
-      <Route exact path="/" />
+      <Route exact path="/" component={HomeComponent}/>
       <LoggedInRoute exact path="/questions/ask" component={AskQuestionContainer} />
       <LoggedInRoute exact path="/questions/edit/:questionId" component={EditQuestionContainer} />
       <LoggedInRoute exact path="/answers/edit/:answerId" component={EditAnswerContainer} />

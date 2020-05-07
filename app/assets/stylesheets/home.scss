@@ -1,0 +1,26 @@
+.splash-page-container {
+  height: 1300px;
+  overflow-y: scroll;
+  
+}
+
+.splash-page-top {
+  top: 50px;
+  left: 0;
+  height: 500px;
+  width: 100%;
+  position: absolute;
+  background-color: #FFCF10;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.splash-page-desc {
+  top: 550px;
+  width: 100%;
+  height: 750px;
+  position: absolute;
+  background-color: whitesmoke;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
