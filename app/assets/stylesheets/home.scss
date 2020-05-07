@@ -13,6 +13,8 @@
   background-color: #FFCF10;
   overflow-x: hidden;
   padding-top: 20px;
+  text-align: center;
+  display: block;
 }
 
 .splash-page-desc {
@@ -23,4 +25,35 @@
   background-color: whitesmoke;
   overflow-x: hidden;
   padding-top: 20px;
+  
 }
+
+.splash-page-text {
+  display: flex;
+  margin-left: 22%;
+  margin-right: 22%;
+  margin-top: 2%
+}
+
+.search-icon-splash {
+  height: 300px;
+  width: 300px;
+  padding-left: 50px;
+}
+
+.splash-page-title {
+  font-family: Verdana;
+  font-size: 50px;
+}
+
+.splash-page-p {
+  font-size: 25px;
+  font-family: Verdana;
+}
+
+.splash-title-block {
+  margin-top: 10%;
+  margin-left: 50px;
+  margin-bottom: 10%;
+}
+
