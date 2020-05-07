@@ -44,7 +44,7 @@ class EditQuestionForm extends React.Component {
         {this.usersQuestion()}
         <Jumbotron className="edit-question-container">
           <h3 className="edit-question-title">Update Question</h3>
-          <form className="ask-question-form" onSubmit={this.handleSubmit}>
+          <form className="edit-question-form" onSubmit={this.handleSubmit}>
             <label>Title</label>
             <input type="text"
               className="title-edit-input-bar"

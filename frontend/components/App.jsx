@@ -9,6 +9,7 @@ import AllQuestionsIndexContainer from './questions/all_questions_index/all_ques
 import AskQuestionContainer from './questions/new_question/ask_question_container';
 import ShowQuestionContainer from './questions/show_question/show_question_container';
 import EditQuestionContainer from "./questions/edit_question/edit_question_container";
+import EditAnswerContainer from './answers/edit_answer/edit_answer_container';
 
 
 const App = () => (
@@ -23,7 +24,9 @@ const App = () => (
     <Switch>
       <Route exact path="/" />
       <LoggedInRoute exact path="/questions/ask" component={AskQuestionContainer} />
-      <LoggedInRoute exact path="/questions/edit/:questionId" component={EditQuestionContainer} /> 
+      <LoggedInRoute exact path="/questions/edit/:questionId" component={EditQuestionContainer} />
+      <LoggedInRoute exact path="/answers/edit/:answerId" component={EditAnswerContainer} />
+
       <Route exact path="/questions/:questionId" component={ShowQuestionContainer} />
       <Route exact path="/questions" component={AllQuestionsIndexContainer}/>
       <AuthRoute exact path="/login" component={LoginContainer} />
