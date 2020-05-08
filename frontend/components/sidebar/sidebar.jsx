@@ -6,7 +6,7 @@ import { Search } from 'react-bootstrap-icons';
 
 const SideBar = ( { currentUser } ) => {
 
-  const sideBarDesign = (user) => (
+  const sideBarDesign = () => (
     <section className="sidebar list-group">
       <ListGroup variant="flush">
         <ListGroup.Item className="side-item"><Link to="/">Home</Link></ListGroup.Item> 
