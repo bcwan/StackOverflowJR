@@ -52,29 +52,31 @@ class SessionForm extends React.Component {
 
   render () {
     return (
-      
-      <Jumbotron>
-        <form className="session-form" onSubmit={this.handleSubmit}>
-          <h1>Please {this.props.formType}</h1>
-          {this.errors()}
-          <label>Username</label>
-            <input type="text"
-                   className="input-bar"
-                   value={this.state.username}
-                   onChange={this.update("username")}
-            />
-          <br/>
-          <label>Password</label>
-            <input type="password"
-              className="input-bar"
-              value={this.state.password}
-              onChange={this.update("password")}
-            />
-          <br/>
-          <Button variant="primary" type="submit">{this.props.formType}</Button>
-          <Button variant="success" onClick={this.handleDemoLogin}>Demo Account</Button>
-        </form>
-      </Jumbotron>
+      <section class="session-form-container">
+
+        <Jumbotron>
+          <form className="session-form" onSubmit={this.handleSubmit}>
+            <h1>Please {this.props.formType}</h1>
+            {this.errors()}
+            <label>Username</label>
+              <input type="text"
+                    className="input-bar"
+                    value={this.state.username}
+                    onChange={this.update("username")}
+              />
+            <br/>
+            <label>Password</label>
+              <input type="password"
+                className="input-bar"
+                value={this.state.password}
+                onChange={this.update("password")}
+              />
+            <br/>
+            <Button variant="primary" type="submit">{this.props.formType}</Button>
+            <Button variant="success" onClick={this.handleDemoLogin}>Demo Account</Button>
+          </form>
+        </Jumbotron>
+      </section>
     )
   }
 }

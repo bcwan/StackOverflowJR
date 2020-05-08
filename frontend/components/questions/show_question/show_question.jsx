@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import AnswerIndexComponent from '../../answers/answers_index/answers_index_container';
+import SideBarContainer from '../../sidebar/sidebar'
 
 class ShowQuestion extends React.Component {
 
@@ -25,7 +26,7 @@ class ShowQuestion extends React.Component {
   // give user who created the question access to edit
 
   editAccess (currentUser, question) {
-    if ((currentUser.id === question.questioner_id) && !!currentUser) {
+    if (!!currentUser && (currentUser.id === question.questioner_id)) {
       return (
         <Link className="edit-question-btn" to={`/questions/edit/${this.props.questionId}`}>
           <Button variant="info">Edit Question</Button>
@@ -45,21 +46,24 @@ class ShowQuestion extends React.Component {
 
 
     return (
-      <section className="single-question-container">
-        <div className="title-ask-button">
-          <h3 className="question-title">{question.title}</h3>
-          <Link className="ask-question-single" to="/questions/ask">
-            <Button variant="warning">Ask Question</Button>
-          </Link>
-        </div>
-        <div>
-          <p className="question-desc">{question.description}</p>
-          {this.editAccess(currentUser, question)}
-        </div>
-        <div className="answer-component-div">
-          <AnswerIndexComponent questionId={this.props.questionId} />
-        </div>
-      </section>
+      <div>
+        <SideBarContainer />
+        <section className="single-question-container">
+          <div className="title-ask-button">
+            <h3 className="question-title">{question.title}</h3>
+            <Link className="ask-question-single" to="/questions/ask">
+              <Button variant="warning">Ask Question</Button>
+            </Link>
+          </div>
+          <div>
+            <p className="question-desc">{question.description}</p>
+            {this.editAccess(currentUser, question)}
+          </div>
+          <div className="answer-component-div">
+            <AnswerIndexComponent questionId={this.props.questionId} />
+          </div>
+        </section>
+      </div>
     )
     
   }

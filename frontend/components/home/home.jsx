@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Search } from 'react-bootstrap-icons';
+import { Search } from 'react-bootstrap-icons'; 
+import Button from 'react-bootstrap/Button';
 
 class HomeComponent extends React.Component {
   render() {
@@ -12,6 +13,9 @@ class HomeComponent extends React.Component {
             <div className="splash-title-block">
               <h1 className="splash-page-title">We love people who code</h1>
               <p className="splash-page-p">A place where people can ask and answer questions.</p>
+              <Link to="/questions">
+                <Button variant="light">See Questions</Button>
+              </Link>
             </div>
           </section>
         </div>
