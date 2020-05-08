@@ -52,7 +52,7 @@ class SessionForm extends React.Component {
 
   render () {
     return (
-      <section class="session-form-container">
+      <section className="session-form-container">
 
         <Jumbotron>
           <form className="session-form" onSubmit={this.handleSubmit}>

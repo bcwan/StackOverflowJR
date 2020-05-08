@@ -4,6 +4,7 @@ import {
   createQuestion
 } from '../../../actions/questions_actions';
 
+
 const mSTP = ({ session, entities: { users } }) => ({
   currentUser: users[session.id]
 });

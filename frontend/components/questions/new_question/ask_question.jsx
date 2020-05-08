@@ -2,6 +2,7 @@ import React from 'react';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Button from 'react-bootstrap/Button';
 
+
 class AskQuestion extends React.Component {
   constructor(props){
     super(props);
@@ -21,7 +22,8 @@ class AskQuestion extends React.Component {
   //go back to parent, which is the all questions page
   handleSubmit() {
     this.props.createQuestion(this.state)
-      .then(() => this.props.history.push('./'));
+      .then(() =>  this.props.history.push('./') );
+     
   }
 
   render() {

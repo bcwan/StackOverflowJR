@@ -11,11 +11,11 @@ Answer.destroy_all
 Question.destroy_all
 
 users = User.create!([
- { username: "kyungpark", password: "123456"},
+ { username: "demo", password: "123456"},
  { username: "borampark", password: "123456"},
  { username: "IU", password: "123456"},
  { username: "jacksonwang", password: "123456"},
- { username: "demo", password: "123456"}
+ { username: "soyou", password: "123456"}
 ])
 
 questions = Question.create!([
@@ -27,12 +27,12 @@ questions = Question.create!([
 ])
 
 answers = Answer.create!([
-  { answerer_id: 2, question_id: 1, description: "Why don't you buy a toostie pop and try it yourself."},
-  { answerer_id: 3, question_id: 2, description: "Start working for NASA. Get an engineering degree, learn physics, and understand how gravity works." },
-  { answerer_id: 2, question_id: 2, description: "I know a guy that can appraise this question. Lemme give him a call."},
-  { answerer_id: 4, question_id: 3, description: "Start practicing a question and day, and turn it into a habit!"},
-  { answerer_id: 1, question_id: 3, description: "Keep practicing code everyday. Hang out with people who are as motivated as you."},
-  { answerer_id: 3, question_id: 3, description: "Practice, practice, practice! Even if you only have 10 minutes."},
-  { answerer_id: 2, question_id: 4, description: "I've been doing Leetcode for the last few months. You just gotta keep at it. Make it your identity."},
+  { id: 1, answerer_id: 2, question_id: 1, description: "Why don't you buy a toostie pop and try it yourself."},
+  { id: 2, answerer_id: 3, question_id: 2, description: "Start working for NASA. Get an engineering degree, learn physics, and understand how gravity works." },
+  { id: 3, answerer_id: 2, question_id: 2, description: "I know a guy that can appraise this question. Lemme give him a call."},
+  { id: 4, answerer_id: 4, question_id: 3, description: "Start practicing a question and day, and turn it into a habit!"},
+  { id: 5, answerer_id: 1, question_id: 3, description: "Keep practicing code everyday. Hang out with people who are as motivated as you."},
+  { id: 6, answerer_id: 3, question_id: 3, description: "Practice, practice, practice! Even if you only have 10 minutes."},
+  { id: 7, answerer_id: 2, question_id: 4, description: "I've been doing Leetcode for the last few months. You just gotta keep at it. Make it your identity."},
 ])
 
