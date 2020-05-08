@@ -28,14 +28,14 @@ StackOverflowJR is a software engineering social networking application. Coders 
 
 ## Features
 
-Questions
+### Questions
 
 Users can...
 * create questions
 * answer questions
 * edit questions
 
-Answers
+### Answers
 
 Users can....
 * create answers
