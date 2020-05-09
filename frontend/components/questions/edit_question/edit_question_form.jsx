@@ -1,6 +1,8 @@
 import React from 'react';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Button from 'react-bootstrap/Button';
+import { Redirect, HashRouter, Link, Switch } from 'react-router-dom';
+
 
 class EditQuestionForm extends React.Component {
   constructor(props) {
