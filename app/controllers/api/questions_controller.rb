@@ -1,7 +1,5 @@
 class Api::QuestionsController < ApplicationController
 
-  # we want user to be logged in in order to manage his/her own questions
-  # protect_from_forgery with: :null_session
   before_action :require_logged_in, only: [:update, :destroy, :create]
 
   # we'll display all questions for now
