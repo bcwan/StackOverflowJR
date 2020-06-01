@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "din-bold";
+  src: url(./typeface/din_bold.ttf);
+}
+
+@font-face {
+  font-family: "din-medium";
+  src: url(./typeface/din_medium.ttf);
+}
+
 .splash-page-container {
   height: 1300px;
   position: relative;
@@ -38,13 +48,13 @@
 }
 
 .splash-page-title {
-  font-family: Verdana;
+  font-family: din-bold;
   font-size: 50px;
 }
 
 .splash-page-p {
   font-size: 25px;
-  font-family: Verdana;
+  font-family: din-medium;
 }
 
 .splash-title-block {
