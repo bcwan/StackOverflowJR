@@ -17,6 +17,7 @@
   height: 100%;
   width: 100%;
   position: absolute;
+  z-index: 2;
 }
 
 .splash-page-desc {
@@ -31,16 +32,9 @@
 }
 
 .splash-page-text {
-  display: flex;
-  margin-left: 22%;
-  margin-right: 22%;
-  margin-top: 2%
-}
-
-.search-icon-splash {
-  height: 300px;
-  width: 300px;
-  padding-left: 50px;
+  margin-top: 2%;
+  position: absolute;
+  z-index: 10;
 }
 
 .splash-page-title {

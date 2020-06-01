@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Search } from 'react-bootstrap-icons'; 
 import Button from 'react-bootstrap/Button';
 
 class HomeComponent extends React.Component {
@@ -10,8 +9,7 @@ class HomeComponent extends React.Component {
         <div className="splash-page-top">
           <embed id="hero-image" src="/assets/hero-image.svg" 
                alt="stackoverflow-splash"/>
-          {/*<section className="splash-page-text">
-            <Search className="search-icon-splash"/>
+          <section className="splash-page-text">
             <div className="splash-title-block">
               <h1 className="splash-page-title">We love people who code</h1>
               <p className="splash-page-p">A place where people can ask and answer questions.</p>
@@ -19,7 +17,7 @@ class HomeComponent extends React.Component {
                 <Button variant="light">See Questions</Button>
               </Link>
             </div>
-          </section>*/}
+          </section>
         </div>
         <div className="splash-page-desc">
           
