@@ -8,9 +8,9 @@ class HomeComponent extends React.Component {
     return (
       <section className="splash-page-container">
         <div className="splash-page-top">
-          <embed src="/assets/hero-image.svg" 
+          <embed id="hero-image" src="/assets/hero-image.svg" 
                alt="stackoverflow-splash"/>
-          <section className="splash-page-text">
+          {/*<section className="splash-page-text">
             <Search className="search-icon-splash"/>
             <div className="splash-title-block">
               <h1 className="splash-page-title">We love people who code</h1>
@@ -19,7 +19,7 @@ class HomeComponent extends React.Component {
                 <Button variant="light">See Questions</Button>
               </Link>
             </div>
-          </section>
+          </section>*/}
         </div>
         <div className="splash-page-desc">
           
