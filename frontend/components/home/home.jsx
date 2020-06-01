@@ -9,9 +9,7 @@ class HomeComponent extends React.Component {
       <section className="splash-page-container">
         <div className="splash-page-top">
           <embed src="/assets/hero-image.svg" 
-               alt="stackoverflow-splash"
-               height="500"
-               width="500"/>
+               alt="stackoverflow-splash"/>
           <section className="splash-page-text">
             <Search className="search-icon-splash"/>
             <div className="splash-title-block">
