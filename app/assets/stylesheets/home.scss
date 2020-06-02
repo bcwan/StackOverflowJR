@@ -143,9 +143,13 @@
   margin: 20px;
 }
 
-  //hide the svg screen
-  //scrump up the top title, to a point where we shrink the font size
-  //make the jumbotrons not be flex, but on top of each other
+
+@media screen and (max-width: 700px) {
+  .desc-top-text {
+   padding: 0;
+  }
+}
+
 @media screen and (max-width: 870px) {
   .splash-page-desc {
     overflow: hidden;
