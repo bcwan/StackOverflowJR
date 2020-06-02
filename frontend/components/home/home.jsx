@@ -11,7 +11,7 @@ class HomeComponent extends React.Component {
                alt="stackoverflow-splash"/>
           <section className="splash-page-text">
             <div className="splash-title-block">
-              <h1 className="splash-page-title">We love people who code</h1>
+              <h1 className="splash-page-title">We love people who are curious</h1>
               <p className="splash-page-p">A place where people can ask and answer questions.</p>
               <Link to="/questions">
                 <Button variant="light">See Questions</Button>
@@ -21,12 +21,11 @@ class HomeComponent extends React.Component {
         </div>
         <div className="splash-page-desc">
           <div className="desc-top">
-            <h2 className="desc-top-title">For developers, by Brian Wan</h2>
+            <h2 className="desc-top-title">For any user, by Brian Wan</h2>
             <div className="bar-pill"></div>
             <div className="desc-top-text">
-              <p className="p-desc-top-text">This StackOverflow inspired full stack application was built from 
-                React, Redux, Ruby on Rails, JavaScript, and HTML/CSS. Users can
-                create, update, and delete questions and answers.
+              <p className="p-desc-top-text">This is a StackOverflow inspired full stack application. Built within two weeks, this
+                                             app allows provides a platform for users to find solutions to their curiosities.
               </p>
             </div>
           </div>
