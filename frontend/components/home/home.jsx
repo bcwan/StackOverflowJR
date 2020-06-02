@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import { FiDatabase } from 'react-icons/fi';
+import { DiReact } from 'react-icons/di';
 
 class HomeComponent extends React.Component {
   render() {
@@ -32,7 +33,7 @@ class HomeComponent extends React.Component {
           </div>
           <div className="desc-bottom">
             <div className="desc-bottom-1">
-
+              <DiReact />
             </div>
             <div className="desc-bottom-2">
               <FiDatabase />
