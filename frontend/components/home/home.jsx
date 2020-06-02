@@ -10,12 +10,19 @@ class HomeComponent extends React.Component {
     return (
       <section className="splash-page-container">
         <div className="splash-page-top">
-          <embed id="hero-image" src="/assets/hero-image.svg" 
-               alt="stackoverflow-splash"/>
+          <embed
+            id="hero-image"
+            src="/assets/hero-image.svg"
+            alt="stackoverflow-splash"
+          />
           <section className="splash-page-text">
             <div className="splash-title-block">
-              <h1 className="splash-page-title">We love people who are curious</h1>
-              <p className="splash-page-p">A place where people can ask and answer questions.</p>
+              <h1 className="splash-page-title">
+                We love people who are curious
+              </h1>
+              <p className="splash-page-p">
+                A place where people can ask and answer questions.
+              </p>
               <Link to="/questions">
                 <Button variant="light">See Questions</Button>
               </Link>
@@ -27,25 +34,34 @@ class HomeComponent extends React.Component {
             <h2 className="desc-top-title">For any user, by Brian Wan</h2>
             <div className="bar-pill"></div>
             <div className="desc-top-text">
-              <p className="p-desc-top-text">This is a StackOverflow inspired full stack application. Built within two weeks, this
-                                             app allows provides a platform for users to find solutions to their curiosities.
+              <p className="p-desc-top-text">
+                This is a StackOverflow inspired full stack application. Built
+                within two weeks, this app allows provides a platform for users
+                to find solutions to their curiosities.
               </p>
             </div>
           </div>
           <div className="desc-bottom">
             <div className="desc-bottom-1">
-              <DiReact />
+              <DiReact className="jumbo-icon" />
+              <p className="jumbo-1-text">
+                Application was built with frontend tools, such as React, Redux,
+                JavaScript, HTML/CSS, along with npm libraries, such as React
+                Icons.
+              </p>
             </div>
             <div className="desc-bottom-2">
-              <FiDatabase />
+              <FiDatabase className="jumbo-icon" />
+              <p></p>
             </div>
             <div className="desc-bottom-3">
-              <AiOutlineMessage />
+              <AiOutlineMessage className="jumbo-icon" />
+              <p></p>
             </div>
           </div>
         </div>
       </section>
-    )
+    );
   }
 }
 
