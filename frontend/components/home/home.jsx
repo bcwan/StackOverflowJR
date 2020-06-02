@@ -43,7 +43,7 @@ class HomeComponent extends React.Component {
           </div>
           <div className="desc-bottom">
             <div className="desc-bottom-1">
-              <DiReact className="jumbo-icon" />
+              <DiReact className="jumbo-icon-1" />
               <p className="jumbo-1-text">
                 Application was built with frontend tools, such as React, Redux,
                 JavaScript, HTML/CSS, along with npm libraries, such as React
