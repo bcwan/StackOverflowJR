@@ -21,7 +21,7 @@ class HomeComponent extends React.Component {
         </div>
         <div className="splash-page-desc">
           <div className="desc-top">
-            
+            <h2 className="desc-top-title">For Developers, by Brian Wan</h2>
           </div>
           <div className="desc-bottom">
 

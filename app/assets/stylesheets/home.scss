@@ -65,17 +65,21 @@
 }
 
 .desc-top {
-  background-color: blue;
+  background-color: skyblue;
   width: 100%;
-  height: 200px;
+  height: 250px;
+}
+
+.desc-top-title {
+  font-family: din-bold;
+  font-size: 40px;
 }
 
 .desc-bottom {
-  background-color: red;
+  background-color: lightcoral;
   width: 100%;
-  height: 500px;
+  height: 450px;
   display: flex;
-
 }
 
 
