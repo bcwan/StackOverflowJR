@@ -20,7 +20,12 @@ class HomeComponent extends React.Component {
           </section>
         </div>
         <div className="splash-page-desc">
-          
+          <div className="desc-top">
+            
+          </div>
+          <div className="desc-bottom">
+
+          </div>
         </div>
       </section>
     )
