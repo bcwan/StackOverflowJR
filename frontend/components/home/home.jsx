@@ -23,6 +23,12 @@ class HomeComponent extends React.Component {
           <div className="desc-top">
             <h2 className="desc-top-title">For developers, by Brian Wan</h2>
             <div className="bar-pill"></div>
+            <div className="desc-top-text">
+              <p className="p-desc-top-text">This StackOverflow inspired full stack application was built from 
+                React, Redux, Ruby on Rails, JavaScript, and HTML/CSS. Users can
+                create, update, and delete questions and answers.
+              </p>
+            </div>
           </div>
           <div className="desc-bottom">
 
