@@ -96,7 +96,6 @@
 
 
 .desc-bottom {
-  background-color: lightcoral;
   width: 100%;
   height: 450px;
   display: flex;
@@ -104,28 +103,28 @@
 }
 
 .desc-bottom-1 {
-  background-color: greenyellow;
   height: 400px;
   width: 325px;
   align-self: flex-end;
   border-radius: 5px;
+  box-shadow: 5px 10px 20px #888888;
   
 }
 
 .desc-bottom-2 {
-  background-color: indigo;
   height: 400px;
   width: 325px;
   margin: 0px 50px 0px 50px;
   border-radius: 5px;
+  box-shadow: 5px 10px 20px #888888;
 }
 
 .desc-bottom-3 {
-  background-color: pink;
   height: 400px;
   width: 325px;
   align-self: flex-end;
   border-radius: 5px;
+  box-shadow: 5px 10px 20px #888888;
 }
 
 
