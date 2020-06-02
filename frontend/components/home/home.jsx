@@ -31,7 +31,7 @@ class HomeComponent extends React.Component {
         </div>
         <div className="splash-page-desc">
           <div className="desc-top">
-            <h2 className="desc-top-title">For any user, by Brian Wan</h2>
+            <h2 className="desc-top-title">For any user, built by Brian Wan</h2>
             <div className="bar-pill"></div>
             <div className="desc-top-text">
               <p className="p-desc-top-text">
