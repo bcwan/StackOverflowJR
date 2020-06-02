@@ -52,11 +52,14 @@ class HomeComponent extends React.Component {
             </div>
             <div className="desc-bottom-2">
               <FiDatabase className="jumbo-icon" />
-              <p></p>
+              <p className="jumbo-2-text">
+                User questions and answers stored and managed with backend tools, 
+                such as Ruby on Rails, jBuilder, ERB, AJAX, JSON, and PostgreSQL.
+              </p>
             </div>
             <div className="desc-bottom-3">
               <AiOutlineMessage className="jumbo-icon" />
-              <p></p>
+              <p className="jumbo-3-text"></p>
             </div>
           </div>
         </div>
