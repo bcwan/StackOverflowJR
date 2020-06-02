@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import { FiDatabase } from 'react-icons/fi';
 import { DiReact } from 'react-icons/di';
+import { AiOutlineMessage } from 'react-icons/ai';
 
 class HomeComponent extends React.Component {
   render() {
@@ -39,7 +40,7 @@ class HomeComponent extends React.Component {
               <FiDatabase />
             </div>
             <div className="desc-bottom-3">
-
+              <AiOutlineMessage />
             </div>
           </div>
         </div>
