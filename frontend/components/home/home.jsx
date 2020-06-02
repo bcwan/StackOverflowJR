@@ -30,7 +30,15 @@ class HomeComponent extends React.Component {
             </div>
           </div>
           <div className="desc-bottom">
+            <div className="desc-bottom-1">
 
+            </div>
+            <div className="desc-bottom-2">
+
+            </div>
+            <div className="desc-bottom-3">
+
+            </div>
           </div>
         </div>
       </section>
