@@ -44,7 +44,7 @@ class HomeComponent extends React.Component {
           <div className="desc-bottom">
             <div className="desc-bottom-1">
               <DiReact className="jumbo-icon-1" />
-              <p className="jumbo-1-text">
+              <p className="jumbo-text">
                 Application was built with frontend tools, such as React, Redux,
                 JavaScript, HTML/CSS, along with npm libraries, such as React
                 Icons.
@@ -52,14 +52,17 @@ class HomeComponent extends React.Component {
             </div>
             <div className="desc-bottom-2">
               <FiDatabase className="jumbo-icon" />
-              <p className="jumbo-2-text">
+              <p className="jumbo-text">
                 User questions and answers stored and managed with backend tools, 
                 such as Ruby on Rails, jBuilder, ERB, AJAX, JSON, and PostgreSQL.
               </p>
             </div>
             <div className="desc-bottom-3">
               <AiOutlineMessage className="jumbo-icon" />
-              <p className="jumbo-3-text"></p>
+              <p className="jumbo-text">
+                Has CRUD functionality. Users can create, update, and delete questions and answers.
+                In addition, user authentication with BCrypt library gives users certain edit privileges.
+              </p>
             </div>
           </div>
         </div>
