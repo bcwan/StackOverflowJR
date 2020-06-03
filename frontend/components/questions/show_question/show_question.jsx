@@ -8,7 +8,6 @@ class ShowQuestion extends React.Component {
 
   componentDidMount() {
     this.props.fetchQuestion(this.props.questionId);
-    //this.props.fetchAnswersForQuestion(this.props.match.params.questionId);
 
   }
 
