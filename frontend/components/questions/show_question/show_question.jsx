@@ -102,14 +102,14 @@ class ShowQuestion extends React.Component {
             },
           }}
         >
-          <p>Modal title</p>
+          <Button className="exit-edit-question" variant="info" onClick={() => this.changeModalStatus(false)}>
+            Close
+          </Button>
           <EditQuestionForm 
             question={question}
             updateQuestion={updateQuestion}
+            changeModalStatus={this.changeModalStatus}
           />
-          <Button variant="info" onClick={() => this.changeModalStatus(false)}>
-            Submit Changes
-          </Button>
         </Modal>
       </div>
     );
