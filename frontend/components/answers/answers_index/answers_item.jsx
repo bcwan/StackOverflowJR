@@ -54,13 +54,14 @@ const AnswerItem = ({ answer, deleteAnswer, updateAnswer, currentUser }) => {
                     },
                 }}
           >
-            <EditAnswerForm answer={answer} 
-                            updateAnswer={updateAnswer}
-            />
-            <Button onClick={() => setModalIsOpen(false)}
+            <Button className="exit-answer-edit"
+                    onClick={() => setModalIsOpen(false)}
                     variant="secondary">
                     Close
             </Button>
+            <EditAnswerForm answer={answer} 
+                            updateAnswer={updateAnswer}
+            />
           </Modal>
       </ListGroupItem>
     )
