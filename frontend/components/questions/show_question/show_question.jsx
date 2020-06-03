@@ -7,6 +7,14 @@ import Modal from 'react-modal';
 
 class ShowQuestion extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      modalIsOpen: true
+    };
+
+  } 
+
   componentDidMount() {
     this.props.fetchQuestion(this.props.questionId);
 
@@ -30,6 +38,7 @@ class ShowQuestion extends React.Component {
       return (
         <Link className="edit-question-btn" to={`/questions/edit/${this.props.questionId}`}>
           <Button variant="info">Edit Question</Button>
+          {/* <Button variant="info" onClick={() => setModalIsOpen(true)}>Edit Question</Button> */}
         </Link>
       )
     } else {
@@ -65,7 +74,7 @@ class ShowQuestion extends React.Component {
             <AnswerIndexComponent questionId={this.props.questionId} />
           </div>
         </section>
-        <Modal isOpen={true}>
+        <Modal isOpen={this.state.modalIsOpen}>
           <p>Modal title</p>
         </Modal>
 
