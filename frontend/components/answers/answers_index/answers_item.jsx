@@ -2,6 +2,7 @@ import React from 'react';
 import { ListGroupItem } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
+import Modal from 'react-modal';
 
 
 const AnswerItem = ({ answer, deleteAnswer, currentUser }) => {
@@ -39,7 +40,9 @@ const AnswerItem = ({ answer, deleteAnswer, currentUser }) => {
                 </div>
               )
           }
-        
+          <Modal isOpen={true}>
+            <h1>Answer Modal</h1>
+          </Modal>
       </ListGroupItem>
     )
   }
