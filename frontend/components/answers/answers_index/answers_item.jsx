@@ -46,7 +46,8 @@ const AnswerItem = ({ answer, deleteAnswer, currentUser }) => {
                 </div>
               )
           }
-          <Modal isOpen={modalIsOpen}>
+          <Modal isOpen={modalIsOpen} 
+                 onRequestClose={() => setModalIsOpen(false)}>
             <h1>Answer Modal</h1>
             <Button onClick={() => setModalIsOpen(false)}
                     variant="secondary">
