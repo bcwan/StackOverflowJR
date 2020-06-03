@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import AnswerIndexComponent from '../../answers/answers_index/answers_index_container';
 import SideBarContainer from '../../sidebar/sidebar';
+import EditQuestionForm from '../../questions/edit_question/edit_question_form';
 import Modal from 'react-modal';
 
 
@@ -64,7 +65,7 @@ class ShowQuestion extends React.Component {
   }
 
   render() {
-    const { question, currentUser } = this.props;
+    const { question, currentUser, updateQuestion } = this.props;
     // if we just want to directly access the question by id instead of through the all questions component
     if (!question) {
       return null;
@@ -102,6 +103,10 @@ class ShowQuestion extends React.Component {
           }}
         >
           <p>Modal title</p>
+          <EditQuestionForm 
+            question={question}
+            updateQuestion={updateQuestion}
+          />
           <Button variant="info" onClick={() => this.changeModalStatus(false)}>
             Submit Changes
           </Button>
