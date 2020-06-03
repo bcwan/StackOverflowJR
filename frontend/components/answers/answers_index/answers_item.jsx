@@ -48,6 +48,10 @@ const AnswerItem = ({ answer, deleteAnswer, currentUser }) => {
           }
           <Modal isOpen={modalIsOpen}>
             <h1>Answer Modal</h1>
+            <Button onClick={() => setModalIsOpen(false)}
+                    variant="secondary">
+                    Close
+            </Button>
           </Modal>
       </ListGroupItem>
     )
