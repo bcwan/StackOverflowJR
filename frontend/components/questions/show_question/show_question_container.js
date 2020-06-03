@@ -14,7 +14,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch) => ({
   fetchQuestion: (questionId) => dispatch(fetchQuestion(questionId)),
-  //fetchAnswersForQuestion: (questionId) => dispatch(fetchAnswersForQuestion(questionId))
+  updateQuestion: (question) => dispatch(updateQuestion(question))
+
 });
 
 export default connect(mSTP, mDTP)(ShowQuestion);
