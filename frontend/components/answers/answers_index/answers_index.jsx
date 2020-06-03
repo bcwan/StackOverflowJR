@@ -20,9 +20,7 @@ class AnswerIndex extends React.Component {
   }
 
   render() {
-    const { answers, 
-            fetchAnswer, 
-            createAnswer, 
+    const { answers,
             deleteAnswer, 
             updateAnswer,
             currentUser

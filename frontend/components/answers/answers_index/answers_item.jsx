@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { ListGroupItem } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-modal';
+import EditAnswerForm from '../edit_answer/edit_answer_form';
 
 
-const AnswerItem = ({ answer, deleteAnswer, currentUser }) => {
+const AnswerItem = ({ answer, deleteAnswer, updateAnswer, currentUser }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false) 
   if (!currentUser) {
     return (
@@ -27,10 +27,6 @@ const AnswerItem = ({ answer, deleteAnswer, currentUser }) => {
                     className="delete-answer-btn"
                     variant="secondary">Delete Answer
                   </Button>
-                  {/* <Link className="edit-answer-btn"
-                    to={`/answers/edit/${answer.id}`}>
-                    <Button variant="info">Edit Answer</Button>
-                  </Link> */}
                   <Button className="edit-answer-btn" 
                           variant="info" 
                           onClick={() => setModalIsOpen(true)}
@@ -58,7 +54,9 @@ const AnswerItem = ({ answer, deleteAnswer, currentUser }) => {
                     },
                 }}
           >
-            <h1>Answer Modal</h1>
+            <EditAnswerForm answer={answer} 
+                            updateAnswer={updateAnswer}
+            />
             <Button onClick={() => setModalIsOpen(false)}
                     variant="secondary">
                     Close
