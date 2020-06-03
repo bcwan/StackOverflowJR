@@ -40,9 +40,6 @@ class ShowQuestion extends React.Component {
   editAccess(currentUser, question) {
     if (!!currentUser && currentUser.id === question.questioner_id) {
       return (
-        // <Link className="edit-question-btn" to={`/questions/edit/${this.props.questionId}`}>
-        //   <Button variant="info">Edit Question</Button>
-        // </Link>
         <Button
           className="edit-question-btn"
           variant="info"
