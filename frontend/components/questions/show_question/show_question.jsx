@@ -84,7 +84,7 @@ class ShowQuestion extends React.Component {
             <AnswerIndexComponent questionId={this.props.questionId} />
           </div>
         </section>
-        <Modal isOpen={this.state.modalIsOpen}>
+        <Modal isOpen={this.state.modalIsOpen} onRequestClose={() => this.changeModalStatus(false)}>
           <p>Modal title</p>
           <Button
             variant="info"
