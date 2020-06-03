@@ -5,6 +5,7 @@ import AnswerIndexComponent from '../../answers/answers_index/answers_index_cont
 import SideBarContainer from '../../sidebar/sidebar';
 import Modal from 'react-modal';
 
+
 class ShowQuestion extends React.Component {
   constructor(props) {
     super(props);
@@ -17,7 +18,10 @@ class ShowQuestion extends React.Component {
 
   componentDidMount() {
     this.props.fetchQuestion(this.props.questionId);
+    Modal.setAppElement("#root");
   }
+
+
 
   fetchData(newId) {
     this.props.fetchQuestion(newId);
