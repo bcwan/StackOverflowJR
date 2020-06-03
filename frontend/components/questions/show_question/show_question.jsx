@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import AnswerIndexComponent from '../../answers/answers_index/answers_index_container';
