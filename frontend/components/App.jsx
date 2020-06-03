@@ -11,7 +11,7 @@ import SideBarContainer from './sidebar/sidebar_container';
 import AllQuestionsIndexContainer from './questions/all_questions_index/all_questions_index_container'
 import AskQuestionContainer from './questions/new_question/ask_question_container';
 import ShowQuestionContainer from './questions/show_question/show_question_container';
-import EditAnswerContainer from './answers/edit_answer/edit_answer_container';
+// import EditAnswerContainer from './answers/edit_answer/edit_answer_container';
 import HomeComponent from './home/home';
 
 
@@ -23,7 +23,7 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={HomeComponent}/>
       <LoggedInRoute exact path="/questions/ask" component={AskQuestionContainer} />
-      <LoggedInRoute exact path="/answers/edit/:answerId" component={EditAnswerContainer} />
+      {/* <LoggedInRoute exact path="/answers/edit/:answerId" component={EditAnswerContainer} /> */}
 
       <Route exact path="/questions/:questionId" component={ShowQuestionContainer} />
       <Route exact path="/questions" component={AllQuestionsIndexContainer}/>
