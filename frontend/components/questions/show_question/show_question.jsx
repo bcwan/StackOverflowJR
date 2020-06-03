@@ -93,7 +93,6 @@ class ShowQuestion extends React.Component {
           onRequestClose={() => this.changeModalStatus(false)}
           style={{
             content: {
-              overflow: "inherit",
               borderRadius: "7px",
             },
             overlay: {
