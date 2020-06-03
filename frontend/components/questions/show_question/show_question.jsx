@@ -86,7 +86,11 @@ class ShowQuestion extends React.Component {
         </section>
         <Modal isOpen={this.state.modalIsOpen}>
           <p>Modal title</p>
-          <button ></button>
+          <Button
+            variant="info"
+            onClick={() => this.changeModalStatus(false)}>
+              Submit Changes
+          </Button>
         </Modal>
       </div>
     );
