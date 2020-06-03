@@ -33,7 +33,9 @@ class ShowQuestion extends React.Component {
         </Link>
       )
     } else {
-      return null;
+      return (
+        <p className="edit-question-btn">Edit access is for question creator.</p>
+      )
     }
   }
   
