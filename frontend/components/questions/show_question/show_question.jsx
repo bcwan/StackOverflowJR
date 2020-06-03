@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import AnswerIndexComponent from '../../answers/answers_index/answers_index_container';
-import SideBarContainer from '../../sidebar/sidebar'
+import SideBarContainer from '../../sidebar/sidebar';
+import Modal from 'react-modal';
 
 class ShowQuestion extends React.Component {
 
@@ -64,6 +65,10 @@ class ShowQuestion extends React.Component {
             <AnswerIndexComponent questionId={this.props.questionId} />
           </div>
         </section>
+        <Modal isOpen={true}>
+          <p>Modal title</p>
+        </Modal>
+
       </div>
     )
     
