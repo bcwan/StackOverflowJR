@@ -10,9 +10,10 @@ class ShowQuestion extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modalIsOpen: true
+      modalIsOpen: false
     };
 
+    this.openModal = this.openModal.bind(this);
   } 
 
   componentDidMount() {
@@ -36,10 +37,10 @@ class ShowQuestion extends React.Component {
   editAccess (currentUser, question) {
     if (!!currentUser && (currentUser.id === question.questioner_id)) {
       return (
-        <Link className="edit-question-btn" to={`/questions/edit/${this.props.questionId}`}>
-          <Button variant="info">Edit Question</Button>
-          {/* <Button variant="info" onClick={() => setModalIsOpen(true)}>Edit Question</Button> */}
-        </Link>
+        // <Link className="edit-question-btn" to={`/questions/edit/${this.props.questionId}`}>
+        //   <Button variant="info">Edit Question</Button>
+        // </Link>
+        <Button className="edit-question-btn" variant="info" onClick={() => this.openModal()}>Edit Question</Button>
       )
     } else {
       return (
@@ -48,6 +49,10 @@ class ShowQuestion extends React.Component {
     }
   }
   
+  openModal () {
+    this.setState({ modalIsOpen: true });
+  }
+
   render () {
     const { question, currentUser } = this.props;
     // if we just want to directly access the question by id instead of through the all questions component
