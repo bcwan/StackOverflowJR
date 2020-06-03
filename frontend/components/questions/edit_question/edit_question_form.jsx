@@ -28,7 +28,7 @@ class EditQuestionForm extends React.Component {
           <h3 className="edit-question-title">Update Question</h3>
           <form className="edit-question-form" onSubmit={this.handleSubmit}>
             <label>Title</label>
-            <input type="text"
+            <textarea type="text"
               className="title-edit-input-bar"
               value={this.state.title}
               onChange={this.update("title")}
