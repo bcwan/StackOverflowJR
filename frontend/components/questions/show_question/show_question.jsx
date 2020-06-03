@@ -88,12 +88,23 @@ class ShowQuestion extends React.Component {
             <AnswerIndexComponent questionId={this.props.questionId} />
           </div>
         </section>
-        <Modal isOpen={this.state.modalIsOpen} onRequestClose={() => this.changeModalStatus(false)}>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onRequestClose={() => this.changeModalStatus(false)}
+          style={{
+            content: {
+              overflow: "inherit",
+              borderRadius: "7px",
+            },
+            overlay: {
+              position: "fixed",
+              zIndex: "50",
+            },
+          }}
+        >
           <p>Modal title</p>
-          <Button
-            variant="info"
-            onClick={() => this.changeModalStatus(false)}>
-              Submit Changes
+          <Button variant="info" onClick={() => this.changeModalStatus(false)}>
+            Submit Changes
           </Button>
         </Modal>
       </div>
