@@ -6,19 +6,17 @@ import SideBarContainer from '../../sidebar/sidebar';
 import Modal from 'react-modal';
 
 class ShowQuestion extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
-      modalIsOpen: false
+      modalIsOpen: false,
     };
 
-    this.openModal = this.openModal.bind(this);
-  } 
+    this.changeModalStatus = this.changeModalStatus.bind(this);
+  }
 
   componentDidMount() {
     this.props.fetchQuestion(this.props.questionId);
-
   }
 
   fetchData(newId) {
@@ -34,32 +32,39 @@ class ShowQuestion extends React.Component {
 
   // give user who created the question access to edit
 
-  editAccess (currentUser, question) {
-    if (!!currentUser && (currentUser.id === question.questioner_id)) {
+  editAccess(currentUser, question) {
+    if (!!currentUser && currentUser.id === question.questioner_id) {
       return (
         // <Link className="edit-question-btn" to={`/questions/edit/${this.props.questionId}`}>
         //   <Button variant="info">Edit Question</Button>
         // </Link>
-        <Button className="edit-question-btn" variant="info" onClick={() => this.openModal()}>Edit Question</Button>
-      )
+        <Button
+          className="edit-question-btn"
+          variant="info"
+          onClick={() => this.changeModalStatus(true)}
+        >
+          Edit Question
+        </Button>
+      );
     } else {
       return (
-        <p className="edit-question-btn">Edit access is for question creator.</p>
-      )
+        <p className="edit-question-btn">
+          Edit access is for question creator.
+        </p>
+      );
     }
   }
-  
-  openModal () {
-    this.setState({ modalIsOpen: true });
+
+  changeModalStatus(status) {
+    this.setState({ modalIsOpen: status });
   }
 
-  render () {
+  render() {
     const { question, currentUser } = this.props;
     // if we just want to directly access the question by id instead of through the all questions component
     if (!question) {
       return null;
     }
-
 
     return (
       <div>
@@ -81,13 +86,11 @@ class ShowQuestion extends React.Component {
         </section>
         <Modal isOpen={this.state.modalIsOpen}>
           <p>Modal title</p>
+          <button ></button>
         </Modal>
-
       </div>
-    )
-    
+    );
   }
-  
 }
 
 export default ShowQuestion;
