@@ -17,8 +17,6 @@ const SideBar = ( { currentUser } ) => {
           <ListGroup.Item className="side-item">
             <Search /><Link to="/questions">Stack Overflow Jr</Link></ListGroup.Item>
           <ListGroup.Item className="indent-side-item">Tags</ListGroup.Item>
-          <ListGroup.Item className="indent-side-item">User</ListGroup.Item>
-          <ListGroup.Item className="indent-side-item">Jobs</ListGroup.Item>
         </ListGroup>
 
       </aside>
