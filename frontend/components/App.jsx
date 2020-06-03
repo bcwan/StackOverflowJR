@@ -20,10 +20,6 @@ const App = () => (
   <div>
     <header className="header-bar">
       <NavBarContainer />
-      {/*<SideBarContainer />*/}
-
-      {/*<GreetingContainer />*/}
-      {/*<AllQuestionsIndexContainer /> */}
     </header>
     <Switch>
       <Route exact path="/" component={HomeComponent}/>
