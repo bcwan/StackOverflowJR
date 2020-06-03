@@ -18,6 +18,7 @@ class EditAnswerForm extends React.Component {
 
   handleSubmit() {
     this.props.updateAnswer(this.state);
+    this.props.setModalIsOpen(false);
   }
 
 

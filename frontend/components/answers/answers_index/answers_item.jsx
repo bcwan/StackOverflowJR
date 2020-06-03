@@ -61,6 +61,7 @@ const AnswerItem = ({ answer, deleteAnswer, updateAnswer, currentUser }) => {
             </Button>
             <EditAnswerForm answer={answer} 
                             updateAnswer={updateAnswer}
+                            setModalIsOpen={setModalIsOpen}
             />
           </Modal>
       </ListGroupItem>
