@@ -10,4 +10,18 @@
 #  user_id     :integer          not null
 #
 class Vote < ApplicationRecord
+
+   belongs_to :user,
+    class_name: :User,
+    foreign_key: :user_id,
+    primary_key: :id,
+    optional: true
+
+  belongs_to :question,
+    class_name: :Question,
+    foreign_key: :question_id,
+    primary_key: :id,
+    optional: true
+    
+
 end

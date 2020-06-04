@@ -30,6 +30,13 @@ class User < ApplicationRecord
     foreign_key: :answerer_id,
     primary_key: :id,
     dependent: :destroy
+
+  has_many :votes,
+    class_name: :Vote,
+    foreign_key: :user_id,
+    primary_key: :id,
+    dependent: :destroy
+
   # able to run method before running validations
   # just needs to have session_token when a user is created
   after_initialize :ensure_session_token
