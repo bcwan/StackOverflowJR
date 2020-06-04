@@ -33,6 +33,9 @@ Rails.application.routes.draw do
     
     # editing an answer
     resources :answers, only: [:show, :destroy, :update]
+
+    # add a vote, unvote, or change vote
+    resources :votes, only: [:create, :destroy, :update]
   end
 end
 
