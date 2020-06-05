@@ -16,5 +16,11 @@ class Api::UpvotesController < ApplicationController
   def destroy
 
   end
+
+  private
+  
+  def already_voted?
+    Upvote.where(user_id: current_user.id, question_id: params[:question_id]).exists?
+  end
   
 end
