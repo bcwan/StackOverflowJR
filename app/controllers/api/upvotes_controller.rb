@@ -1,14 +1,19 @@
 class Api::UpvotesController < ApplicationController
 
   # if user hasn't done an upvote, create upvote
+  # also return a boolean if user upvoted quesiton in show page
   def create
-    @upvote = Upvote.new
-    @upvote.user_id = current_user.id
-    @upvote.question_id = params[:question_id]
-    if @upvote.save
-      render 'api/questions/show'
+    if already_voted?
+      render json: ['User has an upvote already'], status: 422
     else
-      render json: ['Cannot be upvoted'], status: 422
+      @upvote = Upvote.new
+      @upvote.user_id = current_user.id
+      @upvote.question_id = params[:question_id]
+      if @upvote.save
+        render 'api/questions/show'
+      else
+        render json: ['Cannot upvote'], status: 422
+      end
     end
 
   end
