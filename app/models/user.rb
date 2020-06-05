@@ -35,7 +35,7 @@ class User < ApplicationRecord
     class_name: :Upvote,
     foreign_key: :user_id,
     primary_key: :id,
-    optional: true
+    dependent: :destroy
 
   # able to run method before running validations
   # just needs to have session_token when a user is created
