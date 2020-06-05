@@ -43,7 +43,7 @@ class Question < ApplicationRecord
     dependent: :destroy
 
   has_many :downvotes,
-    class_name: :Upvote,
+    class_name: :Downvote,
     foreign_key: :question_id,
     primary_key: :id,
     dependent: :destroy
