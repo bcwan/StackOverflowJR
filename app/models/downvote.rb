@@ -13,4 +13,18 @@
 #  index_downvotes_on_user_id_and_question_id  (user_id,question_id) UNIQUE
 #
 class Downvote < ApplicationRecord
+  
+  validates_uniqueness_of :question_id, :scope => :user_id
+
+  belongs_to :user,
+    class_name: :User,
+    foreign_key: :user_id,
+    primary_key: :id,
+    optional: true
+
+  belongs_to :question,
+    class_name: :Question,
+    foreign_key: :question_id,
+    primary_key: :id,
+    optional: true
 end
