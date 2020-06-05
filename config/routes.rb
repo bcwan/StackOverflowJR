@@ -24,8 +24,6 @@ Rails.application.routes.draw do
 
     # show list of answers from a particular question
     resources :questions, only: [:show] do
-      # add a vote, unvote, or change vote
-      resources :votes, only: [:create, :destroy, :update]
       resources :answers, only: [:index, :create]
     end
 
