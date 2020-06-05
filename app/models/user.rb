@@ -37,6 +37,12 @@ class User < ApplicationRecord
     primary_key: :id,
     dependent: :destroy
 
+  has_many :downvotes,
+    class_name: :Downvote,
+    foreign_key: :user_id,
+    primary_key: :id,
+    dependent: :destroy
+
   # able to run method before running validations
   # just needs to have session_token when a user is created
   after_initialize :ensure_session_token
