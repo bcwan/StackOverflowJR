@@ -22,7 +22,18 @@ class Api::DownvotesController < ApplicationController
   end
 
   def destroy
-
+    # @downvote = Downvote.find_by(user_id: current_user.id, question_id: params[:question_id])
+    @downvote = Downvote.find_by(user_id: 2, question_id: params[:question_id])
+    if @downvote.nil?
+      render json: ['Downvote cannot be found or user did not downvote'], status: 422
+    else
+      @question = @downvote.question
+      if @downvote.destroy
+        render 'api/questions/show'
+      else 
+        render json: ['Downvote is not destroyed'], status: 422
+      end
+    end
   end
   
   private

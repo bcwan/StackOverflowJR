@@ -21,7 +21,7 @@ class Api::UpvotesController < ApplicationController
 
   end
 
-  # if user clicks on downvote
+  # if user clicks on upvote
   def destroy
     # @upvote = Upvote.find_by(user_id: current_user.id, question_id: params[:question_id])
     @upvote = Upvote.find_by(user_id: 2, question_id: params[:question_id])
