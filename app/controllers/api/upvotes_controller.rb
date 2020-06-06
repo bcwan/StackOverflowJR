@@ -22,7 +22,6 @@ class Api::UpvotesController < ApplicationController
   # if user clicks on downvote
   def destroy
     @upvote = Upvote.find_by(user_id: current_user.id, question_id: params[:question_id])
-    byebug
     if @upvote.nil?
       render json: ['Upvote cannot be found or user did not upvote'], status: 422
     else
