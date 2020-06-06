@@ -10,6 +10,7 @@ class Api::UpvotesController < ApplicationController
       @upvote.user_id = current_user.id
       @upvote.question_id = params[:question_id]
       if @upvote.save
+        @question = @upvote.question
         render 'api/questions/show'
       else
         render json: ['Cannot upvote'], status: 422
@@ -21,9 +22,11 @@ class Api::UpvotesController < ApplicationController
   # if user clicks on downvote
   def destroy
     @upvote = Upvote.find_by(user_id: current_user.id, question_id: params[:question_id])
+    byebug
     if @upvote.nil?
       render json: ['Upvote cannot be found or user did not upvote'], status: 422
     else
+      @question = @upvote.question
       if @upvote.destroy
         render 'api/questions/show'
       else 
