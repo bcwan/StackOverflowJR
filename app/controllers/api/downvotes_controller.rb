@@ -3,8 +3,8 @@ class Api::DownvotesController < ApplicationController
   # if user hasn't done an downvote, create downvote
   # also return a boolean if user downvoted quesiton in show page
   def create
-    if already_voted?
-      render json: ['User has an downvote already'], status: 422
+    if already_voted? || has_upvote?
+      render json: ['User has an downvote already or has upvote'], status: 422
     else
       @downvote = Downvote.new
       # @downvote.user_id = current_user.id
@@ -37,9 +37,16 @@ class Api::DownvotesController < ApplicationController
   end
   
   private
-    def already_voted?
-    # Downvote.where(user_id: current_user.id, question_id: params[:question_id]).exists?
-      Downvote.where(user_id: 2, question_id: params[:question_id]).exists?
-    end
+
+  def already_voted?
+  # Downvote.where(user_id: current_user.id, question_id: params[:question_id]).exists?
+    Downvote.where(user_id: 2, question_id: params[:question_id]).exists?
+  end
+
+  # helper method that checks to see there's nothing in Upvotes
+  def has_upvote?
+    # Upvote.where(user_id: current_user.id, question_id: params[:question_id]).exists?
+    Upvote.where(user_id: 2, question_id: params[:question_id]).exists?
+  end
 
 end
