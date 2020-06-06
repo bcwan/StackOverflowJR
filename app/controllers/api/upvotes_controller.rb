@@ -4,7 +4,7 @@ class Api::UpvotesController < ApplicationController
   # also return a boolean if user upvoted quesiton in show page
   def create
     if already_voted? || has_downvote?
-      render json: ['User has an upvote already'], status: 422
+      render json: ['User has an upvote already or has downvote'], status: 422
     else
       @upvote = Upvote.new
       # @upvote.user_id = current_user.id
