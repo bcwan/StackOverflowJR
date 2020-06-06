@@ -8,6 +8,6 @@ export const createDownvote = (questionId) => (
 export const deleteDownvote = (questionId) => (
   $.ajax({
     method: 'DELETE',
-    url: `/api/questions/${questionId}/downvotes/`
+    url: `/api/questions/${questionId}/downvotes`
   })
 );
