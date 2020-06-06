@@ -10,7 +10,6 @@ class Api::UpvotesController < ApplicationController
       # @upvote.user_id = current_user.id
       @upvote.user_id = 2
       @upvote.question_id = params[:question_id]
-      byebug
       if @upvote.save
         @question = @upvote.question
         render 'api/questions/show'

@@ -10,7 +10,6 @@ class Api::DownvotesController < ApplicationController
       # @downvote.user_id = current_user.id
       @downvote.user_id = 2
       @downvote.question_id = params[:question_id]
-      byebug
       if @downvote.save
         @question = @downvote.question
         render 'api/questions/show'
