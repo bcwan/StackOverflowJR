@@ -26,6 +26,10 @@ const QuestionReducer = (oldState = {}, action) => {
       return nextState;
     case RECEIVE_ALL_QUESTIONS:
       return action.questions;
+    case RECEIVE_UPVOTE:
+    case REMOVE_UPVOTE:
+    case RECEIVE_DOWNVOTE:
+    case REMOVE_DOWNVOTE:
     default:
       return oldState;
   }
