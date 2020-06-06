@@ -5,13 +5,11 @@ import {
 } from '../actions/questions_actions';
 
 import {
-  RECEIVE_UPVOTE,
-  REMOVE_UPVOTE
+  UPDATE_UPVOTE
 } from '../actions/upvote_actions';
 
 import {
-  RECEIVE_DOWNVOTE,
-  REMOVE_DOWNVOTE
+  UPDATE_DOWNVOTE
 } from '../actions/downvote_actions';
 
 const QuestionReducer = (oldState = {}, action) => {
@@ -26,10 +24,8 @@ const QuestionReducer = (oldState = {}, action) => {
       return nextState;
     case RECEIVE_ALL_QUESTIONS:
       return action.questions;
-    case RECEIVE_UPVOTE:
-    case REMOVE_UPVOTE:
-    case RECEIVE_DOWNVOTE:
-    case REMOVE_DOWNVOTE:
+    case UPDATE_UPVOTE:
+    case UPDATE_DOWNVOTE:
     default:
       return oldState;
   }
