@@ -24,8 +24,8 @@ Rails.application.routes.draw do
 
     # show list of answers from a particular question
     resources :questions, only: [:show] do
-      resources :downvotes, only: [:create, :destroy]
-      resources :upvotes, only: [:create, :destroy]
+      resource :downvotes, only: [:create, :destroy]
+      resource :upvotes, only: [:create, :destroy]
       resources :answers, only: [:index, :create]
     end
 
