@@ -4,6 +4,16 @@ import {
   RECEIVE_QUESTION
 } from '../actions/questions_actions';
 
+import {
+  RECEIVE_UPVOTE,
+  REMOVE_UPVOTE
+} from '../actions/upvote_actions';
+
+import {
+  RECEIVE_DOWNVOTE,
+  REMOVE_DOWNVOTE
+} from '../actions/downvote_actions';
+
 const QuestionReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   let nextState = Object.assign({}, oldState);

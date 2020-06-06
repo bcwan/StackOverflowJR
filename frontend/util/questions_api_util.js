@@ -8,7 +8,7 @@ export const fetchQuestions = () => (
 export const fetchQuestion = (questionId) => (
   $.ajax({
     method: 'GET',
-    url:  `/api/questions/${questionId}`
+    url: `/api/questions/${questionId}`
   })
 );
 
