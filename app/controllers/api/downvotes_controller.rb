@@ -4,11 +4,10 @@ class Api::DownvotesController < ApplicationController
   # also return a boolean if user downvoted quesiton in show page
   def create
     if already_voted? || has_upvote?
-      render json: ['User has an downvote already or has upvote'], status: 422
+      render json: ['User has an downvote already or has upvoted'], status: 422
     else
       @downvote = Downvote.new
-      # @downvote.user_id = current_user.id
-      @downvote.user_id = 2
+      @downvote.user_id = current_user.id
       @downvote.question_id = params[:question_id]
       if @downvote.save
         @question = @downvote.question
@@ -21,8 +20,7 @@ class Api::DownvotesController < ApplicationController
   end
 
   def destroy
-    # @downvote = Downvote.find_by(user_id: current_user.id, question_id: params[:question_id])
-    @downvote = Downvote.find_by(user_id: 2, question_id: params[:question_id])
+    @downvote = Downvote.find_by(user_id: current_user.id, question_id: params[:question_id])
     if @downvote.nil?
       render json: ['Downvote cannot be found or user did not downvote'], status: 422
     else
@@ -38,14 +36,12 @@ class Api::DownvotesController < ApplicationController
   private
 
   def already_voted?
-  # Downvote.where(user_id: current_user.id, question_id: params[:question_id]).exists?
-    Downvote.where(user_id: 2, question_id: params[:question_id]).exists?
+    Downvote.where(user_id: current_user.id, question_id: params[:question_id]).exists?
   end
 
   # helper method that checks to see there's nothing in Upvotes
   def has_upvote?
-    # Upvote.where(user_id: current_user.id, question_id: params[:question_id]).exists?
-    Upvote.where(user_id: 2, question_id: params[:question_id]).exists?
+    Upvote.where(user_id: current_user.id, question_id: params[:question_id]).exists?
   end
 
 end
