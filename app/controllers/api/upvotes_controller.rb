@@ -7,8 +7,10 @@ class Api::UpvotesController < ApplicationController
       render json: ['User has an upvote already'], status: 422
     else
       @upvote = Upvote.new
-      @upvote.user_id = current_user.id
+      # @upvote.user_id = current_user.id
+      @upvote.user_id = 2
       @upvote.question_id = params[:question_id]
+      byebug
       if @upvote.save
         @question = @upvote.question
         render 'api/questions/show'
@@ -21,7 +23,8 @@ class Api::UpvotesController < ApplicationController
 
   # if user clicks on downvote
   def destroy
-    @upvote = Upvote.find_by(user_id: current_user.id, question_id: params[:question_id])
+    # @upvote = Upvote.find_by(user_id: current_user.id, question_id: params[:question_id])
+    @upvote = Upvote.find_by(user_id: 2, question_id: params[:question_id])
     if @upvote.nil?
       render json: ['Upvote cannot be found or user did not upvote'], status: 422
     else
@@ -37,7 +40,8 @@ class Api::UpvotesController < ApplicationController
   private
   
   def already_voted?
-    Upvote.where(user_id: current_user.id, question_id: params[:question_id]).exists?
+    # Upvote.where(user_id: current_user.id, question_id: params[:question_id]).exists?
+    Upvote.where(user_id: 2, question_id: params[:question_id]).exists?
   end
   
 end
