@@ -23,7 +23,7 @@ export const createUpvote = (questionId) => (dispatch) => {
 };
 
 // delete will returns an updated upvote number if user decides not to upvote
-// it returns all the question attributes, including the new upvote number ~ how controllers are set
+// it returns all the question attributes, including the new upvote number ~ its how controllers are set
 export const deleteUpvote = (questionId) => (dispatch) => {
   return UpvoteApiUtil.deleteUpvote(questionId)
     .then(updatedUpvotes => dispatch(removeUpvote(updatedUpvotes)))
