@@ -5,7 +5,7 @@ import AnswerIndexComponent from '../../answers/answers_index/answers_index_cont
 import SideBarContainer from '../../sidebar/sidebar';
 import EditQuestionForm from '../../questions/edit_question/edit_question_form';
 import Modal from 'react-modal';
-
+import QuestionVotesContainer from '../../votes/votes';
 
 class ShowQuestion extends React.Component {
   constructor(props) {
@@ -78,8 +78,11 @@ class ShowQuestion extends React.Component {
               <Button variant="warning">Ask Question</Button>
             </Link>
           </div>
-          <div>
-            <p className="question-desc">{question.description}</p>
+          <div className="question-contents">
+            <div className="question-vote-desc">
+              <QuestionVotesContainer />
+              <p className="question-desc">{question.description}</p>
+            </div>
             {this.editAccess(currentUser, question)}
           </div>
           <div className="answer-component-div">
