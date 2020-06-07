@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import ShowQuestion from './show_question';
-import { fetchQuestion, updateQuestion, deleteQuestion } from '../../../actions/questions_actions';
-import { fetchAnswersForQuestion } from '../../../actions/answers_actions';
+import { fetchQuestion, updateQuestion } from '../../../actions/questions_actions';
 
 const mSTP = (state, ownProps) => {
 
