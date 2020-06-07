@@ -2,9 +2,9 @@ import * as DownvoteApiUtil from '../util/downvote_api_util';
 
 export const UPDATE_DOWNVOTE = 'UPDATE_DOWNVOTE';
 
-const updateDownvote = questionId => ({
+const updateDownvote = question => ({
   type: UPDATE_DOWNVOTE,
-  questionId
+  question
 });
 
 

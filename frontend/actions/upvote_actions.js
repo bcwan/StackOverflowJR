@@ -2,10 +2,12 @@ import * as UpvoteApiUtil from '../util/upvote_api_util';
 
 export const UPDATE_UPVOTE = 'UPDATE_UPVOTE';
 
-const updateUpvote = questionId => ({
-  type: UPDATE_UPVOTE,
-  questionId
-});
+const updateUpvote = question => {
+  return {
+    type: UPDATE_UPVOTE,
+    question
+  }
+};
 
 
 // thunk action creators
@@ -13,6 +15,7 @@ const updateUpvote = questionId => ({
 // upvotes number updated ~ similar to fetchQuestion thunk action in questions_actions.js
 // it's how the controllers were set
 export const createUpvote = (questionId) => (dispatch) => {
+  debugger;
   return UpvoteApiUtil.createUpvote(questionId)
     .then(updatedUpvotes => dispatch(updateUpvote(updatedUpvotes)))
 };

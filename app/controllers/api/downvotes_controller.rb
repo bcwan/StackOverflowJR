@@ -1,5 +1,6 @@
 class Api::DownvotesController < ApplicationController
 
+  skip_before_action :verify_authenticity_token
   # if user hasn't done an downvote, create downvote
   # also return a boolean if user downvoted quesiton in show page
   def create

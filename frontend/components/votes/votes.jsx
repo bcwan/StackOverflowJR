@@ -23,7 +23,6 @@ class Votes extends React.Component {
     e.preventDefault();
     debugger;
     this.props.createUpvote(this.state.questionId);
-    // the updated response, take the updated upvotes
     debugger;
     this.setState({
       upvotes: this.props.upvotes
@@ -40,7 +39,6 @@ class Votes extends React.Component {
       upvotes: this.props.upvotes
     });
     debugger;
-    // the updated response, take the updated upvotes after deletion
   }
 
 

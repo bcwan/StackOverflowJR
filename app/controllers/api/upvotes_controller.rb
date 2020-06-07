@@ -1,5 +1,6 @@
 class Api::UpvotesController < ApplicationController
 
+  skip_before_action :verify_authenticity_token
   # if user hasn't done an upvote, create upvote
   # also return a boolean if user upvoted quesiton in show page
   def create
