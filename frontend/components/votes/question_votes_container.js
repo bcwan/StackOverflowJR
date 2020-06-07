@@ -6,6 +6,9 @@ import { fetchQuestion } from '../../actions/questions_actions';
 
 const mSTP = (state, ownProps) => {
   return {
+    questionId: ownProps.match.params.questionId,
+    upvotes: state.entities.questions[ownProps.match.params.questionId].upvotes,
+    downvotes: state.entities.questions[ownProps.match.params.questionId].downvotes
   }
 };
 
