@@ -80,7 +80,7 @@ class ShowQuestion extends React.Component {
           </div>
           <div className="question-contents">
             <div className="question-vote-desc">
-              <QuestionVotesContainer />
+              <QuestionVotesContainer question={question}/>
               <p className="question-desc">{question.description}</p>
             </div>
             {this.editAccess(currentUser, question)}
