@@ -12,6 +12,10 @@ class Votes extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+
+  }
+
   render() {
     const { upvotes, 
             downvotes, 
@@ -20,11 +24,11 @@ class Votes extends React.Component {
             createDownvote, 
             deleteDownvote
     } = this.props;
-
+    debugger;
     return (
       <div>
         <TiArrowUpOutline className="up-arrow-outline"/>
-        <p className="voting-score">100</p>
+        <p className="voting-score"></p>
         <TiArrowDownOutline className="down-arrow-outline"/>
       </div>
     );
