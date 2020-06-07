@@ -23,9 +23,9 @@ class Votes extends React.Component {
 
     return (
       <div>
-        <TiArrowUpOutline />
-        <p>888</p>
-        <TiArrowDownOutline />
+        <TiArrowUpOutline className="up-arrow-outline"/>
+        <p className="voting-score">100</p>
+        <TiArrowDownOutline className="down-arrow-outline"/>
       </div>
     );
   }
