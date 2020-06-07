@@ -22,23 +22,25 @@ class Votes extends React.Component {
   handleUpvote(e) {
     e.preventDefault();
     debugger;
-    this.props.createUpvote(this.state.questionId);
-    debugger;
-    this.setState({
-      upvotes: this.props.upvotes
-    });
-    debugger;
+    this.props.createUpvote(this.state.questionId)
+      .then(() => {
+        debugger;
+        return this.setState({
+          upvotes: this.props.upvotes
+        })
+      });
   }
 
   handleDownvote(e) {
     e.preventDefault();
     debugger;
-    this.props.deleteUpvote(this.state.questionId);
-    debugger;
-    this.setState({
-      upvotes: this.props.upvotes
-    });
-    debugger;
+    this.props.deleteUpvote(this.state.questionId)
+      .then(() => {
+        debugger;
+        return this.setState({
+          upvotes: this.props.upvotes
+        })
+      });
   }
 
 
