@@ -5,21 +5,20 @@ import { createDownvote, deleteDownvote } from '../../actions/downvote_actions';
 import { fetchQuestion } from '../../actions/questions_actions';
 
 const mSTP = (state, ownProps) => {
+  debugger;
   return {
-    questionId: ownProps.match.params.questionId,
-    upvotes: state.entities.questions[ownProps.match.params.questionId].upvotes,
-    downvotes: state.entities.questions[ownProps.match.params.questionId].downvotes
+    questionId: ownProps.question.id,
+    upvotes: state.entities.questions[ownProps.question.id].upvotes,
+    downvotes: state.entities.questions[ownProps.question.id].downvotes
   }
 };
 
-const mDTP = (dispatch) => {
-  return {
+const mDTP = (dispatch) => ({
     fetchQuestion: (questionId) => dispatch(fetchQuestion(questionId)),
     createUpvote: (questionId) => dispatch(createUpvote(questionId)),
     deleteUpvote: (questionId) => dispatch(deleteUpvote(questionId)),
     createDownvote: (questionId) => dispatch(createDownvote(questionId)),
     deleteDownvote: (questionId) => dispatch(deleteDownvote(questionId))
-  }
-};
+});
 
 export default connect(mSTP, mDTP)(Votes);

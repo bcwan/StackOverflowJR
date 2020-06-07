@@ -25,6 +25,7 @@ class AnswerIndex extends React.Component {
             updateAnswer,
             currentUser
           } = this.props;
+
     return (
       <section>
         <h4 className="answer-title">Answers</h4>

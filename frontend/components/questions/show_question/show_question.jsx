@@ -5,7 +5,7 @@ import AnswerIndexComponent from '../../answers/answers_index/answers_index_cont
 import SideBarContainer from '../../sidebar/sidebar';
 import EditQuestionForm from '../../questions/edit_question/edit_question_form';
 import Modal from 'react-modal';
-import QuestionVotesContainer from '../../votes/votes';
+import QuestionVotesContainer from '../../votes/question_votes_container';
 
 class ShowQuestion extends React.Component {
   constructor(props) {
