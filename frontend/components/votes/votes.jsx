@@ -24,7 +24,6 @@ class Votes extends React.Component {
     debugger;
     this.props.createUpvote(this.state.questionId)
       .then(() => {
-        debugger;
         return this.setState({
           upvotes: this.props.upvotes
         })
@@ -36,7 +35,6 @@ class Votes extends React.Component {
     debugger;
     this.props.deleteUpvote(this.state.questionId)
       .then(() => {
-        debugger;
         return this.setState({
           upvotes: this.props.upvotes
         })
