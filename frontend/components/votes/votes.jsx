@@ -1,4 +1,11 @@
 import React from 'react';
+import { 
+  TiArrowDownOutline,
+  TiArrowDownThick,
+  TiArrowUpOutline,
+  TiArrowUpThick
+} from 'react-icons/ti'
+
 
 class Votes extends React.Component {
   constructor(props) {
@@ -13,8 +20,14 @@ class Votes extends React.Component {
             createDownvote, 
             deleteDownvote
     } = this.props;
-    return null;
 
+    return (
+      <div>
+        <TiArrowUpOutline />
+        <p>888</p>
+        <TiArrowDownOutline />
+      </div>
+    );
   }
 }
 
