@@ -5,6 +5,7 @@ import { createDownvote, deleteDownvote } from '../../actions/downvote_actions';
 import { fetchQuestion } from '../../actions/questions_actions';
 
 const mSTP = (state, ownProps) => {
+  debugger;
   return {
     questionId: ownProps.question.id,
     upvotes: state.entities.questions[ownProps.question.id].upvotes,

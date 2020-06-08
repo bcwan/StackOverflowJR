@@ -3,10 +3,31 @@ class Api::UpvotesController < ApplicationController
   skip_before_action :verify_authenticity_token
   # if user hasn't done an upvote, create upvote
   # also return a boolean if user upvoted quesiton in show page
+  # def create
+  #   if already_voted? || has_downvote?
+  #     render json: ['User has an upvote already or has downvoted'], status: 422
+  #   else
+  #     @upvote = Upvote.new
+  #     @upvote.user_id = current_user.id
+  #     @upvote.question_id = params[:question_id]
+  #     if @upvote.save
+  #       @question = @upvote.question
+  #       render 'api/questions/show'
+  #     else
+  #       render json: ['Cannot upvote'], status: 422
+  #     end
+  #   end
+
+  # end
+
   def create
-    if already_voted? || has_downvote?
-      render json: ['User has an upvote already or has downvoted'], status: 422
+    if already_voted?
+      render json: ['User has an upvote already'], status: 422
     else
+      if has_downvote?
+        @downvote = Downvote.find_by(user_id: current_user.id, question_id: params[:question_id])
+        @downvote = Downvote.delete(@downvote.id)
+      end
       @upvote = Upvote.new
       @upvote.user_id = current_user.id
       @upvote.question_id = params[:question_id]
