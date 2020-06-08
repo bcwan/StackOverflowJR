@@ -25,7 +25,6 @@ const QuestionReducer = (oldState = {}, action) => {
     case RECEIVE_ALL_QUESTIONS:
       return action.questions;
     case UPDATE_UPVOTE:
-      debugger;
       nextState[action.question.id].upvotes = action.question.upvotes;
       return nextState;
     case UPDATE_DOWNVOTE:

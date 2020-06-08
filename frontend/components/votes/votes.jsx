@@ -21,7 +21,6 @@ class Votes extends React.Component {
 
   handleUpvote(e) {
     e.preventDefault();
-    debugger;
     this.props.createUpvote(this.state.questionId)
       .then(() => {
         return this.setState({
@@ -32,7 +31,6 @@ class Votes extends React.Component {
 
   handleDownvote(e) {
     e.preventDefault();
-    debugger;
     this.props.deleteUpvote(this.state.questionId)
       .then(() => {
         return this.setState({
@@ -44,7 +42,6 @@ class Votes extends React.Component {
 
   render() {
     const { createUpvote, deleteUpvote, createDownvote, deleteDownvote } = this.props;
-    debugger;
     return (
       <div>
         <TiArrowUpOutline 
