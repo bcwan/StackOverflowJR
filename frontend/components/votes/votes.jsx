@@ -13,7 +13,8 @@ class Votes extends React.Component {
     this.state = {
       questionId: this.props.question.id,
       upvotes: this.props.question.upvotes,
-      downvotes: this.props.question.downvotes
+      downvotes: this.props.question.downvotes,
+      votes: this.props.question.upvotes - this.props.question.downvotes
     }
     this.handleUpvote = this.handleUpvote.bind(this);
     this.handleDownvote = this.handleDownvote.bind(this);
@@ -24,7 +25,8 @@ class Votes extends React.Component {
     this.props.createUpvote(this.state.questionId)
       .then(() => {
         return this.setState({
-          upvotes: this.props.upvotes
+          upvotes: this.props.upvotes,
+          votes: this.props.question.upvotes - this.props.question.downvotes
         })
       });
   }
@@ -34,7 +36,8 @@ class Votes extends React.Component {
     this.props.deleteUpvote(this.state.questionId)
       .then(() => {
         return this.setState({
-          upvotes: this.props.upvotes
+          upvotes: this.props.upvotes,
+          votes: this.props.question.upvotes - this.props.question.downvotes
         })
       });
   }
@@ -42,13 +45,14 @@ class Votes extends React.Component {
 
   render() {
     const { createUpvote, deleteUpvote, createDownvote, deleteDownvote } = this.props;
+    debugger;
     return (
       <div>
         <TiArrowUpOutline 
           className="up-arrow-outline"
           onClick = {this.handleUpvote}  
         />
-        <p className="voting-score">{this.state.upvotes}</p>
+        <p className="voting-score">{this.state.votes}</p>
         <TiArrowDownOutline 
           className="down-arrow-outline"
           onClick = {this.handleDownvote}
