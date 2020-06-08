@@ -13,7 +13,6 @@ const mSTP = (state, ownProps) => {
 };
 
 const mDTP = (dispatch) => ({
-    fetchQuestion: (questionId) => dispatch(fetchQuestion(questionId)),
     createUpvote: (questionId) => dispatch(createUpvote(questionId)),
     deleteUpvote: (questionId) => dispatch(deleteUpvote(questionId)),
     createDownvote: (questionId) => dispatch(createDownvote(questionId)),

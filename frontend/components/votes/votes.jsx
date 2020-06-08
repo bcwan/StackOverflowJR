@@ -44,8 +44,6 @@ class Votes extends React.Component {
 
 
   render() {
-    const { createUpvote, deleteUpvote, createDownvote, deleteDownvote } = this.props;
-    debugger;
     return (
       <div>
         <TiArrowUpOutline 
