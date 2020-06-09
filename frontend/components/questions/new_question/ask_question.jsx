@@ -1,7 +1,6 @@
 import React from 'react';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Button from 'react-bootstrap/Button';
-import { Redirect, HashRouter, Link, Switch } from 'react-router-dom';
 
 
 class AskQuestion extends React.Component {
@@ -22,9 +21,7 @@ class AskQuestion extends React.Component {
 
   //go back to parent, which is the all questions page
   handleSubmit() {
-    this.props.createQuestion(this.state)
-      .then(() =>  this.props.history.push('./') );
-     
+    this.props.createQuestion(this.state);
   }
 
   render() {
