@@ -60,7 +60,6 @@ class ShowQuestion extends React.Component {
     }
   }
 
-  
 
   changeModalStatus(status) {
     this.setState({ modalIsOpen: status });
@@ -84,7 +83,11 @@ class ShowQuestion extends React.Component {
           <div className="title-ask-button">
             <h3 className="question-title">{question.title}</h3>
               <Button variant="warning"
-                      onClick={() => this.changeModalStatusForAsk(true)}
+                      onClick={() => 
+                        {
+                           !!currentUser ? this.changeModalStatusForAsk(true) : ''
+                        }
+                      }
                       className="ask-question-single"
               >
                 Ask Question
