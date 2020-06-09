@@ -80,13 +80,11 @@ class ShowQuestion extends React.Component {
         <section className="single-question-container">
           <div className="title-ask-button">
             <h3 className="question-title">{question.title}</h3>
-            <Link className="ask-question-single" to="/questions/ask">
               <Button variant="warning"
                 onClick={() => this.changeModalStatusForAsk(true)}
               >
                 Ask Question
               </Button>
-            </Link>
           </div>
           <div className="question-contents">
             <div className="question-vote-desc">
@@ -140,6 +138,7 @@ class ShowQuestion extends React.Component {
             Close
           </Button>
           <AskQuestion
+            currentUser={currentUser}
             question={question}
             updateQuestion={updateQuestion}
             changeModalStatusForAsk={this.changeModalStatusForAsk}

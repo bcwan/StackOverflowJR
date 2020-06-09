@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ShowQuestion from './show_question';
-import { fetchQuestion, updateQuestion } from '../../../actions/questions_actions';
+import { fetchQuestion, updateQuestion, createQuestion } from '../../../actions/questions_actions';
 
 const mSTP = (state, ownProps) => {
 
@@ -13,7 +13,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch) => ({
   fetchQuestion: (questionId) => dispatch(fetchQuestion(questionId)),
-  updateQuestion: (question) => dispatch(updateQuestion(question))
+  updateQuestion: (question) => dispatch(updateQuestion(question)),
+  createQuestion: (question) => dispatch(createQuestion(question))
 
 });
 
