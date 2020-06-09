@@ -18,6 +18,7 @@ class AllQuestionsIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchQuestions();
+    Modal.setAppElement("#root");
   }
 
   changeModalStatusForAsk(status) {
