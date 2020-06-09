@@ -85,7 +85,10 @@ class ShowQuestion extends React.Component {
               <Button variant="warning"
                       onClick={() => 
                         {
-                           !!currentUser ? this.changeModalStatusForAsk(true) : ''
+                          //make sure user is logged in in order to ask questions
+                          !!currentUser ? 
+                            this.changeModalStatusForAsk(true) : 
+                            this.props.history.push('/login')
                         }
                       }
                       className="ask-question-single"
