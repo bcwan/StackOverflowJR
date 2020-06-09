@@ -18,7 +18,14 @@ class NewAnswer extends React.Component {
   }
 
   handleSubmit() {
-    this.props.createAnswer(this.props.questionId, this.state);
+    this.props.createAnswer(this.props.questionId, this.state)
+      .then(() => {
+        return this.resetAnswerTextbox();
+      });
+  }
+
+  resetAnswerTextbox() {
+    this.setState({ description: "" });
   }
 
   loggedIn() {
