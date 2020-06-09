@@ -12,6 +12,7 @@ class ShowQuestion extends React.Component {
     super(props);
     this.state = {
       modalIsOpen: false,
+      modalOpenForAsk: false,
     };
 
     this.changeModalStatus = this.changeModalStatus.bind(this);
@@ -61,6 +62,10 @@ class ShowQuestion extends React.Component {
     this.setState({ modalIsOpen: status });
   }
 
+  changeModalStatusForAsk(status) {
+    this.setState({ modalOpenForAsk: status });
+  }
+
   render() {
     const { question, currentUser, updateQuestion } = this.props;
     // if we just want to directly access the question by id instead of through the all questions component
@@ -89,6 +94,7 @@ class ShowQuestion extends React.Component {
             <AnswerIndexComponent questionId={this.props.questionId} />
           </div>
         </section>
+        {/* Modal for editing questions */}
         <Modal
           isOpen={this.state.modalIsOpen}
           onRequestClose={() => this.changeModalStatus(false)}
@@ -109,6 +115,29 @@ class ShowQuestion extends React.Component {
             question={question}
             updateQuestion={updateQuestion}
             changeModalStatus={this.changeModalStatus}
+          />
+        </Modal>
+        {/* Modal for asking questions */}
+        <Modal
+          isOpen={this.state.modalOpenForAsk}
+          onRequestClose={() => this.changeModalStatusForAsk(false)}
+          style={{
+            content: {
+              borderRadius: "7px",
+            },
+            overlay: {
+              position: "fixed",
+              zIndex: "50",
+            },
+          }}
+        >
+          <Button className="exit-edit-question" variant="info" onClick={() => this.changeModalStatusForAsk(false)}>
+            Close
+          </Button>
+          <EditQuestionForm
+            question={question}
+            updateQuestion={updateQuestion}
+            changeModalStatusForAsk={this.changeModalStatusForAsk}
           />
         </Modal>
       </div>
