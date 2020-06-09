@@ -60,6 +60,8 @@ class ShowQuestion extends React.Component {
     }
   }
 
+  
+
   changeModalStatus(status) {
     this.setState({ modalIsOpen: status });
   }

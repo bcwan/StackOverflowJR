@@ -18,8 +18,8 @@ class EditQuestionForm extends React.Component {
   }
 
   handleSubmit() {
-    this.props.updateQuestion(this.state);
-    this.props.changeModalStatus(false);
+    this.props.updateQuestion(this.state)
+      .then(() => this.props.changeModalStatus(false));
   }
 
   render() {
