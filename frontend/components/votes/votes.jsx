@@ -23,15 +23,12 @@ class Votes extends React.Component {
     // if there's a downvote, delete it
     //this.props.deleteDownvote(this.state.questionId);
     // then upvote it
-    debugger;
     this.props.createUpvote(this.state.questionId)
       .then(() => {
-        debugger;
         return this.setState({
           votes: this.props.question.upvotes - this.props.question.downvotes
         })
       });
-    debugger;
   }
 
   handleDownvote(e) {
@@ -39,15 +36,12 @@ class Votes extends React.Component {
     // if there's a upvote, delete it
     //this.props.deleteUpvote(this.state.questionId);
     // then downvote it
-    debugger;
     this.props.createDownvote(this.state.questionId)
       .then(() => {
-        debugger;
         return this.setState({
           votes: this.props.question.upvotes - this.props.question.downvotes
         })
       });
-    debugger;
   }
 
   votingDisplay() {
@@ -69,7 +63,6 @@ class Votes extends React.Component {
 
 
   render() {
-    debugger;
     return (
       <div>
         {this.votingDisplay()}
