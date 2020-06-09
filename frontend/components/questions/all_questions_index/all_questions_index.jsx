@@ -30,7 +30,11 @@ class AllQuestionsIndex extends React.Component {
         <section className="questions-section">
           <section className="title-button">
             <h3 className="index-title">All Questions</h3>
-            <Button variant="warning">Ask Question</Button>
+            <Button className="ask-question" 
+                    variant="warning"
+            >
+              Ask Question
+            </Button>
           </section>
           <ListGroup variant="flush">
           {
