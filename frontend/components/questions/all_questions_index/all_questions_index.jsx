@@ -6,9 +6,20 @@ import ListGroup from 'react-bootstrap/ListGroup'
 import SideBarContainer from '../../sidebar/sidebar'
 
 class AllQuestionsIndex extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      modalOpenForAsk: false,
+    }
+    this.changeModalStatusForAsk = this.changeModalStatusForAsk.bind(this);
+  }
 
   componentDidMount() {
     this.props.fetchQuestions();
+  }
+
+  changeModalStatusForAsk(status) {
+    this.setState({ modalOpenForAsk: status });
   }
 
   render() {
@@ -19,9 +30,7 @@ class AllQuestionsIndex extends React.Component {
         <section className="questions-section">
           <section className="title-button">
             <h3 className="index-title">All Questions</h3>
-            <Link className="ask-question" to="/questions/ask">
-              <Button variant="warning">Ask Question</Button>
-            </Link>
+            <Button variant="warning">Ask Question</Button>
           </section>
           <ListGroup variant="flush">
           {
