@@ -82,7 +82,8 @@ class ShowQuestion extends React.Component {
           <div className="title-ask-button">
             <h3 className="question-title">{question.title}</h3>
               <Button variant="warning"
-                onClick={() => this.changeModalStatusForAsk(true)}
+                      onClick={() => this.changeModalStatusForAsk(true)}
+                      className="ask-question-single"
               >
                 Ask Question
               </Button>
