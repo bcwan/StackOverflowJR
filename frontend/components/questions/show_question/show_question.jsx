@@ -6,6 +6,7 @@ import SideBarContainer from '../../sidebar/sidebar';
 import EditQuestionForm from '../../questions/edit_question/edit_question_form';
 import Modal from 'react-modal';
 import QuestionVotesContainer from '../../votes/question_votes_container';
+import AskQuestion from '../new_question/ask_question';
 
 class ShowQuestion extends React.Component {
   constructor(props) {
@@ -80,7 +81,11 @@ class ShowQuestion extends React.Component {
           <div className="title-ask-button">
             <h3 className="question-title">{question.title}</h3>
             <Link className="ask-question-single" to="/questions/ask">
-              <Button variant="warning">Ask Question</Button>
+              <Button variant="warning"
+                onClick={() => this.changeModalStatusForAsk(true)}
+              >
+                Ask Question
+              </Button>
             </Link>
           </div>
           <div className="question-contents">
@@ -131,10 +136,10 @@ class ShowQuestion extends React.Component {
             },
           }}
         >
-          <Button className="exit-edit-question" variant="info" onClick={() => this.changeModalStatusForAsk(false)}>
+          <Button className="exit-ask-question" variant="info" onClick={() => this.changeModalStatusForAsk(false)}>
             Close
           </Button>
-          <EditQuestionForm
+          <AskQuestion
             question={question}
             updateQuestion={updateQuestion}
             changeModalStatusForAsk={this.changeModalStatusForAsk}
