@@ -12,7 +12,8 @@ class Votes extends React.Component {
     super(props);
     this.state = {
       questionId: this.props.question.id,
-      votes: this.props.question.upvotes - this.props.question.downvotes
+      votes: this.props.question.upvotes - this.props.question.downvotes,
+      totalVotes: this.props.question.upvotes + this.props.question.downvotes
     }
     this.handleUpvote = this.handleUpvote.bind(this);
     this.handleDownvote = this.handleDownvote.bind(this);
@@ -26,7 +27,8 @@ class Votes extends React.Component {
     this.props.createUpvote(this.state.questionId)
       .then(() => {
         return this.setState({
-          votes: this.props.question.upvotes - this.props.question.downvotes
+          votes: this.props.question.upvotes - this.props.question.downvotes,
+          totalVotes: this.props.question.upvotes + this.props.question.downvotes
         })
       });
   }
@@ -39,7 +41,8 @@ class Votes extends React.Component {
     this.props.createDownvote(this.state.questionId)
       .then(() => {
         return this.setState({
-          votes: this.props.question.upvotes - this.props.question.downvotes
+          votes: this.props.question.upvotes - this.props.question.downvotes,
+          totalVotes: this.props.question.upvotes + this.props.question.downvotes
         })
       });
   }
@@ -57,6 +60,7 @@ class Votes extends React.Component {
           className="down-arrow-outline"
           onClick={this.handleDownvote}
         />
+        <p className="total-user-votes">Votes: {this.state.totalVotes}</p>
       </div>
     );
   }
