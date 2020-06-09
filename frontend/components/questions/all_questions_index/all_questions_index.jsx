@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import AllQuestionsItem from './all_questions_item';
 import Button from 'react-bootstrap/Button';
 import ListGroup from 'react-bootstrap/ListGroup'
-import SideBarContainer from '../../sidebar/sidebar'
+import SideBarContainer from '../../sidebar/sidebar';
+import AskQuestion from '../new_question/ask_question';
 
 class AllQuestionsIndex extends React.Component {
   constructor(props) {
