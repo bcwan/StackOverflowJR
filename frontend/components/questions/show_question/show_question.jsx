@@ -17,6 +17,7 @@ class ShowQuestion extends React.Component {
     };
 
     this.changeModalStatus = this.changeModalStatus.bind(this);
+    this.changeModalStatusForAsk = this.changeModalStatusForAsk.bind(this);
   }
 
   componentDidMount() {
@@ -68,7 +69,7 @@ class ShowQuestion extends React.Component {
   }
 
   render() {
-    const { question, currentUser, updateQuestion } = this.props;
+    const { question, currentUser, updateQuestion, createQuestion } = this.props;
     // if we just want to directly access the question by id instead of through the all questions component
     if (!question) {
       return null;
@@ -140,7 +141,7 @@ class ShowQuestion extends React.Component {
           <AskQuestion
             currentUser={currentUser}
             question={question}
-            updateQuestion={updateQuestion}
+            createQuestion={createQuestion}
             changeModalStatusForAsk={this.changeModalStatusForAsk}
           />
         </Modal>
