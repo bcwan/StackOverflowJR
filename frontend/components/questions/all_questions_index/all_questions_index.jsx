@@ -32,6 +32,14 @@ class AllQuestionsIndex extends React.Component {
             <h3 className="index-title">All Questions</h3>
             <Button className="ask-question" 
                     variant="warning"
+                    onClick={() => 
+                      {
+                        //make sure user is logged in in order to ask questions
+                        !!currentUser ?
+                          this.changeModalStatusForAsk(true) :
+                          this.props.history.push('/login')
+                      }
+                    }
             >
               Ask Question
             </Button>
