@@ -149,7 +149,6 @@ class ShowQuestion extends React.Component {
           </Button>
           <AskQuestion
             currentUser={currentUser}
-            question={question}
             createQuestion={createQuestion}
             changeModalStatusForAsk={this.changeModalStatusForAsk}
           />
