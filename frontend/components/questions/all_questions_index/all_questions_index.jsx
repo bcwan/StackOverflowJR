@@ -23,7 +23,7 @@ class AllQuestionsIndex extends React.Component {
   }
 
   render() {
-    const { questions, fetchQuestion, createQuestion } = this.props;
+    const { currentUser, questions, fetchQuestion, createQuestion } = this.props;
     return (
       <div>
         <SideBarContainer />

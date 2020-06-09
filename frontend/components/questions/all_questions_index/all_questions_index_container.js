@@ -7,7 +7,8 @@ import {
 } from '../../../actions/questions_actions';
 
 const mSTP = (state) => ({
-  questions: Object.values(state.entities.questions)
+  questions: Object.values(state.entities.questions),
+  currentUser: state.entities.users[state.session.id]
 });
 
 const mDTP = (dispatch) => ({
