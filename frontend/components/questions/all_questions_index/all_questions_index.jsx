@@ -23,7 +23,7 @@ class AllQuestionsIndex extends React.Component {
   }
 
   render() {
-    const { questions, fetchQuestion } = this.props;
+    const { questions, fetchQuestion, createQuestion } = this.props;
     return (
       <div>
         <SideBarContainer />
@@ -55,6 +55,29 @@ class AllQuestionsIndex extends React.Component {
             ))
           }
           </ListGroup>
+          <Modal
+            isOpen={this.state.modalOpenForAsk}
+            onRequestClose={() => this.changeModalStatusForAsk(false)}
+            style={{
+              content: {
+                borderRadius: "7px",
+              },
+              overlay: {
+                position: "fixed",
+                zIndex: "50",
+              },
+            }}
+          >
+            <Button className="exit-ask-question" variant="info" onClick={() => this.changeModalStatusForAsk(false)}>
+              Close
+          </Button>
+            <AskQuestion
+              currentUser={currentUser}
+              question={question}
+              createQuestion={createQuestion}
+              changeModalStatusForAsk={this.changeModalStatusForAsk}
+            />
+          </Modal>
         </section>
       </div>
     )
