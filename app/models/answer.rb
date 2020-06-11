@@ -36,4 +36,10 @@ class Answer < ApplicationRecord
     primary_key: :id,
     dependent: :destroy
 
+  has_many :upvotes,
+    class_name: :Upvote,
+    foreign_key: :answer_id,
+    primary_key: :id,
+    dependent: :destroy
+
 end

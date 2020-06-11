@@ -28,6 +28,12 @@ class Upvote < ApplicationRecord
     foreign_key: :question_id,
     primary_key: :id,
     optional: true
+
+  belongs_to :answer,
+    class_name: :Answer,
+    foreign_key: :answer_id,
+    primary_key: :id,
+    optional: true
   
 
 end

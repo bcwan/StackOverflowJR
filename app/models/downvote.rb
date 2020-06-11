@@ -34,4 +34,5 @@ class Downvote < ApplicationRecord
     foreign_key: :answer_id,
     primary_key: :id,
     optional: true
+  
 end
