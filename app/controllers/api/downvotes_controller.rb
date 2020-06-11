@@ -48,7 +48,7 @@ class Api::DownvotesController < ApplicationController
     Upvote.where(user_id: current_user.id, question_id: params[:question_id]).exists?
   end
 
-  def upvote_params
+  def downvote_params
     params.require(:downvote).permit(:type)
   end
 
