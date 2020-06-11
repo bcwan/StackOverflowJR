@@ -20,7 +20,6 @@ const App = () => (
     </header>
     <Switch>
       <Route exact path="/" component={HomeComponent}/>
-
       <Route exact path="/questions/:questionId" component={ShowQuestionContainer} />
       <Route exact path="/questions" component={AllQuestionsIndexContainer}/>
       <AuthRoute exact path="/login" component={LoginContainer} />
