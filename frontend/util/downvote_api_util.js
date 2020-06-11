@@ -1,7 +1,10 @@
-export const createDownvote = (questionId) => {
+export const createDownvote = (questionId, answerId = 0) => {
   return $.ajax({
     method: 'POST',
-    url: `/api/questions/${questionId}/downvotes`
+    url: `/api/questions/${questionId}/downvotes`,
+    data: { 
+      downvote: answerId 
+    }
   })
 };
 
