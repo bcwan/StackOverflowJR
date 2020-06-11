@@ -10,7 +10,8 @@ class Api::UpvotesController < ApplicationController
         @downvote = Downvote.find_by(user_id: current_user.id, question_id: params[:question_id])
         @downvote = Downvote.delete(@downvote.id)
       end
-      @upvote = Upvote.new
+      # @upvote = Upvote.new
+      @upvote = Upvote.new(upvote_params)
       @upvote.user_id = current_user.id
       @upvote.question_id = params[:question_id]
       if @upvote.save
