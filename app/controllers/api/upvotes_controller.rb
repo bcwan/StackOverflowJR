@@ -51,7 +51,7 @@ class Api::UpvotesController < ApplicationController
   end
   
   def upvote_params
-    params.require(:upvote).permit(:type)
+    params.require(:upvote).permit(:answer_id)
   end
 
 end

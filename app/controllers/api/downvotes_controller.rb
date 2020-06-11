@@ -50,7 +50,7 @@ class Api::DownvotesController < ApplicationController
   end
 
   def downvote_params
-    params.require(:downvote).permit(:type)
+    params.require(:downvote).permit(:answer_id)
   end
 
 end
