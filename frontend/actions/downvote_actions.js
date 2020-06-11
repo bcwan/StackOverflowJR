@@ -12,8 +12,8 @@ const updateDownvote = question => ({
 // the response from downvoting returns question attributes with the
 // downvotes number updated ~ similar to fetchQuestion thunk action in questions_actions.js
 // it's how the controllers were set
-export const createDownvote = (questionId) => (dispatch) => {
-  return DownvoteApiUtil.createDownvote(questionId)
+export const createDownvote = (questionId, answerId) => (dispatch) => {
+  return DownvoteApiUtil.createDownvote(questionId, answerId)
     .then(updatedDownvotes => dispatch(updateDownvote(updatedDownvotes)))
 };
 

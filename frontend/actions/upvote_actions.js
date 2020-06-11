@@ -14,8 +14,8 @@ const updateUpvote = question => {
 // the response from upvoting returns question attributes with the
 // upvotes number updated ~ similar to fetchQuestion thunk action in questions_actions.js
 // it's how the controllers were set
-export const createUpvote = (questionId) => (dispatch) => {
-  return UpvoteApiUtil.createUpvote(questionId)
+export const createUpvote = (questionId, answerId) => (dispatch) => {
+  return UpvoteApiUtil.createUpvote(questionId, answerId)
     .then(updatedUpvotes => dispatch(updateUpvote(updatedUpvotes)))
 };
 
