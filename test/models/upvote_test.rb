@@ -3,9 +3,9 @@
 # Table name: upvotes
 #
 #  id          :bigint           not null, primary key
-#  type        :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  answer_id   :integer
 #  question_id :integer          not null
 #  user_id     :integer          not null
 #

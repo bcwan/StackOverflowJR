@@ -30,4 +30,10 @@ class Answer < ApplicationRecord
     primary_key: :id,
     optional: true
 
+  has_many :downvotes,
+    class_name: :Downvote,
+    foreign_key: :answer_id,
+    primary_key: :id,
+    dependent: :destroy
+
 end

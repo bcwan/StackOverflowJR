@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2020_06_11_190220) do
     t.integer "question_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "type", null: false
+    t.integer "answer_id"
     t.index ["user_id", "question_id"], name: "index_downvotes_on_user_id_and_question_id", unique: true
   end
 
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2020_06_11_190220) do
     t.integer "question_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "type", null: false
+    t.integer "answer_id"
     t.index ["user_id", "question_id"], name: "index_upvotes_on_user_id_and_question_id", unique: true
   end
 

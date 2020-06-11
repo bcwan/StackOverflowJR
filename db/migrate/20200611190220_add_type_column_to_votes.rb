@@ -1,6 +1,6 @@
 class AddTypeColumnToVotes < ActiveRecord::Migration[5.2]
   def change
-    add_column :upvotes, :type, :integer, null: false
-    add_column :downvotes, :type, :integer, null: false
+    add_column :upvotes, :answer_id, :integer
+    add_column :downvotes, :answer_id, :integer
   end
 end
