@@ -3,6 +3,7 @@
 # Table name: downvotes
 #
 #  id          :bigint           not null, primary key
+#  type        :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  question_id :integer          not null
