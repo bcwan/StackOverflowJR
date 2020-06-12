@@ -16,7 +16,7 @@ class AnswerVotes extends React.Component {
 
   render() {
     return (
-      <div className="voting">
+      <div className="voting answer-voting">
         <TiArrowUpOutline
           className="up-arrow-outline"
           // onClick={this.handleUpvote}
