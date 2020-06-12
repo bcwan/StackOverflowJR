@@ -5,7 +5,7 @@ import Modal from 'react-modal';
 import EditAnswerForm from '../edit_answer/edit_answer_form';
 
 
-const AnswerItem = ({ answer, deleteAnswer, updateAnswer, currentUser }) => {
+const AnswerItem = ({ answer, deleteAnswer, updateAnswer, currentUser, questionId }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false) 
   if (!currentUser) {
     return (

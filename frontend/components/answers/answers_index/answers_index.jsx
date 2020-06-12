@@ -23,7 +23,8 @@ class AnswerIndex extends React.Component {
     const { answers,
             deleteAnswer, 
             updateAnswer,
-            currentUser
+            currentUser,
+            questionId
           } = this.props;
 
     return (
@@ -36,6 +37,7 @@ class AnswerIndex extends React.Component {
                         currentUser={currentUser}
                         deleteAnswer={deleteAnswer}
                         updateAnswer={updateAnswer}
+                        questionId={questionId}
             />
           ))}
         </ListGroup>
