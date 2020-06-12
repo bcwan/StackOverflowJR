@@ -7,7 +7,7 @@ import {
 } from 'react-icons/ti'
 
 
-class Votes extends React.Component {
+class QuestionVotes extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -75,4 +75,4 @@ class Votes extends React.Component {
   }
 }
 
-export default Votes;
+export default QuestionVotes;
