@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import QuestionVotes from './question_votes';
 import { createUpvote, deleteUpvote } from '../../actions/upvote_actions';
 import { createDownvote, deleteDownvote } from '../../actions/downvote_actions';
-import { fetchQuestion } from '../../actions/questions_actions';
 
 const mSTP = (state, ownProps) => {
   return {
