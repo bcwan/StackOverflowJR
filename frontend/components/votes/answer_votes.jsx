@@ -16,8 +16,17 @@ class AnswerVotes extends React.Component {
 
   render() {
     return (
-      <div>
-        <p>Answer Votes</p>
+      <div className="voting">
+        <TiArrowUpOutline
+          className="up-arrow-outline"
+          // onClick={this.handleUpvote}
+        />
+        <p className="voting-score">100{/*this.state.votes*/}</p>
+        <TiArrowDownOutline
+          className="down-arrow-outline"
+          // onClick={this.handleDownvote}
+        />
+        <p className="total-user-votes">Votes: 1{/*this.state.totalVotes*/}</p>
       </div>
     );
   }
