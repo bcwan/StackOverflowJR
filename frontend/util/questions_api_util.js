@@ -12,13 +12,14 @@ export const fetchQuestion = (questionId) => (
   })
 );
 
-export const createQuestion = (question) => (
-  $.ajax({
+export const createQuestion = (question) => {
+  debugger;
+  return $.ajax({
     method: 'POST',
     url: '/api/questions',
     data: { question }
   })
-);
+};
 
 export const updateQuestion = (question) => (
   $.ajax({

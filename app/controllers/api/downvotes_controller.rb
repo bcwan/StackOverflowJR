@@ -41,6 +41,7 @@ class Api::DownvotesController < ApplicationController
   private
 
   def already_voted?
+    byebug
     Downvote.where(user_id: current_user.id, question_id: params[:question_id]).exists?
   end
 
