@@ -7,7 +7,6 @@ import { AuthRoute, ProtectedRoute } from '../util/route_utils'
 import LoginContainer from "./user_session/login_form_container"
 import SignUpContainer from "./user_session/signup_form_container"
 import NavBarContainer from './navbar/navbar_container';
-import SideBarContainer from './sidebar/sidebar_container';
 import AllQuestionsIndexContainer from './questions/all_questions_index/all_questions_index_container';
 import ShowQuestionContainer from './questions/show_question/show_question_container';
 import HomeComponent from './home/home';
