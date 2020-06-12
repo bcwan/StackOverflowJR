@@ -1,5 +1,4 @@
 export const createUpvote = (questionId, answerId) => {
-  debugger;
   return $.ajax({
     method: 'POST',
     url: `/api/questions/${questionId}/upvotes`,

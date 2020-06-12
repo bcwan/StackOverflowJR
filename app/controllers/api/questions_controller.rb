@@ -23,7 +23,6 @@ class Api::QuestionsController < ApplicationController
   # only user logged in can ask questions
   # make sure that description is 30 letters more
   def create
-    byebug
     @question = Question.new(question_params)
     @question.questioner_id = current_user.id 
     if @question.save
