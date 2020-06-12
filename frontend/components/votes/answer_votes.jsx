@@ -15,7 +15,11 @@ class AnswerVotes extends React.Component {
   }
 
   render() {
-    return null;
+    return (
+      <div>
+        <p>Answer Votes</p>
+      </div>
+    );
   }
 }
 

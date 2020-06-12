@@ -3,6 +3,7 @@ import { ListGroupItem } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-modal';
 import EditAnswerForm from '../edit_answer/edit_answer_form';
+import AnswerVotesContainer from '../../votes/answer_votes_container';
 
 
 const AnswerItem = ({ answer, deleteAnswer, updateAnswer, currentUser, questionId }) => {
@@ -10,7 +11,11 @@ const AnswerItem = ({ answer, deleteAnswer, updateAnswer, currentUser, questionI
   if (!currentUser) {
     return (
       <ListGroupItem>
-        <div>
+        <div className="answer-votes-desc">
+          <AnswerVotesContainer
+            questionId={questionId}
+            answer={answer} 
+          />
           <p>{answer.description}</p>
         </div>
       </ListGroupItem>
@@ -37,7 +42,11 @@ const AnswerItem = ({ answer, deleteAnswer, updateAnswer, currentUser, questionI
               )
               :
               (
-                <div>
+                <div className="answer-votes-desc">
+                  <AnswerVotesContainer
+                    questionId={questionId}
+                    answer={answer}
+                  />
                   <p>{answer.description}</p>
                 </div>
               )
