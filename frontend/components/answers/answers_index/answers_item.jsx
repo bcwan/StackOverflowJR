@@ -16,7 +16,7 @@ const AnswerItem = ({ answer, deleteAnswer, updateAnswer, currentUser, questionI
             questionId={questionId}
             answer={answer} 
           />
-          <p>{answer.description}</p>
+          <p className="answer-desc">{answer.description}</p>
         </div>
       </ListGroupItem>
     )
@@ -27,7 +27,11 @@ const AnswerItem = ({ answer, deleteAnswer, updateAnswer, currentUser, questionI
             (currentUser.id === answer.answerer_id && !!currentUser) ?
               (
                 <div>
-                  <p>{answer.description}</p>
+                  <AnswerVotesContainer
+                    questionId={questionId}
+                    answer={answer}
+                  />
+                  <p className="answer-desc">{answer.description}</p>
                   <Button onClick={() => deleteAnswer(answer.id)}
                     className="delete-answer-btn"
                     variant="secondary">Delete Answer
@@ -47,7 +51,7 @@ const AnswerItem = ({ answer, deleteAnswer, updateAnswer, currentUser, questionI
                     questionId={questionId}
                     answer={answer}
                   />
-                  <p>{answer.description}</p>
+                <p className="answer-desc">{answer.description}</p>
                 </div>
               )
           }
