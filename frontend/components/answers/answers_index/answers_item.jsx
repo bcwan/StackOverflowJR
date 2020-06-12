@@ -10,7 +10,7 @@ const AnswerItem = ({ answer, deleteAnswer, updateAnswer, currentUser, questionI
   const [modalIsOpen, setModalIsOpen] = useState(false) 
   if (!currentUser) {
     return (
-      <ListGroupItem>
+      <ListGroupItem className="answer-item">
         <div className="answer-votes-desc">
           <AnswerVotesContainer
             questionId={questionId}
@@ -22,7 +22,7 @@ const AnswerItem = ({ answer, deleteAnswer, updateAnswer, currentUser, questionI
     )
   } else {
     return (
-      <ListGroupItem>
+      <ListGroupItem className="answer-item">
           {
             (currentUser.id === answer.answerer_id && !!currentUser) ?
               (
