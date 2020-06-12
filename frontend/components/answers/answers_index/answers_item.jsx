@@ -27,8 +27,8 @@ const AnswerItem = ({ answer, deleteAnswer, updateAnswer, currentUser, questionI
             (currentUser.id === answer.answerer_id && !!currentUser) ?
               (
                 <div>
-                  <div className="votes-desc-flex">
-                    <AnswerVotesContainer
+                 <div className="answer-votes-desc votes-desc-flex">
+                    <AnswerVotesContainer className="votes-crud-btn"
                       questionId={questionId}
                       answer={answer}
                     />
