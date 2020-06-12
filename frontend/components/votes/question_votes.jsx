@@ -4,7 +4,7 @@ import {
   TiArrowDownThick,
   TiArrowUpOutline,
   TiArrowUpThick
-} from 'react-icons/ti'
+} from 'react-icons/ti';
 
 
 class QuestionVotes extends React.Component {
