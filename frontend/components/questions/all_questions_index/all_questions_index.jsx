@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import AllQuestionsItem from './all_questions_item';
 import Button from 'react-bootstrap/Button';
 import ListGroup from 'react-bootstrap/ListGroup'
