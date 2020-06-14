@@ -14,12 +14,27 @@ class Api::UpvotesController < ApplicationController
       @upvote = Upvote.new(upvote_params)
       @upvote.user_id = current_user.id
       @upvote.question_id = params[:question_id]
-      if @upvote.save
-        @question = @upvote.question
-        render 'api/questions/show'
+      if @upvote.answer_id === 0
+        if @upvote.save
+          @answer = @upvote.answer
+          render 'api/answers/show'
+        else
+          render json: ['Cannot upvote answer'], status: 422
+        end
       else
-        render json: ['Cannot upvote'], status: 422
+        if @upvote.save
+          @question = @upvote.question
+          render 'api/questions/show'
+        else
+          render json: ['Cannot upvote question'], status: 422
+        end
       end
+      # if @upvote.save
+      #   @question = @upvote.question
+      #   render 'api/questions/show'
+      # else
+      #   render json: ['Cannot upvote'], status: 422
+      # end
     end
 
   end
