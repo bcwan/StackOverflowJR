@@ -40,7 +40,7 @@ class Api::DownvotesController < ApplicationController
   end
 
   def destroy
-    @downvote = Downvote.find_by(user_id: current_user.id, question_id: params[:question_id])
+    @downvote = Downvote.find_by(user_id: current_user.id, question_id: params[:question_id], answer_id: params[:answer_id])
     if @downvote.nil?
       render json: ['Downvote cannot be found or user did not downvote'], status: 422
     else
@@ -56,12 +56,12 @@ class Api::DownvotesController < ApplicationController
   private
 
   def already_voted?
-    Downvote.where(user_id: current_user.id, question_id: params[:question_id]).exists?
+    Downvote.where(user_id: current_user.id, question_id: params[:question_id], answer_id: params[:answer_id]).exists?
   end
 
   # helper method that checks to see there's nothing in Upvotes
   def has_upvote?
-    Upvote.where(user_id: current_user.id, question_id: params[:question_id]).exists?
+    Upvote.where(user_id: current_user.id, question_id: params[:question_id], answer_id: params[:answer_id]).exists?
   end
 
   def downvote_params
