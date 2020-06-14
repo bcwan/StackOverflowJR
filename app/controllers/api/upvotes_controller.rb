@@ -7,7 +7,8 @@ class Api::UpvotesController < ApplicationController
       render json: ['User has an upvote already'], status: 422
     else
       if has_downvote?
-        @downvote = Downvote.find_by(user_id: current_user.id, question_id: params[:question_id])
+        #@downvote = Downvote.find_by(user_id: current_user.id, question_id: params[:question_id])
+        @downvote = Downvote.find_by(user_id: current_user.id, question_id: params[:question_id], answer_id: params[:answer_id])
         @downvote = Downvote.delete(@downvote.id)
       end
       @upvote = Upvote.new(upvote_params)
@@ -41,12 +42,14 @@ class Api::UpvotesController < ApplicationController
   private
   
   def already_voted?
-    Upvote.where(user_id: current_user.id, question_id: params[:question_id]).exists?
+    #Upvote.where(user_id: current_user.id, question_id: params[:question_id]).exists?
+    Upvote.where(user_id: current_user.id, question_id: params[:question_id], answer_id: params[:answer_id]).exists?
   end
 
     # helper method that checks to see there's nothing in Downvotes
   def has_downvote?
-    Downvote.where(user_id: current_user.id, question_id: params[:question_id]).exists?
+    #Downvote.where(user_id: current_user.id, question_id: params[:question_id]).exists?
+    Downvote.where(user_id: current_user.id, question_id: params[:question_id], answer_id: params[:answer_id]).exists?
   end
   
   def upvote_params

@@ -10,6 +10,8 @@ class AnswerVotes extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      questionId: this.props.questionId,
+      answer: this.props.answer.id,
       
     };
   }
