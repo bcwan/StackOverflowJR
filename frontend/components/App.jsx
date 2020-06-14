@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Redirect, HashRouter, Link, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_utils'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 // React Redux Containers
