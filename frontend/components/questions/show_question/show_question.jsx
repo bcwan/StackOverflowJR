@@ -71,7 +71,6 @@ class ShowQuestion extends React.Component {
 
   render() {
     const { question, currentUser, updateQuestion, createQuestion } = this.props;
-    // if we just want to directly access the question by id instead of through the all questions component
     if (!question) {
       return null;
     }
