@@ -14,7 +14,7 @@ class Api::UpvotesController < ApplicationController
       @upvote = Upvote.new(upvote_params)
       @upvote.user_id = current_user.id
       @upvote.question_id = params[:question_id]
-      if @upvote.answer_id === 0
+      if @upvote.answer_id != 0
         if @upvote.save
           @answer = @upvote.answer
           render 'api/answers/show'
