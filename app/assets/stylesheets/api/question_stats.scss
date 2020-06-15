@@ -1,8 +1,33 @@
+.stats {
+  width: 70px;
+  margin-right: 8px;
+}
+
 .stats-votes {
   text-align: center;
 }
 
+.stats-votes-number {
+  font-size: 25px;
+  margin-bottom: 0;
+}
+
+.stats-votes-desc {
+  font-size: 13px;
+}
 
 .stats-answer-count {
   text-align: center;
+  border: 1.3px solid #1e7e34;
+  border-radius: 4px;
+}
+
+.stats-answer-number {
+  font-size: 25px;
+  margin-bottom: 0;
+}
+
+.stats-answer-desc {
+  font-size: 13px;
+  margin-bottom: 2px;
 }
