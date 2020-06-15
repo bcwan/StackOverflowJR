@@ -25,12 +25,15 @@ const QuestionReducer = (oldState = {}, action) => {
     case RECEIVE_ALL_QUESTIONS:
       return action.questions;
     case UPDATE_UPVOTE:
-      nextState[action.question.id].downvotes = action.question.downvotes;
-      nextState[action.question.id].upvotes = action.question.upvotes;
+      debugger;
+      nextState[action.vote.id].downvotes = action.vote.downvotes;
+      nextState[action.vote.id].upvotes = action.vote.upvotes;
       return nextState;
     case UPDATE_DOWNVOTE:
-      nextState[action.question.id].downvotes = action.question.downvotes;
-      nextState[action.question.id].upvotes = action.question.upvotes;
+      debugger;
+      nextState[action.vote.id].downvotes = action.vote.downvotes;
+      nextState[action.vote.id].upvotes = action.vote.upvotes;
+      return nextState;
     default:
       return oldState;
   }

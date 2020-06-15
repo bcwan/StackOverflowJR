@@ -11,11 +11,11 @@
 #
 # Indexes
 #
-#  index_upvotes_on_user_id_and_question_id  (user_id,question_id) UNIQUE
+#  index_upvotes_on_user_id_and_question_id_and_answer_id  (user_id,question_id,answer_id) UNIQUE
 #
 class Upvote < ApplicationRecord
 
-  validates_uniqueness_of :question_id, :scope => :user_id
+  validates_uniqueness_of :user_id, :scope => [:question_id, :answer_id]
 
   belongs_to :user,
     class_name: :User,

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_11_190220) do
+ActiveRecord::Schema.define(version: 2020_06_15_063846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,10 +31,7 @@ ActiveRecord::Schema.define(version: 2020_06_11_190220) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "answer_id", default: 0
-    t.index ["user_id", "question_id"], name: "index_downvotes_on_user_id_and_question_id", unique: true
-  end
-
-  create_table "index_for_downvotes", force: :cascade do |t|
+    t.index ["user_id", "question_id", "answer_id"], name: "index_downvotes_on_user_id_and_question_id_and_answer_id", unique: true
   end
 
   create_table "questions", force: :cascade do |t|
@@ -54,7 +51,7 @@ ActiveRecord::Schema.define(version: 2020_06_11_190220) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "answer_id", default: 0
-    t.index ["user_id", "question_id"], name: "index_upvotes_on_user_id_and_question_id", unique: true
+    t.index ["user_id", "question_id", "answer_id"], name: "index_upvotes_on_user_id_and_question_id_and_answer_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|

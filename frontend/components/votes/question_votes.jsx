@@ -21,9 +21,6 @@ class QuestionVotes extends React.Component {
 
   handleUpvote(e) {
     e.preventDefault();
-    // if there's a downvote, delete it
-    //this.props.deleteDownvote(this.state.questionId);
-    // then upvote it
     this.props.createUpvote(this.state.questionId)
       .then(() => {
         return this.setState({
@@ -35,9 +32,6 @@ class QuestionVotes extends React.Component {
 
   handleDownvote(e) {
     e.preventDefault();
-    // if there's a upvote, delete it
-    //this.props.deleteUpvote(this.state.questionId);
-    // then downvote it
     this.props.createDownvote(this.state.questionId)
       .then(() => {
         return this.setState({

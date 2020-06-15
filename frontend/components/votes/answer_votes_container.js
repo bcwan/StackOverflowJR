@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import AnswerVotes from './answer_votes';
-import { createUpvote, deleteUpvote } from '../../actions/upvote_actions';
-import { createDownvote, deleteDownvote } from '../../actions/downvote_actions';
+import { createAnswerUpvote, deleteUpvote } from '../../actions/upvote_actions';
+import { createAnswerDownvote, deleteDownvote } from '../../actions/downvote_actions';
 
 const mSTP = (state, ownProps) => {
   return {
@@ -11,9 +11,9 @@ const mSTP = (state, ownProps) => {
 };
 
 const mDTP = (dispatch) => ({
-  createUpvote: (questionId, answerId) => dispatch(createUpvote(questionId, answerId)),
+  createAnswerUpvote: (questionId, answerId) => dispatch(createAnswerUpvote(questionId, answerId)),
   deleteUpvote: (questionId) => dispatch(deleteUpvote(questionId)),
-  createDownvote: (questionId, answerId) => dispatch(createDownvote(questionId, answerId)),
+  createAnswerDownvote: (questionId, answerId) => dispatch(createAnswerDownvote(questionId, answerId)),
   deleteDownvote: (questionId) => dispatch(deleteDownvote(questionId))
 });
 
