@@ -28,6 +28,17 @@ class AnswerVotes extends React.Component {
       });
   }
 
+  handleDownvote(e) {
+    e.preventDefault();
+    this.props.createDownvote(this.state.questionId, this.state.answerId)
+      .then(() => {
+        return this.setState({
+          votes: this.props.answer.upvotes - this.props.answer.downvotes,
+          totalVotes: this.props.answer.upvotes + this.props.answer.downvotes
+        })
+      });
+  }
+
 
   votingDisplay() {
     return (
