@@ -24,7 +24,6 @@ export const createDownvote = (questionId, answerId = 0) => (dispatch) => {
 };
 
 export const createAnswerDownvote = (questionId, answerId) => (dispatch) => {
-  debugger;
   return DownvoteApiUtil.createDownvote(questionId, answerId)
     .then(updatedDownvotes => dispatch(updateAnswerDownvote(updatedDownvotes)))
 };
