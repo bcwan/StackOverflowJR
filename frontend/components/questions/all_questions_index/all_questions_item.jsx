@@ -6,7 +6,7 @@ import QuestionStats from './question_stats';
 
 const AllQuestionsItem = ({ question }) => {
   return (
-    <ListGroupItem>
+    <ListGroupItem className="single-question">
       <QuestionStats question={question}/>
       <div>
         <Link to={`/questions/${question.id}`}>{question.title}</Link>
