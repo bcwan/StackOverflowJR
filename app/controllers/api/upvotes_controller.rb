@@ -9,7 +9,6 @@ class Api::UpvotesController < ApplicationController
     else
       if has_downvote?
         byebug
-        #@downvote = Downvote.find_by(user_id: current_user.id, question_id: params[:question_id])
         @downvote = Downvote.find_by(user_id: current_user.id, question_id: params[:question_id], answer_id: params[:upvote][:answer_id])
         @downvote = Downvote.delete(@downvote.id)
       end
@@ -36,12 +35,6 @@ class Api::UpvotesController < ApplicationController
           render json: ['Cannot upvote question'], status: 422
         end
       end
-      # if @upvote.save
-      #   @question = @upvote.question
-      #   render 'api/questions/show'
-      # else
-      #   render json: ['Cannot upvote'], status: 422
-      # end
     end
 
   end
