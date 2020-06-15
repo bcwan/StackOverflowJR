@@ -1,9 +1,15 @@
 import * as DownvoteApiUtil from '../util/downvote_api_util';
 
 export const UPDATE_DOWNVOTE = 'UPDATE_DOWNVOTE';
+export const UPDATE_ANSWER_DOWNVOTE = 'UPDATE_ANSWER_DOWNVOTE';
 
 const updateDownvote = vote => ({
   type: UPDATE_DOWNVOTE,
+  vote
+});
+
+const updateAnswerDownvote = vote => ({
+  type: UPDATE_ANSWER_DOWNVOTE,
   vote
 });
 
@@ -15,6 +21,11 @@ const updateDownvote = vote => ({
 export const createDownvote = (questionId, answerId = 0) => (dispatch) => {
   return DownvoteApiUtil.createDownvote(questionId, answerId)
     .then(updatedDownvotes => dispatch(updateDownvote(updatedDownvotes)))
+};
+
+export const createAnswerDownvote = (questionId, answerId) => (dispatch) => {
+  return DownvoteApiUtil.createDownvote(questionId, answerId)
+    .then(updatedDownvotes => dispatch(updateAnswerDownvote(updatedDownvotes)))
 };
 
 // delete will returns an updated downvote number if user decides not to downvote
