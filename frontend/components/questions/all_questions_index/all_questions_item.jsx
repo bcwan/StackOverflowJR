@@ -7,7 +7,7 @@ import QuestionStats from './question_stats';
 const AllQuestionsItem = ({ question, fetchQuestion }) => {
   return (
     <ListGroupItem>
-      
+      <QuestionStats question={question}/>
       <div>
         <Link to={`/questions/${question.id}`}>{question.title}</Link>
         <p className="question-desc-item">{question.description}</p>
