@@ -21,7 +21,7 @@ class QuestionVotes extends React.Component {
 
   handleUpvote(e) {
     e.preventDefault();
-    this.props.createUpvote(this.state.questionId)
+    this.props.createUpvote(this.state.questionId, 0)
       .then(() => {
         return this.setState({
           votes: this.props.question.upvotes - this.props.question.downvotes,
@@ -32,7 +32,7 @@ class QuestionVotes extends React.Component {
 
   handleDownvote(e) {
     e.preventDefault();
-    this.props.createDownvote(this.state.questionId)
+    this.props.createDownvote(this.state.questionId, 0)
       .then(() => {
         return this.setState({
           votes: this.props.question.upvotes - this.props.question.downvotes,

@@ -11,6 +11,7 @@ class Api::DownvotesController < ApplicationController
         byebug
         @upvote = Upvote.find_by(user_id: current_user.id, question_id: params[:question_id], answer_id: params[:downvote][:answer_id])
         @upvote = Upvote.destroy(@upvote.id)
+        byebug
       end
       @downvote = Downvote.new(downvote_params)
       byebug
