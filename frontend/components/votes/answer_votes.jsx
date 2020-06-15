@@ -11,11 +11,23 @@ class AnswerVotes extends React.Component {
     super(props);
     this.state = {
       questionId: this.props.questionId,
-      answer: this.props.answer.id,
+      answerId: this.props.answer.id,
       votes: this.props.answer.upvotes - this.props.answer.downvotes,
       totalVotes: this.props.answer.upvotes + this.props.answer.downvotes
     };
   }
+
+  handleUpvote(e) {
+    e.preventDefault();
+    this.props.createUpvote(this.state.questionId, this.state.answerId)
+      .then(() => {
+        return this.setState({
+          votes: this.props.answer.upvotes - this.props.answer.downvotes,
+          totalVotes: this.props.answer.upvotes + this.props.answer.downvotes
+        })
+      });
+  }
+
 
   votingDisplay() {
     return (
