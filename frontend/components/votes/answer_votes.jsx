@@ -12,7 +12,8 @@ class AnswerVotes extends React.Component {
     this.state = {
       questionId: this.props.questionId,
       answer: this.props.answer.id,
-      
+      votes: this.props.answer.upvotes - this.props.answer.downvotes,
+      totalVotes: this.props.answer.upvotes + this.props.answer.downvotes
     };
   }
 
