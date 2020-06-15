@@ -5,11 +5,11 @@ import {
 } from '../actions/answers_actions';
 
 import {
-  UPDATE_UPVOTE
+ UPDATE_ANSWER_UPVOTE
 } from '../actions/upvote_actions';
 
 import {
-  UPDATE_DOWNVOTE
+  UPDATE_ANSWER_DOWNVOTE
 } from '../actions/downvote_actions';
 
 
@@ -25,11 +25,11 @@ const AnswerReducer = (oldState = {}, action) => {
     case REMOVE_ANSWER:
       delete nextState[action.answerId];
       return nextState;
-    case UPDATE_UPVOTE:
+    case UPDATE_ANSWER_UPVOTE:
       nextState[action.vote.id].downvotes = action.vote.downvotes;
       nextState[action.vote.id].upvotes = action.vote.upvotes;
       return nextState;
-    case UPDATE_DOWNVOTE:
+    case UPDATE_ANSWER_DOWNVOTE:
       nextState[action.vote.id].downvotes = action.vote.downvotes;
       nextState[action.vote.id].upvotes = action.vote.upvotes;
       return nextState;
