@@ -4,7 +4,7 @@ import { ListGroupItem } from 'react-bootstrap';
 import QuestionStats from './question_stats';
 
 
-const AllQuestionsItem = ({ question, fetchQuestion }) => {
+const AllQuestionsItem = ({ question }) => {
   return (
     <ListGroupItem>
       <QuestionStats question={question}/>
