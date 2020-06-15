@@ -9,10 +9,6 @@
 #  question_id :integer          not null
 #  user_id     :integer          not null
 #
-# Indexes
-#
-#  index_upvotes_on_user_id_and_question_id  (user_id,question_id) UNIQUE
-#
 require 'test_helper'
 
 class UpvoteTest < ActiveSupport::TestCase

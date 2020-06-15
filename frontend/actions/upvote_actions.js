@@ -28,6 +28,7 @@ export const createUpvote = (questionId, answerId = 0) => (dispatch) => {
 };
 
 export const createAnswerUpvote = (questionId, answerId) => (dispatch) => {
+  debugger;
   return UpvoteApiUtil.createUpvote(questionId, answerId)
     .then(updatedUpvotes => dispatch(updateAnswerUpvote(updatedUpvotes)))
 };
