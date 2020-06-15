@@ -2,10 +2,10 @@ import * as UpvoteApiUtil from '../util/upvote_api_util';
 
 export const UPDATE_UPVOTE = 'UPDATE_UPVOTE';
 
-const updateUpvote = question => {
+const updateUpvote = vote => {
   return {
     type: UPDATE_UPVOTE,
-    question
+    vote
   }
 };
 

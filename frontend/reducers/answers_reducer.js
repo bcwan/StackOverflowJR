@@ -4,6 +4,15 @@ import {
   REMOVE_ANSWER
 } from '../actions/answers_actions';
 
+import {
+  UPDATE_UPVOTE
+} from '../actions/upvote_actions';
+
+import {
+  UPDATE_DOWNVOTE
+} from '../actions/downvote_actions';
+
+
 const AnswerReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   let nextState = Object.assign({}, oldState);
@@ -15,6 +24,14 @@ const AnswerReducer = (oldState = {}, action) => {
       return nextState;
     case REMOVE_ANSWER:
       delete nextState[action.answerId];
+      return nextState;
+    case UPDATE_UPVOTE:
+      nextState[action.vote.id].downvotes = action.vote.downvotes;
+      nextState[action.vote.id].upvotes = action.vote.upvotes;
+      return nextState;
+    case UPDATE_DOWNVOTE:
+      nextState[action.vote.id].downvotes = action.vote.downvotes;
+      nextState[action.vote.id].upvotes = action.vote.upvotes;
       return nextState;
     default:
       return oldState;
