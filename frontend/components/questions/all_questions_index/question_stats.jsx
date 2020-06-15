@@ -2,7 +2,9 @@ import React from 'react';
 
 const QuestionStats = ({ question }) => {
   return (
-    <p>Question Stats</p>
+    <div>
+      <p>{question.upvotes - question.downvotes} votes</p>
+    </div>
   );
 }
 
