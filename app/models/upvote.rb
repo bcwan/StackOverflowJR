@@ -15,7 +15,7 @@
 #
 class Upvote < ApplicationRecord
 
-  validates_uniqueness_of :question_id, :scope => :user_id
+  validates_uniqueness_of :user_id, :scope => [:question_id, :answer_id]
 
   belongs_to :user,
     class_name: :User,
