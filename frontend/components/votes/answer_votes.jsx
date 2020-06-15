@@ -1,9 +1,7 @@
 import React from 'react';
 import {
-  TiArrowDownOutline,
-  TiArrowDownThick,
-  TiArrowUpOutline,
-  TiArrowUpThick
+  TiArrowSortedDown,
+  TiArrowSortedUp,
 } from 'react-icons/ti';
 
 class AnswerVotes extends React.Component {
@@ -45,12 +43,12 @@ class AnswerVotes extends React.Component {
   votingDisplay() {
     return (
       <div className="voting answer-voting">
-        <TiArrowUpOutline
+        <TiArrowSortedUp
           className="up-arrow-outline"
           onClick={this.handleUpvote}
         />
         <p className="voting-score">{this.state.votes}</p>
-        <TiArrowDownOutline
+        <TiArrowSortedDown
           className="down-arrow-outline"
           onClick={this.handleDownvote}
         />
