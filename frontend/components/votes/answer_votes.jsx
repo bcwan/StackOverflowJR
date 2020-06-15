@@ -45,14 +45,14 @@ class AnswerVotes extends React.Component {
       <div className="voting answer-voting">
         <TiArrowUpOutline
           className="up-arrow-outline"
-        // onClick={this.handleUpvote}
+          onClick={this.handleUpvote}
         />
-        <p className="voting-score">100{/*this.state.votes*/}</p>
+        <p className="voting-score">{this.state.votes}</p>
         <TiArrowDownOutline
           className="down-arrow-outline"
-        // onClick={this.handleDownvote}
+          onClick={this.handleDownvote}
         />
-        <p className="total-user-votes">Votes: 1{/*this.state.totalVotes*/}</p>
+        <p className="total-user-votes">Votes: {this.state.totalVotes}</p>
       </div>
     );
   }
