@@ -1,12 +1,18 @@
 .questions-section {
   top: 50px;
   left: 225px;
-  height: 100%;
+  height: 95%;
   width: 60%;
   position: fixed;
   padding-top: 20px;
   overflow-y: auto;
+  -ms-overflow-style: none;
 }
+
+.questions-section::-webkit-scrollbar {
+  display: none;
+}
+
 
 .list-group-item {
   background: transparent !important;
