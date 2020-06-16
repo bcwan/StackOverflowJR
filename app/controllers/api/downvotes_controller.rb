@@ -14,7 +14,7 @@ class Api::DownvotesController < ApplicationController
       @downvote.user_id = current_user.id
       @downvote.question_id = params[:question_id]
       if @downvote.answer_id != 0
-        if @downvote.save!
+        if @downvote.save
           @answer = @downvote.answer
           render 'api/answers/show'
         else
