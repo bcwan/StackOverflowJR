@@ -28,10 +28,14 @@ const AnswerReducer = (oldState = {}, action) => {
     case UPDATE_ANSWER_UPVOTE:
       nextState[action.vote.id].downvotes = action.vote.downvotes;
       nextState[action.vote.id].upvotes = action.vote.upvotes;
+      nextState[action.vote.id].downvotes_user_id = action.vote.downvotes_user_id;
+      nextState[action.vote.id].upvotes_user_id = action.vote.upvotes_user_id;
       return nextState;
     case UPDATE_ANSWER_DOWNVOTE:
       nextState[action.vote.id].downvotes = action.vote.downvotes;
       nextState[action.vote.id].upvotes = action.vote.upvotes;
+      nextState[action.vote.id].downvotes_user_id = action.vote.downvotes_user_id;
+      nextState[action.vote.id].upvotes_user_id = action.vote.upvotes_user_id;
       return nextState;
     default:
       return oldState;
