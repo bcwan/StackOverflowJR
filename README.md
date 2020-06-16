@@ -6,7 +6,14 @@ StackOverflowJR is a software engineering social networking application. Coders 
 
 [Live Demo](https://stackoverflow-jr.herokuapp.com/#/)
 
+Main splash page
+![](./app/assets/images/splash.png)
+
+List of questions
 ![](./app/assets/images/questions.png)
+
+Details of a question
+![](./app/assets/images/show.png)
 
 ## Technologies
 
