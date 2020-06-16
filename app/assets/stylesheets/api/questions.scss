@@ -10,6 +10,11 @@
   padding-top: 20px;
   overflow-y: auto;
   margin-left: 20px;
+  -ms-overflow-style: none;
+}
+
+.single-question-container::-webkit-scrollbar {
+  display: none;
 }
 
 .title-ask-button {
