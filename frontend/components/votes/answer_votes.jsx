@@ -19,13 +19,14 @@ class AnswerVotes extends React.Component {
   }
 
   componentDidMount() {
-    //this.indicateVote();
+    this.indicateVote();
   }
 
   handleUpvote(e) {
     e.preventDefault();
     this.props.createAnswerUpvote(this.state.questionId, this.state.answerId)
       .then(() => {
+        this.indicateVote();
         return this.setState({
           votes: this.props.answer.upvotes - this.props.answer.downvotes,
           totalVotes: this.props.answer.upvotes + this.props.answer.downvotes
@@ -37,6 +38,7 @@ class AnswerVotes extends React.Component {
     e.preventDefault();
     this.props.createAnswerDownvote(this.state.questionId, this.state.answerId)
       .then(() => {
+        this.indicateVote();
         return this.setState({
           votes: this.props.answer.upvotes - this.props.answer.downvotes,
           totalVotes: this.props.answer.upvotes + this.props.answer.downvotes
