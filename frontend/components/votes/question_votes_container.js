@@ -6,6 +6,7 @@ import { createDownvote, deleteDownvote } from '../../actions/downvote_actions';
 const mSTP = (state, ownProps) => {
   return {
     questionId: ownProps.question.id,
+    currentUser: state.entities.users[state.session.id]
   }
 };
 
