@@ -52,11 +52,13 @@ class AnswerVotes extends React.Component {
       <div className="voting answer-voting">
         <TiArrowSortedUp
           id="up-arrow-outline-answer"
+          className={`up-answer-arrow-selected-${this.props.answer.id}`}
           onClick={this.handleUpvote}
         />
         <p className="voting-score">{this.state.votes}</p>
         <TiArrowSortedDown
           id="down-arrow-outline-answer"
+          className={`down-answer-arrow-selected-${this.props.answer.id}`}
           onClick={this.handleDownvote}
         />
         <p className="total-user-votes">Votes: {this.state.totalVotes}</p>
@@ -69,8 +71,8 @@ class AnswerVotes extends React.Component {
     let userUpvoted = this.props.answer.upvotes_user_id.includes(currentUserId);
     let userDownvoted = this.props.answer.downvotes_user_id.includes(currentUserId);
 
-    let upvoteArrow = document.getElementById("up-arrow-outline-answer");
-    let downvoteArrow = document.getElementById("down-arrow-outline-answer");
+    let upvoteArrow = document.getElementsByClassName(`up-answer-arrow-selected-${this.props.answer.id}`)[0];
+    let downvoteArrow = document.getElementsByClassName(`down-answer-arrow-selected-${this.props.answer.id}`)[0];
 
     if (userUpvoted) {
       upvoteArrow.style.color = "orange";
