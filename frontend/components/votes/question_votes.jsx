@@ -57,6 +57,10 @@ class QuestionVotes extends React.Component {
     );
   }
 
+  // votingDisplay needs to be invoke before this method works
+  indicateVote(question, currentUser) {
+
+  }
 
   render() {
     return (

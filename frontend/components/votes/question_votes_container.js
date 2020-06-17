@@ -5,7 +5,7 @@ import { createDownvote, deleteDownvote } from '../../actions/downvote_actions';
 
 const mSTP = (state, ownProps) => {
   return {
-    questionId: ownProps.question.id
+    questionId: ownProps.question.id,
   }
 };
 
