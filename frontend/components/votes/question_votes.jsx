@@ -15,6 +15,12 @@ class QuestionVotes extends React.Component {
     }
     this.handleUpvote = this.handleUpvote.bind(this);
     this.handleDownvote = this.handleDownvote.bind(this);
+    this.indicateVote = this.indicateVote.bind(this);
+  }
+
+
+  componentDidMount() {
+    this.indicateVote();
   }
 
   handleUpvote(e) {
@@ -66,7 +72,7 @@ class QuestionVotes extends React.Component {
 
     let upvoteArrow = document.getElementById("up-arrow-outline");
     let downvoteArrow = document.getElementById("down-arrow-outline");
-    
+
     if (userUpvoted) {
       upvoteArrow.style.color = "orange";
       downvoteArrow.style.color = "lightgray";
