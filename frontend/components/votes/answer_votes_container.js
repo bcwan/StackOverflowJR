@@ -6,7 +6,8 @@ import { createAnswerDownvote, deleteDownvote } from '../../actions/downvote_act
 const mSTP = (state, ownProps) => {
   return {
     questionId: ownProps.questionId,
-    answer: ownProps.answer
+    answer: ownProps.answer,
+    currentUser: state.entities.users[state.session.id]
   }
 };
 
