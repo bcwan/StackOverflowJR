@@ -58,8 +58,17 @@ class QuestionVotes extends React.Component {
   }
 
   // votingDisplay needs to be invoke before this method works
-  indicateVote(question, currentUser) {
+  indicateVote() {
+    //if user has upvoted, we want to add a class that changes up-arrow-outline to orange
+    let currentUserId = parseInt(this.props.currentUser.id);
+    let userUpvoted = this.props.question.upvotes_user_id.includes(currentUserId);
+    let userDownvoted = this.props.question.downvotes_user_id.includes(currentUserId);
+    if (userUpvoted) {
 
+    }
+    //if user has downvoted, we want to do otherwise for down-arrow-outline
+
+    //else, we leave alone
   }
 
   render() {
