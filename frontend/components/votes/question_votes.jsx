@@ -21,6 +21,7 @@ class QuestionVotes extends React.Component {
     e.preventDefault();
     this.props.createUpvote(this.state.questionId, 0)
       .then(() => {
+        this.indicateVote();
         return this.setState({
           votes: this.props.question.upvotes - this.props.question.downvotes,
           totalVotes: this.props.question.upvotes + this.props.question.downvotes
@@ -32,6 +33,7 @@ class QuestionVotes extends React.Component {
     e.preventDefault();
     this.props.createDownvote(this.state.questionId, 0)
       .then(() => {
+        this.indicateVote();
         return this.setState({
           votes: this.props.question.upvotes - this.props.question.downvotes,
           totalVotes: this.props.question.upvotes + this.props.question.downvotes
@@ -44,12 +46,12 @@ class QuestionVotes extends React.Component {
     return (
       <div className="voting">
         <TiArrowSortedUp
-          className="up-arrow-outline"
+          id="up-arrow-outline"
           onClick={this.handleUpvote}
         />
         <p className="voting-score">{this.state.votes}</p>
         <TiArrowSortedDown
-          className="down-arrow-outline"
+          id="down-arrow-outline"
           onClick={this.handleDownvote}
         />
         <p className="total-user-votes">Votes: {this.state.totalVotes}</p>
@@ -57,18 +59,21 @@ class QuestionVotes extends React.Component {
     );
   }
 
-  // votingDisplay needs to be invoke before this method works
   indicateVote() {
-    //if user has upvoted, we want to add a class that changes up-arrow-outline to orange
     let currentUserId = parseInt(this.props.currentUser.id);
     let userUpvoted = this.props.question.upvotes_user_id.includes(currentUserId);
     let userDownvoted = this.props.question.downvotes_user_id.includes(currentUserId);
+
+    let upvoteArrow = document.getElementById("up-arrow-outline");
+    let downvoteArrow = document.getElementById("down-arrow-outline");
+    
     if (userUpvoted) {
-
+      upvoteArrow.style.color = "orange";
+      downvoteArrow.style.color = "lightgray";
+    } else if (userDownvoted) {
+      downvoteArrow.style.color = "orange";
+      upvoteArrow.style.color="lightgray";
     }
-    //if user has downvoted, we want to do otherwise for down-arrow-outline
-
-    //else, we leave alone
   }
 
   render() {
