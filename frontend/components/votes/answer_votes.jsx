@@ -15,6 +15,11 @@ class AnswerVotes extends React.Component {
     };
     this.handleUpvote = this.handleUpvote.bind(this);
     this.handleDownvote = this.handleDownvote.bind(this);
+    this.indicateVote = this.indicateVote.bind(this);
+  }
+
+  componentDidMount() {
+    //this.indicateVote();
   }
 
   handleUpvote(e) {
@@ -44,12 +49,12 @@ class AnswerVotes extends React.Component {
     return (
       <div className="voting answer-voting">
         <TiArrowSortedUp
-          id="up-arrow-outline"
+          id="up-arrow-outline-answer"
           onClick={this.handleUpvote}
         />
         <p className="voting-score">{this.state.votes}</p>
         <TiArrowSortedDown
-          id="down-arrow-outline"
+          id="down-arrow-outline-answer"
           onClick={this.handleDownvote}
         />
         <p className="total-user-votes">Votes: {this.state.totalVotes}</p>
@@ -62,8 +67,8 @@ class AnswerVotes extends React.Component {
     let userUpvoted = this.props.answer.upvotes_user_id.includes(currentUserId);
     let userDownvoted = this.props.answer.downvotes_user_id.includes(currentUserId);
 
-    let upvoteArrow = document.getElementById("up-arrow-outline");
-    let downvoteArrow = document.getElementById("down-arrow-outline");
+    let upvoteArrow = document.getElementById("up-arrow-outline-answer");
+    let downvoteArrow = document.getElementById("down-arrow-outline-answer");
 
     if (userUpvoted) {
       upvoteArrow.style.color = "orange";

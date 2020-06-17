@@ -7,9 +7,6 @@
   cursor: pointer;
 }
 
-.selected-arrow {
-  color: orange;
-}
 
 #down-arrow-outline {
   font-size: 50px;
@@ -17,6 +14,25 @@
 }
 
 #down-arrow-outline:hover {
+  cursor: pointer;
+}
+
+// ===========================
+#up-arrow-outline-answer {
+  font-size: 50px;
+  color: lightgray;
+}
+
+#up-arrow-outline-answer:hover {
+  cursor: pointer;
+}
+
+#down-arrow-outline-answer {
+  font-size: 50px;
+  color: lightgray;
+}
+
+#down-arrow-outline-answer:hover {
   cursor: pointer;
 }
 
