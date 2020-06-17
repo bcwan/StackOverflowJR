@@ -59,8 +59,8 @@ class AnswerVotes extends React.Component {
 
   indicateVote() {
     let currentUserId = parseInt(this.props.currentUser.id);
-    let userUpvoted = this.props.question.upvotes_user_id.includes(currentUserId);
-    let userDownvoted = this.props.question.downvotes_user_id.includes(currentUserId);
+    let userUpvoted = this.props.answer.upvotes_user_id.includes(currentUserId);
+    let userDownvoted = this.props.answer.downvotes_user_id.includes(currentUserId);
 
     let upvoteArrow = document.getElementById("up-arrow-outline");
     let downvoteArrow = document.getElementById("down-arrow-outline");
