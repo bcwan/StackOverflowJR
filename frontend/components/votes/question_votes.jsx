@@ -48,7 +48,6 @@ class QuestionVotes extends React.Component {
   }
 
   votingDisplay() {
-    // if user hasn't voted yet
     return (
       <div className="voting">
         <TiArrowSortedUp
