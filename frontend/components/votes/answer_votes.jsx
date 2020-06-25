@@ -67,19 +67,21 @@ class AnswerVotes extends React.Component {
   }
 
   indicateVote() {
-    let currentUserId = parseInt(this.props.currentUser.id);
-    let userUpvoted = this.props.answer.upvotes_user_id.includes(currentUserId);
-    let userDownvoted = this.props.answer.downvotes_user_id.includes(currentUserId);
+    if (this.props.currentUser) {
+      let currentUserId = parseInt(this.props.currentUser.id);
+      let userUpvoted = this.props.answer.upvotes_user_id.includes(currentUserId);
+      let userDownvoted = this.props.answer.downvotes_user_id.includes(currentUserId);
 
-    let upvoteArrow = document.getElementsByClassName(`up-answer-arrow-selected-${this.props.answer.id}`)[0];
-    let downvoteArrow = document.getElementsByClassName(`down-answer-arrow-selected-${this.props.answer.id}`)[0];
+      let upvoteArrow = document.getElementsByClassName(`up-answer-arrow-selected-${this.props.answer.id}`)[0];
+      let downvoteArrow = document.getElementsByClassName(`down-answer-arrow-selected-${this.props.answer.id}`)[0];
 
-    if (userUpvoted) {
-      upvoteArrow.style.color = "orange";
-      downvoteArrow.style.color = "lightgray";
-    } else if (userDownvoted) {
-      downvoteArrow.style.color = "orange";
-      upvoteArrow.style.color = "lightgray";
+      if (userUpvoted) {
+        upvoteArrow.style.color = "orange";
+        downvoteArrow.style.color = "lightgray";
+      } else if (userDownvoted) {
+        downvoteArrow.style.color = "orange";
+        upvoteArrow.style.color = "lightgray";
+      }
     }
   }
 

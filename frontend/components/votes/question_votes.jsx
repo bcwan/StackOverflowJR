@@ -65,19 +65,21 @@ class QuestionVotes extends React.Component {
   }
 
   indicateVote() {
-    let currentUserId = parseInt(this.props.currentUser.id);
-    let userUpvoted = this.props.question.upvotes_user_id.includes(currentUserId);
-    let userDownvoted = this.props.question.downvotes_user_id.includes(currentUserId);
+    if (this.props.currentUser) {
+      let currentUserId = parseInt(this.props.currentUser.id);
+      let userUpvoted = this.props.question.upvotes_user_id.includes(currentUserId);
+      let userDownvoted = this.props.question.downvotes_user_id.includes(currentUserId);
 
-    let upvoteArrow = document.getElementById("up-arrow-outline");
-    let downvoteArrow = document.getElementById("down-arrow-outline");
+      let upvoteArrow = document.getElementById("up-arrow-outline");
+      let downvoteArrow = document.getElementById("down-arrow-outline");
 
-    if (userUpvoted) {
-      upvoteArrow.style.color = "orange";
-      downvoteArrow.style.color = "lightgray";
-    } else if (userDownvoted) {
-      downvoteArrow.style.color = "orange";
-      upvoteArrow.style.color="lightgray";
+      if (userUpvoted) {
+        upvoteArrow.style.color = "orange";
+        downvoteArrow.style.color = "lightgray";
+      } else if (userDownvoted) {
+        downvoteArrow.style.color = "orange";
+        upvoteArrow.style.color="lightgray";
+      }
     }
   }
 
