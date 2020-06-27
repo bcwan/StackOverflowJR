@@ -16,7 +16,6 @@ const NavBar = ( { currentUser, logout } ) => {
     </div>
   );
 
-  //login and signup buttons
   const notLoggedInButtons = () => (
     <div className="auth-btn-set">
       <Link to="/login">
