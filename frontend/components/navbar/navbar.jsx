@@ -6,9 +6,10 @@ const NavBar = ( { currentUser, logout } ) => {
   //profile button and logout button
   const loggedInButtons = () => (
     <div className="auth-btn-set">
-      <Link to="/profile">
+      {/* <Link to="/profile">
         <Button variant="success">{currentUser ? currentUser.username : "Profile"}</Button>
-      </Link>
+      </Link> */}
+      <Button variant="success">{currentUser ? currentUser.username : "Profile"}</Button>
       <Link to="/">
         <Button variant="dark" onClick={logout}>Log out</Button>
       </Link>
