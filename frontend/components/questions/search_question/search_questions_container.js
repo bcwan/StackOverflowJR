@@ -7,9 +7,11 @@ import {
 } from '../../../actions/questions_actions';
 
 const mSTP = (state) => {
+  let questionsResult = Object.values(state.entities.questions);
 
   return ({
-    
+    questions: questionsResult,
+    currentUser: state.entities.users[state.session.id]
   });
 };
 
