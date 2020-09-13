@@ -6,4 +6,21 @@ import SideBarContainer from '../../sidebar/sidebar';
 import AskQuestion from '../new_question/ask_question';
 import Modal from 'react-modal';
 
+class SearchQuestionsIndex extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
 
+    }
+  }
+
+  componentDidMount() {
+
+  }
+
+  render () {
+    return null;
+  }
+}
+
+export default SearchQuestionsIndex;
