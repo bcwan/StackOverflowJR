@@ -30,7 +30,7 @@ const NavBar = ( { currentUser, logout } ) => {
       <Link to="/"><img className="stackoverflow-logo" src="/assets/stackoverflowjr.png" alt="" /></Link>
       <nav className="header-nav">
      
-        {/*<input className="search-bar" type="text" placeholder=" Search..." />*/}
+        <input className="search-bar" type="text" placeholder=" Search..." />
         {
           user ? loggedInHTML : notLoggedInHTML
         }
