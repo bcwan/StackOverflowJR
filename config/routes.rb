@@ -14,6 +14,13 @@ Rails.application.routes.draw do
       end
     end
 
+    # search
+    resources :questions, only: [:search] do
+      collection do
+        get :search
+      end
+    end
+
 
     # show list of questions
     resources :questions, only: [:index]

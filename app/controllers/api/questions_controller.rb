@@ -15,8 +15,13 @@ class Api::QuestionsController < ApplicationController
 
   # current_user's questions
   def self
-     @questions = Question.where(questioner_id: current_user.id)
-     render :self
+    @questions = Question.where(questioner_id: current_user.id)
+    render :self
+  end
+
+  # search questions
+  def search
+    # @questions = Question.where("title like ?", "%#{}%")
   end
 
 

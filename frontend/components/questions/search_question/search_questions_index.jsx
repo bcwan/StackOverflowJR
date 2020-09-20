@@ -16,6 +16,7 @@ class SearchQuestionsIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchQuestions();
+
   }
 
   render () {
