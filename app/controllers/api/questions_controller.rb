@@ -21,7 +21,8 @@ class Api::QuestionsController < ApplicationController
 
   # search questions
   def search
-    # @questions = Question.where("title like ?", "%#{}%")
+    @questions = Question.where("title like ?", "%#{"moon"}%")
+    render :search
   end
 
 
