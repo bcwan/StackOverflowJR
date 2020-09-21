@@ -21,7 +21,10 @@ class Api::QuestionsController < ApplicationController
 
   # search questions
   def search
-    @questions = Question.where("title like ?", "%#{"moon"}%")
+    search = "moon question"
+    search_length = search.split.length
+    @questions = Question.where([(['title LIKE ?'] * search_length).join(' OR ')] + search.split.map { |word| "%#{word}%" })
+    # search_length = search.split.length
     render :search
   end
 
