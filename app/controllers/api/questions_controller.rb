@@ -21,7 +21,7 @@ class Api::QuestionsController < ApplicationController
 
   # search questions
   def search
-    search = "moon question"
+    search = params[:search]
     search_length = search.split.length
     @questions = Question.where([
                   (
