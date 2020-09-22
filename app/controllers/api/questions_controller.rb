@@ -22,12 +22,13 @@ class Api::QuestionsController < ApplicationController
   # search questions
   def search
     search = params[:search]
-    search_length = search.split.length
-    @questions = Question.where([
-                  (
-                    ['title LIKE ?'] * search_length)
-                      .join(' OR ')
-                  ] + search.split.map { |word| "%#{word}%" }
+    search_length = search.split(" ").length
+    parse_search = search.split(" ")
+    @questions = Question.where(
+                  [
+                    (['title LIKE ?'] * search_length)
+                    .join(' OR ')
+                  ] + parse_search.map { |word| "%#{word}%" }
     )
     # search_length = search.split.length
     render :search
