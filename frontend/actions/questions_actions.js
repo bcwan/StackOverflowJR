@@ -3,7 +3,7 @@ import * as QuestionApiUtil from '../util/questions_api_util';
 export const RECEIVE_ALL_QUESTIONS = 'RECEIVE_ALL_QUESTIONS';
 export const RECEIVE_QUESTION = 'RECEIVE_QUESTION';
 export const REMOVE_QUESTION = 'REMOVE_QUESTION';
-export const RECEIVE_SEARCH_QUESTIONS = 'RECEIVE_SEARCH_QUESTIONS';
+
 
 const receiveQuestions = questions => ({
   type: RECEIVE_ALL_QUESTIONS,
