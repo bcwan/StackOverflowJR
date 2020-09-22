@@ -7,3 +7,8 @@ const receiveSearchQuestions = questions => ({
   questions
 });
 
+// thunk action
+export const fetchSearchQuestions = () => dispatch => (
+  QuestionApiUtil.fetchSearchQuestions()
+    .then(questions => dispatch(receiveSearchQuestions(questions)))
+);

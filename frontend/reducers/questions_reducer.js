@@ -11,7 +11,7 @@ import {
 import {
   UPDATE_DOWNVOTE
 } from '../actions/downvote_actions';
-import { Filter } from 'react-bootstrap-icons';
+
 
 const QuestionReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
