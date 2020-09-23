@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { withRouter } from "react-router-dom";
 
 const NavBar = ({ history }, { currentUser, logout } ) => {
-  // localhost:3000/api/questions/search?search=Leetcode+moon
+
   const redirectToSearchPage = () => {
     let input = document.getElementById("search-bar-text").value;
     let parse = input.split(" ").join("+")
