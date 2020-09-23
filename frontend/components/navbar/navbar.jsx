@@ -4,9 +4,11 @@ import Button from 'react-bootstrap/Button';
 import { withRouter } from "react-router-dom";
 
 const NavBar = ({ history }, { currentUser, logout } ) => {
-
+  // localhost:3000/api/questions/search?search=Leetcode+moon
   const redirectToSearchPage = () => {
-    return history.push('/search');
+    let input = document.getElementById("search-bar-text").value;
+    let parse = input.split(" ").join("+")
+    return history.push(`/search?search=${parse}`);
   };
 
   //profile button and logout button
@@ -47,6 +49,7 @@ const NavBar = ({ history }, { currentUser, logout } ) => {
         <form onSubmit={redirectToSearchPage}>
           <input
             className="search-bar"
+            id ="search-bar-text"
             type="text"
             placeholder=" Search...press enter"
           />
