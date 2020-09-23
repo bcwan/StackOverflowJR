@@ -9,17 +9,18 @@ import Modal from 'react-modal';
 class SearchQuestionsIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-
-    }
+    this.state = {};
   }
 
   componentDidMount() {
     this.props.fetchSearchQuestions();
-
   }
 
-  render () {
+  changeModalStatusForAsk(status) {
+    // this.setState({ modalOpenForAsk: status });
+  }
+
+  render() {
     return null;
   }
 }
