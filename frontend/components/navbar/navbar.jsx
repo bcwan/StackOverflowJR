@@ -29,11 +29,13 @@ const NavBar = ( { currentUser, logout } ) => {
     <header className="header">
       <Link to="/"><img className="stackoverflow-logo" src="/assets/stackoverflowjr.png" alt="" /></Link>
       <nav className="header-nav">
-     
-        <input className="search-bar" type="text" placeholder=" Search..." />
-        {
-          user ? loggedInHTML : notLoggedInHTML
-        }
+        <form>
+          <input className="search-bar" type="text" placeholder=" Search..." />
+
+          {
+            user ? loggedInHTML : notLoggedInHTML
+          }
+        </form>
 
       </nav>
     </header>
