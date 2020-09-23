@@ -1,16 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
+import { withRouter } from "react-router-dom";
 
-const NavBar = ( { currentUser, logout } ) => {
+const NavBar = ({ history }, { currentUser, logout } ) => {
+
+  const redirectToSearchPage = () => {
+    return history.push('/search');
+  };
+
   //profile button and logout button
   const loggedInButtons = () => (
     <div className="auth-btn-set">
-      <Button variant="success">{currentUser ? currentUser.username : "Profile"}</Button>
+      <Button variant="success">
+        {currentUser ? currentUser.username : "Profile"}
+      </Button>
       <Link to="/">
-        <Button variant="dark" onClick={logout}>Log out</Button>
+        <Button variant="dark" onClick={logout}>
+          Log out
+        </Button>
       </Link>
-     
     </div>
   );
 
@@ -27,16 +36,22 @@ const NavBar = ( { currentUser, logout } ) => {
 
   const navBarDesign = (user, loggedInHTML, notLoggedInHTML) => (
     <header className="header">
-      <Link to="/"><img className="stackoverflow-logo" src="/assets/stackoverflowjr.png" alt="" /></Link>
+      <Link to="/">
+        <img
+          className="stackoverflow-logo"
+          src="/assets/stackoverflowjr.png"
+          alt=""
+        />
+      </Link>
       <nav className="header-nav">
-        <form>
-          <input className="search-bar" type="text" placeholder=" Search..." />
-
-          {
-            user ? loggedInHTML : notLoggedInHTML
-          }
+        <form onSubmit={redirectToSearchPage}>
+          <input
+            className="search-bar"
+            type="text"
+            placeholder=" Search...press enter"
+          />
+          {user ? loggedInHTML : notLoggedInHTML}
         </form>
-
       </nav>
     </header>
   );
@@ -44,4 +59,4 @@ const NavBar = ( { currentUser, logout } ) => {
   return navBarDesign(currentUser, loggedInButtons(), notLoggedInButtons());
 };
 
-export default NavBar;
+export default withRouter(NavBar);
