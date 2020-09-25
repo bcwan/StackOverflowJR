@@ -17,7 +17,7 @@ class SearchQuestionsIndex extends React.Component {
   }
 
   changeModalStatusForAsk(status) {
-    // this.setState({ modalOpenForAsk: status });
+
   }
 
   render() {
