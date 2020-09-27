@@ -1,15 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
-import { withRouter } from "react-router-dom";
 
-// const NavBar = ({ history }, { currentUser, logout } ) => {
-const NavBar = ({ currentUser, logout }) => {
-  // const redirectToSearchPage = () => {
-  //   let input = document.getElementById("search-bar-text").value;
-  //   let parse = input.split(" ").join("+")
-  //   return history.push(`/search?search=${parse}`);
-  // };
+const NavBar = ({ currentUser, logout, history }) => {
+
+  const redirectToSearchPage = () => {
+    let input = document.getElementById("search-bar-text").value;
+    let parse = input.split(" ").join("+")
+    return history.push(`/search?search=${parse}`);
+  };
 
   //profile button and logout button
   const loggedInButtons = () => {
@@ -51,8 +50,7 @@ const NavBar = ({ currentUser, logout }) => {
           />
         </Link>
         <nav className="header-nav">
-          {/* <form onSubmit={redirectToSearchPage}> */}
-          <form>
+          <form onSubmit={redirectToSearchPage}>
             <input
               className="search-bar"
               id="search-bar-text"
@@ -69,5 +67,4 @@ const NavBar = ({ currentUser, logout }) => {
   return navBarDesign(currentUser, loggedInButtons(), notLoggedInButtons());
 };
 
-
-export default withRouter(NavBar);
+export default NavBar;
