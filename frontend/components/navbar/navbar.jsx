@@ -59,8 +59,8 @@ const NavBar = ({ currentUser, logout }) => {
               type="text"
               placeholder=" Search...press enter"
             />
+            {user ? loggedInHTML : notLoggedInHTML}
           </form>
-          {user ? loggedInHTML : notLoggedInHTML}
         </nav>
       </header>
     );
@@ -69,5 +69,5 @@ const NavBar = ({ currentUser, logout }) => {
   return navBarDesign(currentUser, loggedInButtons(), notLoggedInButtons());
 };
 
-export default NavBar;
-//export default withRouter(NavBar);
+
+export default withRouter(NavBar);
