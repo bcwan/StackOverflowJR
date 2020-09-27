@@ -13,20 +13,22 @@ import ShowQuestionContainer from './questions/show_question/show_question_conta
 import HomeComponent from './home/home';
 
 
-const App = () => (
-  <div>
-    <header className="header-bar">
-      <NavBarContainer />
-    </header>
-    <Switch>
-      <Route exact path="/" component={HomeComponent}/>
-      <Route exact path="/questions/:questionId" component={ShowQuestionContainer} />
-      <Route exact path="/questions" component={AllQuestionsIndexContainer}/>
-      <AuthRoute exact path="/login" component={LoginContainer} />
-      <AuthRoute exact path="/signup" component={SignUpContainer} />
-      
-    </Switch>
-  </div>
-);
+const App = () => {
+  return (
+    <div>
+      <header className="header-bar">
+        <NavBarContainer />
+      </header>
+      <Switch>
+        <Route exact path="/" component={HomeComponent}/>
+        <Route exact path="/questions/:questionId" component={ShowQuestionContainer} />
+        <Route exact path="/questions" component={AllQuestionsIndexContainer}/>
+        <AuthRoute exact path="/login" component={LoginContainer} />
+        <AuthRoute exact path="/signup" component={SignUpContainer} />
+        
+      </Switch>
+    </div>
+  )
+};
 
 export default App;
