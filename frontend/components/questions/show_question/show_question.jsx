@@ -47,8 +47,15 @@ class ShowQuestion extends React.Component {
         <Button
           className="edit-question-btn"
           variant="info"
-          onClick={() => this.changeModalStatus(true)}
-        >
+          onClick={() => 
+            {
+                ReactGA.event({
+                  category: "Edit Question",
+                  action: "Click to edit a question",
+                });
+                return this.changeModalStatus(true);
+            }
+          }>
           Edit Question
         </Button>
       );
