@@ -20,7 +20,7 @@ const App = () => {
 
   useEffect(() => {
     ReactGA.initialize("UA-179101592-1");
-    ReactGA.pageview('/')
+    ReactGA.pageview(window.location.hash)
   }, [])
 
   return (
@@ -29,15 +29,18 @@ const App = () => {
         <NavBarContainer />
       </header>
       <Switch>
-        <Route exact path="/" component={HomeComponent}/>
-        <Route exact path="/questions/:questionId" component={ShowQuestionContainer} />
-        <Route exact path="/questions" component={AllQuestionsIndexContainer}/>
+        <Route exact path="/" component={HomeComponent} />
+        <Route
+          exact
+          path="/questions/:questionId"
+          component={ShowQuestionContainer}
+        />
+        <Route exact path="/questions" component={AllQuestionsIndexContainer} />
         <AuthRoute exact path="/login" component={LoginContainer} />
         <AuthRoute exact path="/signup" component={SignUpContainer} />
-        
       </Switch>
     </div>
-  )
+  );
 };
 
 export default App;
