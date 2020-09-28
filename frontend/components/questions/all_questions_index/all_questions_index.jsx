@@ -5,6 +5,7 @@ import ListGroup from 'react-bootstrap/ListGroup'
 import SideBarContainer from '../../sidebar/sidebar';
 import AskQuestion from '../new_question/ask_question';
 import Modal from 'react-modal';
+import ReactGA from 'react-ga';
 
 class AllQuestionsIndex extends React.Component {
   constructor(props) {
@@ -37,6 +38,10 @@ class AllQuestionsIndex extends React.Component {
                     onClick={() => 
                       {
                         //make sure user is logged in in order to ask questions
+                        ReactGA.event({
+                          category: "Ask Question",
+                          action: "Click to ask a question",
+                        });
                         !!currentUser ?
                           this.changeModalStatusForAsk(true) :
                           this.props.history.push('/login')

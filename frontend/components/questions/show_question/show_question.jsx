@@ -7,6 +7,7 @@ import EditQuestionForm from '../../questions/edit_question/edit_question_form';
 import Modal from 'react-modal';
 import QuestionVotesContainer from '../../votes/question_votes_container';
 import AskQuestion from '../new_question/ask_question';
+import ReactGA from 'react-ga'
 
 class ShowQuestion extends React.Component {
   constructor(props) {
@@ -85,6 +86,11 @@ class ShowQuestion extends React.Component {
                       onClick={() => 
                         {
                           //make sure user is logged in in order to ask questions
+                          ReactGA.event({
+                            category: "Ask Question",
+                            action:
+                              "Click to ask a question",
+                          });
                           !!currentUser ? 
                             this.changeModalStatusForAsk(true) : 
                             this.props.history.push('/login')
