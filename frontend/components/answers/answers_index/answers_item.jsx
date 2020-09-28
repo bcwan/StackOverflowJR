@@ -36,7 +36,15 @@ const AnswerItem = ({ answer, deleteAnswer, updateAnswer, currentUser, questionI
                     <p className="answer-desc">{answer.description}</p>
                   </div>
                   <div className="edit-delete-btns">
-                    <Button onClick={() => deleteAnswer(answer.id)}
+                    <Button onClick={() => {
+                                               ReactGA.event({
+                                                 category: "Delete Answer",
+                                                 action:
+                                                   "Click to delete an answer",
+                                               });                                             
+                                              return deleteAnswer(answer.id);
+                                            }
+                                    }
                       className="delete-answer-btn"
                       variant="secondary">Delete Answer
                     </Button>
