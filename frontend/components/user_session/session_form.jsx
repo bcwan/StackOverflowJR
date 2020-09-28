@@ -23,6 +23,10 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    ReactGA.event({
+      category: "Regular Login",
+      action: "Click and sign in to login",
+    });
     this.props.processForm(this.state)
       .then(() => this.props.history.push('./questions'));
   }
