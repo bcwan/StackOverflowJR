@@ -23,22 +23,27 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    ReactGA.event({
-      category: "Regular Login",
-      action: "Click and sign in to login",
-    });
     this.props.processForm(this.state)
-      .then(() => this.props.history.push('./questions'));
+      .then(() => {
+        ReactGA.event({
+          category: "Regular Login",
+          action: "Click and sign in to login",
+        });
+        return this.props.history.push('./questions')
+      });
   }
 
   handleDemoLogin(e) {
     e.preventDefault();
-    ReactGA.event({
-      category: 'Demo Login',
-      action: 'Click and sign in to demo login'
-    });
+
     this.props.demoProcessForm({ username: "demo", password: "123456" })
-      .then(() => this.props.history.push('./questions'));
+      .then(() => {
+        ReactGA.event({
+          category: "Demo Login",
+          action: "Click and sign in to demo login",
+        });
+        return this.props.history.push('./questions')
+      });
   }
 
   update(field) {
