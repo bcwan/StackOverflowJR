@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-modal';
 import EditAnswerForm from '../edit_answer/edit_answer_form';
 import AnswerVotesContainer from '../../votes/answer_votes_container';
+import ReactGA from 'react-ga';
 
 
 const AnswerItem = ({ answer, deleteAnswer, updateAnswer, currentUser, questionId }) => {
@@ -41,7 +42,18 @@ const AnswerItem = ({ answer, deleteAnswer, updateAnswer, currentUser, questionI
                     </Button>
                     <Button className="edit-answer-btn" 
                             variant="info" 
-                            onClick={() => setModalIsOpen(true)}
+                            onClick={() => {
+                                              ReactGA.event(
+                                                {
+                                                  category:
+                                                    "Edit Answer",
+                                                  action:
+                                                    "Click to edit an answer",
+                                                }
+                                              );
+                                              return setModalIsOpen(true)
+                                           }
+                            }
                     >
                       Edit Answer
                     </Button>
