@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Jumbotron from 'react-bootstrap/Jumbotron';
+import ReactGA from 'react-ga';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -28,6 +29,10 @@ class SessionForm extends React.Component {
 
   handleDemoLogin(e) {
     e.preventDefault();
+    ReactGA.event({
+      category: 'Demo Login',
+      action: 'Click and sign in to demo login'
+    });
     this.props.demoProcessForm({ username: "demo", password: "123456" })
       .then(() => this.props.history.push('./questions'));
   }
