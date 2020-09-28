@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_utils'
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+// Google Analytics
+import ReactGA from 'react-ga';
 
 
 // React Redux Containers
@@ -14,6 +17,12 @@ import HomeComponent from './home/home';
 
 
 const App = () => {
+
+  useEffect(() => {
+    ReactGA.initialize("UA-179101592-1");
+    ReactGA.pageview('/')
+  }, [])
+
   return (
     <div>
       <header className="header-bar">
