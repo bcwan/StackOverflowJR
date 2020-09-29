@@ -7,7 +7,8 @@ const NavBar = ({ currentUser, logout, history }) => {
   const redirectToSearchPage = () => {
     let input = document.getElementById("search-bar-text").value;
     let parse = input.split(" ").join("+")
-    return history.push(`/search?search=${parse}`);
+    //return history.push(`/search?search=${parse}`);
+    return history.push(`/search`);
   };
 
   //profile button and logout button
@@ -55,7 +56,7 @@ const NavBar = ({ currentUser, logout, history }) => {
               className="search-bar"
               id="search-bar-text"
               type="text"
-              placeholder=" Search...press enter"
+              placeholder=" Type search...press enter"
             />
             {user ? loggedInHTML : notLoggedInHTML}
           </form>
