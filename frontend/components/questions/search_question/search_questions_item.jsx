@@ -7,7 +7,7 @@ import { ListGroupItem } from "react-bootstrap";
 const SearchQuestionsItem = ({ question }) => {
   return (
     <ListGroupItem className="single-question">
-      <QuestionStats question={question} />
+      <SearchQuestionStats question={question} />
       <div className="question">
         <Link to={`/questions/${question.id}`}>{question.title}</Link>
         <p className="question-desc-item">{question.description}</p>
