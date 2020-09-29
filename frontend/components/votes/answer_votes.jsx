@@ -3,6 +3,7 @@ import {
   TiArrowSortedDown,
   TiArrowSortedUp,
 } from 'react-icons/ti';
+import ReactGA from 'react-ga'
 
 class AnswerVotes extends React.Component {
   constructor(props) {
@@ -24,6 +25,10 @@ class AnswerVotes extends React.Component {
 
   handleUpvote(e) {
     e.preventDefault();
+    ReactGA.event({
+      category: "Upvote Answer",
+      action: "Click upvote on an answer",
+    });
     this.props.createAnswerUpvote(this.state.questionId, this.state.answerId)
       .then(() => {
         this.indicateVote();
@@ -36,6 +41,10 @@ class AnswerVotes extends React.Component {
 
   handleDownvote(e) {
     e.preventDefault();
+    ReactGA.event({
+      category: "Downvote Answer",
+      action: "Click downvote on an answer",
+    });
     this.props.createAnswerDownvote(this.state.questionId, this.state.answerId)
       .then(() => {
         this.indicateVote();

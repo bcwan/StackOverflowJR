@@ -3,6 +3,7 @@ import {
   TiArrowSortedDown,
   TiArrowSortedUp,
 } from 'react-icons/ti';
+import ReactGA from 'react-ga'
 
 
 class QuestionVotes extends React.Component {
@@ -25,6 +26,10 @@ class QuestionVotes extends React.Component {
 
   handleUpvote(e) {
     e.preventDefault();
+    ReactGA.event({
+      category: "Upvote Question",
+      action: "Click upvote on a question",
+    });
     this.props.createUpvote(this.state.questionId, 0)
       .then(() => {
         this.indicateVote();
@@ -37,6 +42,10 @@ class QuestionVotes extends React.Component {
 
   handleDownvote(e) {
     e.preventDefault();
+    ReactGA.event({
+      category: "Downvote Question",
+      action: "Click downvote on a question",
+    });
     this.props.createDownvote(this.state.questionId, 0)
       .then(() => {
         this.indicateVote();
@@ -80,6 +89,8 @@ class QuestionVotes extends React.Component {
         downvoteArrow.style.color = "orange";
         upvoteArrow.style.color="lightgray";
       }
+
+
     }
   }
 
