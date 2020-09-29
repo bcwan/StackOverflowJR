@@ -5,6 +5,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import SideBarContainer from '../../sidebar/sidebar';
 import AskQuestion from '../new_question/ask_question';
 import Modal from 'react-modal';
+import ReactGA from "react-ga";
 
 class SearchQuestionsIndex extends React.Component {
   constructor(props) {
@@ -36,7 +37,7 @@ class SearchQuestionsIndex extends React.Component {
         <SideBarContainer />
         <section className="questions-section">
           <section className="title-button">
-            <h3 className="index-title">All Questions</h3>
+            <h3 className="index-title">Search Results</h3>
             <Button
               className="ask-question"
               variant="warning"
@@ -56,7 +57,7 @@ class SearchQuestionsIndex extends React.Component {
           </section>
           <ListGroup variant="flush">
             {questions.map((question) => (
-              <AllQuestionsItem
+              <SearchQuestionsItem
                 question={question}
                 fetchQuestion={fetchQuestion}
                 key={question.id}
