@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ListGroupItem } from "react-bootstrap";
-//import SearchQuestionStats from './search_question_stats';
+import SearchQuestionStats from './search_question_stats';
 
 // css will be the same classes as that of question item
 const SearchQuestionsItem = ({ question }) => {
