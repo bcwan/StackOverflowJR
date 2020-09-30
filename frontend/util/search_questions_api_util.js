@@ -6,10 +6,3 @@ export const fetchSearchQuestions = (keywords) => {
     data: { words: keywords }
   })
 };
-
-// export const fetchSearchQuestions = () => (
-//   $.ajax({
-//     method: 'GET',
-//     url: '/api/questions/search'
-//   })
-// );
