@@ -80,7 +80,7 @@ class Api::QuestionsController < ApplicationController
   end
 
   def question_search_params
-    params.require(:search).permit(:keywords)
+    params.require(:keywords).permit(:words)
   end
 
 end
