@@ -5,13 +5,6 @@ export const fetchQuestions = () => (
   })
 );
 
-// // search REST API
-// export const fetchSearchQuestions = () => (
-//   $.ajax({
-//     method: 'GET',
-//     url: '/api/questions/search'
-//   })
-// );
 
 export const fetchQuestion = (questionId) => (
   $.ajax({
