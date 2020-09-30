@@ -21,8 +21,7 @@ class Api::QuestionsController < ApplicationController
 
   # search questions
   def search
-    # debugger
-    search = params[:search]
+    search = question_search_params[:keywords]
     search_length = search.split(" ").length
     parse_search = search.split(" ")
     @questions = Question.where(
@@ -31,7 +30,6 @@ class Api::QuestionsController < ApplicationController
                     .join(' OR ')
                   ] + parse_search.map { |word| "%#{word}%" }
     )
-    # search_length = search.split.length
     render :search
   end
 
@@ -80,7 +78,7 @@ class Api::QuestionsController < ApplicationController
   end
 
   def question_search_params
-    params.require(:keywords).permit(:words)
+    params.require(:words).permit(:keywords)
   end
 
 end

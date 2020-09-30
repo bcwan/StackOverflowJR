@@ -1,11 +1,11 @@
 // search REST API
-export const fetchSearchQuestions = (keywords) => (
-  $.ajax({
+export const fetchSearchQuestions = (keywords) => {
+  return $.ajax({
     method: 'GET',
     url: '/api/questions/search',
-    data: { keywords }
+    data: { words: keywords }
   })
-);
+};
 
 // export const fetchSearchQuestions = () => (
 //   $.ajax({

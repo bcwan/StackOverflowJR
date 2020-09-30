@@ -16,7 +16,7 @@ const mSTP = (state) => {
 };
 
 const mDTP = (dispatch) => ({
-  fetchSearchQuestions: () => dispatch(fetchSearchQuestions()),
+  fetchSearchQuestions: (keywords) => dispatch(fetchSearchQuestions(keywords)),
   fetchQuestion: (questionId) => dispatch(fetchQuestion(questionId)),
   createQuestion: (question) => dispatch(createQuestion(question)),
 });

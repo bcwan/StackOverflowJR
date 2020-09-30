@@ -17,7 +17,7 @@ class SearchQuestionsIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchSearchQuestions();
+    this.props.fetchSearchQuestions(this.props.match.params);
     Modal.setAppElement("#root");
   }
 
@@ -32,7 +32,7 @@ class SearchQuestionsIndex extends React.Component {
       fetchQuestion,
       createQuestion,
     } = this.props;
-    debugger;
+
     return (
       <div>
         <SideBarContainer />
