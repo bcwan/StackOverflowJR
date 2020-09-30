@@ -32,6 +32,7 @@ class SearchQuestionsIndex extends React.Component {
       fetchQuestion,
       createQuestion,
     } = this.props;
+    debugger;
     return (
       <div>
         <SideBarContainer />

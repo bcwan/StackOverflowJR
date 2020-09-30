@@ -21,6 +21,7 @@ class Api::QuestionsController < ApplicationController
 
   # search questions
   def search
+    # debugger
     search = params[:search]
     search_length = search.split(" ").length
     parse_search = search.split(" ")
@@ -78,5 +79,8 @@ class Api::QuestionsController < ApplicationController
     params.require(:question).permit(:title, :description)
   end
 
+  def question_search_params
+    params.require(:search).permit(:keywords)
+  end
 
 end
