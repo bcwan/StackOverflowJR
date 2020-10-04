@@ -22,8 +22,8 @@ class Api::QuestionsController < ApplicationController
   # search questions
   def search
     search = question_search_params[:keywords]
-    search_length = search.split(" ").length
-    parse_search = search.split(" ")
+    search_length = search.split("+").length
+    parse_search = search.split("+")
     @questions = Question.where(
                   [
                     (['title LIKE ?'] * search_length)
