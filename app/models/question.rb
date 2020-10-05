@@ -6,7 +6,7 @@
 #  description   :string           not null
 #  has_answers   :boolean          default(FALSE), not null
 #  solved        :boolean          default(FALSE), not null
-#  title         :string           not null
+#  title         :citext           not null
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  questioner_id :integer          not null

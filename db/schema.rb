@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_15_063846) do
+ActiveRecord::Schema.define(version: 2020_10_05_004455) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "citext"
   enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
@@ -35,7 +36,7 @@ ActiveRecord::Schema.define(version: 2020_06_15_063846) do
   end
 
   create_table "questions", force: :cascade do |t|
-    t.string "title", null: false
+    t.citext "title", null: false
     t.integer "questioner_id", null: false
     t.string "description", null: false
     t.boolean "solved", default: false, null: false
