@@ -37,7 +37,7 @@ const App = () => {
           component={ShowQuestionContainer}
         />
         <Route exact path="/questions" component={AllQuestionsIndexContainer} />
-        <Route exact path="/search/:keywords" component={SearchQuestionIndexContainer} />
+        <Route exact path="/search/:keywords" replace component={SearchQuestionIndexContainer} />
         <AuthRoute exact path="/login" component={LoginContainer} />
         <AuthRoute exact path="/signup" component={SignUpContainer} />
       </Switch>

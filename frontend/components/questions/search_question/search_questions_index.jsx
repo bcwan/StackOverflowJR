@@ -21,6 +21,14 @@ class SearchQuestionsIndex extends React.Component {
     Modal.setAppElement("#root");
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    // if (prevProps.keywords !== this.props.match.params) {
+    //   debugger;
+    //   this.props.fetchSearchQuestions(this.props.match.params);
+    // }
+    // debugger;
+  }
+
   changeModalStatusForAsk(status) {
     this.setState({ modalOpenForAsk: status });
   }
@@ -32,6 +40,10 @@ class SearchQuestionsIndex extends React.Component {
       fetchQuestion,
       createQuestion,
     } = this.props;
+
+    // if (!questions) {
+    //   return null;
+    // }
 
     return (
       <div>

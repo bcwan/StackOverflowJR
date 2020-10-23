@@ -8,9 +8,10 @@ import {
   createQuestion,
 } from "../../../actions/questions_actions";
 
-const mSTP = (state) => {
+const mSTP = (state, ownProps) => {
   return ({
     questions: Object.values(state.entities.search_questions),
+    keywords: ownProps.match.params.keywords,
     currentUser: state.entities.users[state.session.id]
   });
 };
