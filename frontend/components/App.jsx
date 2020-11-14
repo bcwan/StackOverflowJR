@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactGA from 'react-ga';
 
 
-// React Redux Containers
+// Redux Containers
 import LoginContainer from "./user_session/login_form_container"
 import SignUpContainer from "./user_session/signup_form_container"
 import NavBarContainer from './navbar/navbar_container';
