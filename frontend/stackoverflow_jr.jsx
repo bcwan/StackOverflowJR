@@ -4,7 +4,6 @@ import configureStore from './store/store';
 import Root from './components/root';
 import Favicon from 'react-favicon';
 
-
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
   let store;

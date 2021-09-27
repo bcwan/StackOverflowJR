@@ -2,6 +2,7 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 
+// Works with new answers
 class NewAnswer extends React.Component {
   constructor(props) {
     super(props);
