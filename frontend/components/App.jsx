@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // Google Analytics
 import ReactGA from 'react-ga';
 
-
 // Redux Containers
 import LoginContainer from "./user_session/login_form_container"
 import SignUpContainer from "./user_session/signup_form_container"
@@ -16,9 +15,7 @@ import ShowQuestionContainer from './questions/show_question/show_question_conta
 import HomeComponent from './home/home';
 import SearchQuestionIndexContainer from './questions/search_question/search_questions_container';
 
-
 const App = () => {
-
   useEffect(() => {
     ReactGA.initialize("UA-179101592-1");
     ReactGA.pageview(window.location.hash)
